@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "lib": [
+            "DOM",
+            "DOM.Iterable",
+            "ESNext"
+        ],
+        "allowJs": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "esnext",
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react",
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "baseUrl": "./",
+        "downlevelIteration": true,
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "./src",
+        "./webpack.cofig.ts"
+    ]
+}
