@@ -1,32 +1,28 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "lib": [
-            "DOM",
-            "DOM.Iterable",
-            "ESNext"
-        ],
-        "allowJs": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "module": "esnext",
-        "moduleResolution": "Node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "noEmit": true,
-        "jsx": "react",
-        "sourceMap": true,
-        "noImplicitAny": false,
-        "baseUrl": "./",
-        "downlevelIteration": true,
-    },
-    "exclude": [
-        "node_modules"
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "lib": [
+      "DOM",
+      "ESNext"
     ],
-    "include": [
-        "./src",
-        "./webpack.cofig.ts"
-    ]
+    "target": "es5",
+    "allowJs": true,
+    "jsx": "react",
+    "noEmit": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "skipDefaultLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+  },
+  "files": [
+    "src/index.tsx"
+  ],
+  "include": [
+    "src/**/*"
+  ]
 }
