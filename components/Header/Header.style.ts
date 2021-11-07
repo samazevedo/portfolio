@@ -1,24 +1,29 @@
 import styled from 'styled-components'
 
-export const Container = styled.header`
+export const HeaderContainer = styled.header`
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    padding: 7px 0;
-    background-color: white;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.1rem 1.5rem;
+    opacity: 0.2;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+        opacity: 1;
+    }
 `
 
 export const Logo = styled.h1`
     font-size: 1.6rem;
-    font-family: ${(p) => p.theme.fonts.accent};
+    font-family: ${(p) => p.theme.fonts.cursive};
+
     a {
         text-decoration: none;
-        color: black;
+        color: ${(p) => p.theme.colors.gray};
+        transition: all 1s ease;
     }
     a:hover {
-        color: ${(p) => p.theme.colors.pink};
+        color: ${(p) => p.theme.colors.green};
     }
 `

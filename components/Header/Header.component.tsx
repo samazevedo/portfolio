@@ -1,15 +1,14 @@
 import Link from 'next/link'
-import { Center } from '../Center/Center.style'
-import { Container, Logo } from '../Header/Header.style'
+import { HeaderContainer, Logo } from '../Header/Header.style'
+import { Nav } from '../Nav/Nav.component'
 
 export const Header = () => (
-    <Container>
-        <Center>
-            <Logo>
-                <Link href='/'>
-                    <a>Sam</a>
-                </Link>
-            </Logo>
-        </Center>
-    </Container>
+    <HeaderContainer>
+        <Logo>
+            <Link href='/'>
+                <a>Sam Azevedo</a>
+            </Link>
+        </Logo>
+        <Nav />
+    </HeaderContainer>
 )

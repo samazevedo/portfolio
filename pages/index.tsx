@@ -1,14 +1,26 @@
 import React from 'react'
 import Head from 'next/head'
+import BGImage from '../components/BGImage/BGImage'
+import HomeComponent from '../components/Home/Home.component'
+import About from '../components/About/About.component'
+import Projects from '../components/projects/Projects.comonent'
+import Contact from '../components/Contact/Contact.component'
 
 export default function Home() {
     return (
-        <div className='container'>
+        <div>
             <Head>
                 <title>Sam Azevedo</title>
-                <link rel='icon' href='/favicon.ico' />
+                <link rel='icon' href='/images/glasses-logo.svg' />
             </Head>
-            <main>Hello World</main>
+
+            <main>
+                <BGImage />
+                <HomeComponent />
+                <About />
+                <Projects />
+                <Contact />
+            </main>
         </div>
     )
 }

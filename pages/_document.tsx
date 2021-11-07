@@ -10,9 +10,9 @@ import Document, {
 
 export default class MyDocument extends Document {
     render() {
-        const description = 'The Next Generation of a new feed'
+        const description = 'Front-End Web Developer'
         const fontURL =
-            'https://fonts.googleapi.com/css2?family=Permanent+Marker&display=swap'
+            'https://fonts.googleapis.com/css2?family=Suwannaphum:wght@100&display=swap'
         return (
             <Html lang='en'>
                 <Head>
