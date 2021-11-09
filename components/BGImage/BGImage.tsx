@@ -18,7 +18,7 @@ function useWindowSize() {
     }
 }
 
-function BGImage() {
+const BGImage = () => {
     const [width, setWidth] = useState<number>()
     const [height, setHeight] = useState<number>()
 
@@ -40,13 +40,7 @@ function BGImage() {
     if (width && height) {
         return (
             <Box>
-                <Image
-                    src='/images/sam.jpg'
-                    width={width}
-                    height={height}
-                    layout='fill'
-                    objectFit='cover'
-                />
+                <Image src='/images/sam.jpg' layout='fill' objectFit='cover' />
             </Box>
         )
     } else {

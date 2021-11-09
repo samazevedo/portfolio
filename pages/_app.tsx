@@ -4,8 +4,11 @@ import { ThemeProvider } from 'styled-components'
 
 import { Header } from '../components/Header/Header.component'
 import { Footer } from '../components/Footer/Footer.component'
-import { Center } from '../components/Center/Center.style'
+import { Container } from '../components/Container/Container.style'
+import { About } from '../components/About/About.component'
+import { Portfolio } from '../components/Portfolio/Portfolio.component'
 import { GlobalStyle, theme } from '../shared/theme'
+import { Contact } from '../components/Contact/Contact.component'
 
 export default function MyApp({ Component, pageProps }) {
     return (
@@ -18,11 +21,15 @@ export default function MyApp({ Component, pageProps }) {
                 <title>What's next?</title>
             </Head>
             <Header />
-            <main className='main'>
-                <Center>
+            <main>
+                <Container>
                     <Component {...pageProps} />
-                </Center>
+                </Container>
+                <About />
+                <Portfolio />
+                <Contact />
             </main>
+
             <Footer />
         </ThemeProvider>
     )

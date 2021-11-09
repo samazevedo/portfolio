@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 
-export const ContactStyles = styled.div`
-    display: grid;
+export const Intro = styled.div`
     height: 100%;
     min-height: 100vh;
     width: 100%;
+    display: grid;
     align-items: center;
-    background-color: rgba(88, 245, 39, 0.124);
 `

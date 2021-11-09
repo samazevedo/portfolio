@@ -10,7 +10,7 @@ import Document, {
 
 export default class MyDocument extends Document {
     render() {
-        const description = 'Front-End Web Developer'
+        const description = 'Front-End Web Developer | Design'
         const fontURL =
             'https://fonts.googleapis.com/css2?family=Suwannaphum:wght@100&display=swap'
         return (

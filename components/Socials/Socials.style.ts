@@ -1,13 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    position: absolute;
-    top: 5rem;
-    right: 3rem;
-    color: #fff;
-    box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.5),
-        0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    padding: 0.5rem;
 `
 export const SocialItem = styled.div`
     font-size: 2rem;
@@ -19,8 +15,12 @@ export const SocialItem = styled.div`
     justify-content: center;
     align-items: center;
     border: 1px solid #4b4b4b;
-    transition: transform 0.3s;
+    transition: transform 0.5s;
     &:hover {
-        transform: rotate(90deg);
+        transform: rotateY(180deg);
     }
+    box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.5),
+        0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    margin-bottom: 1rem;
 `

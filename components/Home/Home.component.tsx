@@ -1,7 +1,9 @@
-import { Center } from '../Center/Center.style'
+import { Intro } from '../Home/Home.style'
 import { Container } from '../Container/Container.style'
 import { useState, useEffect } from 'react'
 import Socials from '../Socials/Socials.component'
+import BGImage from '../BGImage/BGImage'
+
 const HomeComponent = () => {
     const [greeting, setGreeting] = useState('')
     useEffect(() => {
@@ -19,16 +21,16 @@ const HomeComponent = () => {
     }, [])
 
     return (
-        <div id='home'>
-            <Container>
-                <Center>
+        <Container id='home'>
+            <BGImage />
+            <Intro>
+                <div>
                     <h2>Hello, {greeting}</h2>
                     <h1>Sam Azevedo</h1>
-                    <p>I'm a Frontend Developer from Sao Paulo.</p>
-                    <Socials />
-                </Center>
-            </Container>
-        </div>
+                    <p>Frontend Web Developer | Design</p>
+                </div>
+            </Intro>
+        </Container>
     )
 }
 export default HomeComponent

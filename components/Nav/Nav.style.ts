@@ -4,6 +4,9 @@ export const Container = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+        display: none;
+    }
 `
 export const NavList = styled.ul`
     display: flex;

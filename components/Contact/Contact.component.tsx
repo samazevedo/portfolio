@@ -1,12 +1,14 @@
-import { Center } from '../Center/Center.style'
+import { Container } from '../Container/Container.style'
+import { ContactStyles } from './Contact.style'
 
-const Contact = () => {
+export const Contact = () => {
     return (
-        <Center>
-            <div id='contact'>
-                <h1>Contact</h1>
-            </div>
-        </Center>
+        <Container id='contact'>
+            <ContactStyles>
+                <div>
+                    <h1>Contact</h1>
+                </div>
+            </ContactStyles>
+        </Container>
     )
 }
-export default Contact

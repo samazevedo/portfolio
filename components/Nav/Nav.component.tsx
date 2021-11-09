@@ -15,8 +15,8 @@ export const Nav = () => {
                     </Link>
                 </NavItem>
                 <NavItem>
-                    <Link href='#projects'>
-                        <a>Projects</a>
+                    <Link href='#portfolio'>
+                        <a>Portfolio</a>
                     </Link>
                 </NavItem>
                 <NavItem>

@@ -14,6 +14,17 @@ export const theme = {
         black: '#000000',
         gray: '#696969',
     },
+    breakpoints: {
+        mobile: '576px',
+        tablet: '768px',
+        desktop: '1024px',
+        desktopL: '1280px',
+    },
+    fontSizes: {
+        small: '1.2rem',
+        medium: '1.6rem',
+        large: '2.4rem',
+    },
 }
 
 export type MainThemeProps = ThemeProps<typeof theme>
@@ -39,5 +50,6 @@ body {
     min-height: calc(100vh - 50px);
     color: ${({ theme }) => theme.colors.green};
     background-color: rgba(0, 0, 0, 0.75);
+    
     }
 `
