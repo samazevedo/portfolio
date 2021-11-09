@@ -18,7 +18,6 @@ export default class MyDocument extends Document {
                 <Head>
                     <meta name='description' content={description} />
                     <link href={fontURL} rel='stylesheet' />
-                    {this.props.styles}
                 </Head>
                 <body>
                     <Main />

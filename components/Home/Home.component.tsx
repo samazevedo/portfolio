@@ -1,8 +1,8 @@
 import { Intro } from '../Home/Home.style'
 import { Container } from '../Container/Container.style'
 import { useState, useEffect } from 'react'
-import Socials from '../Socials/Socials.component'
 import BGImage from '../BGImage/BGImage'
+import Typewritter from 'typewriter-effect'
 
 const HomeComponent = () => {
     const [greeting, setGreeting] = useState('')
@@ -25,9 +25,31 @@ const HomeComponent = () => {
             <BGImage />
             <Intro>
                 <div>
-                    <h2>Hello, {greeting}</h2>
+                    <h2>Hello =), {greeting}</h2>
                     <h1>Sam Azevedo</h1>
-                    <p>Frontend Web Developer | Design</p>
+                    <Typewritter
+                        options={{
+                            autoStart: true,
+                            loop: true,
+                        }}
+                        onInit={(typewriter) => {
+                            typewriter
+                                .typeString(
+                                    'I am a Front End Web Developer & Design.'
+                                )
+                                .pauseFor(100)
+                                .deleteAll()
+                                .typeString(
+                                    'I enjoy building interactive and resposible web apps.'
+                                )
+                                .pauseFor(500)
+                                .deleteAll()
+                                .typeString(` I'm specializing in React.js`)
+                                .pauseFor(500)
+                                .deleteAll()
+                                .start()
+                        }}
+                    />
                 </div>
             </Intro>
         </Container>

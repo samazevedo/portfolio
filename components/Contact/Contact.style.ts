@@ -1,10 +1,16 @@
 import styled from 'styled-components'
 
 export const ContactStyles = styled.div`
-    display: grid;
-    height: 100%;
-    min-height: 100vh;
     width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
     align-items: center;
-    background-color: rgba(88, 245, 39, 0.124);
+    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+        display: grid;
+        max-width: 60rem;
+        grid-template-rows: 1fr 1fr;
+        margin: 0 auto;
+        padding: 0 3rem;
+    }
 `

@@ -7,6 +7,7 @@ interface ButtonProps {
 
 export const BurgerStyles = styled.button<ButtonProps>`
     position: fixed;
+    content: '';
     top: 2%;
     right: 3%;
     width: 2rem;
@@ -23,7 +24,7 @@ export const BurgerStyles = styled.button<ButtonProps>`
         height: 0.15rem;
         transition: all 0.3s linear;
         transform-origin: 2px;
-        background-color: ${({ isOpen }) => (isOpen ? '#000000' : '#CFFA41')};
+        background-color: ${({ isOpen }) => (isOpen ? '#fff' : '#CFFA41')};
         &:nth-child(1) {
             transform: ${({ isOpen }) =>
                 isOpen ? 'rotate(45deg)' : 'rotate(0)'};

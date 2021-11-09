@@ -15,8 +15,8 @@ export const StyledMenu = styled.nav<NavProps>`
     height: 100%;
     z-index: 1;
     transform: ${({ isOpen }) =>
-        isOpen ? 'translateX(0)' : 'translateX(+100%)'};
-    background-color: rgba(0, 0, 0, 0.5);
+        isOpen ? 'translateX(50%)' : 'translateX(+100%)'};
+    background-color: rgba(0, 0, 0, 0.8);
     transition: transform 0.2s ease-in-out;
     & a {
         font-size: 2rem;

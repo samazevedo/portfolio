@@ -6,4 +6,5 @@ export const Intro = styled.div`
     width: 100%;
     display: grid;
     align-items: center;
+    padding: 5%;
 `
