@@ -13,12 +13,9 @@ import { Contact } from '../components/Contact/Contact.component'
 export default function MyApp({ Component, pageProps }) {
     return (
         <ThemeProvider theme={theme}>
-            <Head>
-                <title>Next.js with styled-components</title>
-            </Head>
             <GlobalStyle />
             <Head>
-                <title>What's next?</title>
+                <title>Sam Azevedo</title>
             </Head>
             <Header />
             <main>
@@ -29,7 +26,6 @@ export default function MyApp({ Component, pageProps }) {
                 <Portfolio />
                 <Contact />
             </main>
-
             <Footer />
         </ThemeProvider>
     )

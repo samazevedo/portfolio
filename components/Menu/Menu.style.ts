@@ -14,10 +14,11 @@ export const StyledMenu = styled.nav<NavProps>`
     width: 100%;
     height: 100%;
     z-index: 1;
+    
     transform: ${({ isOpen }) =>
         isOpen ? 'translateX(50%)' : 'translateX(+100%)'};
     background-color: rgba(0, 0, 0, 0.8);
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     & a {
         font-size: 2rem;
         text-transform: uppercase;

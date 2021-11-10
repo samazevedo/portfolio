@@ -14,7 +14,7 @@ export const Header = () => {
     return (
         <HeaderContainer>
             <Logo>
-                <Link href='/'>
+                <Link href='#home'>
                     <a>Sam Azevedo</a>
                 </Link>
             </Logo>
