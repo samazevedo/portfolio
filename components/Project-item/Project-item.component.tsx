@@ -3,48 +3,49 @@ import {
     StyledImage,
     StyledTitle,
     StyledDescription,
+    ButtonsBox,
 } from './Project-item.style'
 import { Button } from '../Button/Button.component'
+import { ReactNode } from 'react'
 interface ProjectProps {
     title: string
     description: string
-    link: string
+    projectURL: string
     image: string
     tags: string[]
-    github: string
-    live: string
+    githubURL: string
 }
 
 export const ProjectItem: React.FC<ProjectProps> = ({
     title,
     description,
-    link,
+    projectURL,
     image,
     tags,
-    github,
-    live,
+    githubURL,
 }) => {
     return (
         <StyledProjectItem>
-            <StyledTitle>
-                <span>{title}</span>
-            </StyledTitle>
+            <StyledTitle>{title}</StyledTitle>
             <StyledImage>
                 <img src={image} alt={title} />
             </StyledImage>
             <StyledDescription>
-                {description}
-                <a href={link}>{link}</a>
+                <p>{description}</p>
                 <ul>
                     {tags.map((tag) => (
                         <li key={tag}>{tag}</li>
                     ))}
                 </ul>
             </StyledDescription>
-            <div>
-                <Button>{live}</Button>
-                <Button>{github}</Button>
-            </div>
+            <ButtonsBox>
+                <a href={projectURL} target='_blank'>
+                    <Button>see live</Button>
+                </a>
+                <a href={githubURL} target='_blank'>
+                    <Button>github</Button>
+                </a>
+            </ButtonsBox>
         </StyledProjectItem>
     )
 }

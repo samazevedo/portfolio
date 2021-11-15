@@ -1,21 +1,23 @@
 import { Container } from '../Container/Container.style'
 import { PortfolioStyles } from './Portfolio.style'
 import { ProjectItem } from '../Project-item/Project-item.component'
+
 export const Portfolio = () => {
     return (
         <Container id='portfolio'>
             <PortfolioStyles>
                 <h1>Portfolio</h1>
-                <p> Here are some of my recent projects</p>
-
+                <p>
+                    The following are my most recent projects. You can also
+                    check my Github account for more.
+                </p>
                 <ProjectItem
                     title='Monsters App'
-                    image='images/projects/monsters-app.png'
-                    description='This is a simple Project using React. This project also make use of API consumming and React Hooks.'
-                    link='project stack'
-                    github='github'
-                    live='deployed website'
-                    tags={['react', 'redux', 'styled-components']}
+                    description='my project description'
+                    projectURL='http://google.com'
+                    image={`/images/projects/monsters-app.png`}
+                    tags={['tag1', 'tag2']}
+                    githubURL='https://github.com/samazevedo'
                 />
             </PortfolioStyles>
         </Container>
