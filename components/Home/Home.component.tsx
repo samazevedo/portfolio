@@ -1,4 +1,4 @@
-import { Intro } from '../Home/Home.style'
+import { Intro, ButtonBox } from '../Home/Home.style'
 import { Container } from '../Container/Container.style'
 import { useState, useEffect } from 'react'
 import BGImage from '../BGImage/BGImage'
@@ -53,10 +53,14 @@ const HomeComponent = () => {
                     <p>
                         Click here to know more <a href='#about'>about me.</a>
                     </p>
-                    <div>
-                        <Button href='#contact'>See my work </Button>
-                        <Button href='#contact'>get in touch </Button>
-                    </div>
+                    <ButtonBox>
+                        <a href='#portfolio'>
+                            <Button>see my work</Button>
+                        </a>
+                        <a href='#contact'>
+                            <Button>get in touch</Button>
+                        </a>
+                    </ButtonBox>
                 </div>
             </Intro>
         </Container>

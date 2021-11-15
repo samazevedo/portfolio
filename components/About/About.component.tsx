@@ -58,7 +58,7 @@ export const About = () => {
                         I am a Web Developer based in Sao Paulo Brazil, with a
                         passion for creating beautiful and intuitive user
                         interfaces. I have a strong fundation in front-end
-                        development concepts, resposive layouts and in the
+                        development concepts, responsive layouts and in the
                         creation of clean and reusable code. I am constantly
                         learning new technologies and tools.
                     </p>
