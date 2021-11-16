@@ -3,8 +3,8 @@ export const Footer = () => {
     const currentYear = new Date().getFullYear()
     return (
         <Container>
-            &copy; copyright <a href='#'>Sam Azevedo </a> | {currentYear} | All
-            rights reserved
+            &copy; copyright <a href='#home'>Sam Azevedo </a> | {currentYear} |
+            All rights reserved
             <div>
                 <ul>
                     <li>

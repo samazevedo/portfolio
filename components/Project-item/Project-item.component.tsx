@@ -6,7 +6,6 @@ import {
     ButtonsBox,
 } from './Project-item.style'
 import { Button } from '../Button/Button.component'
-import { ReactNode } from 'react'
 interface ProjectProps {
     title: string
     description: string

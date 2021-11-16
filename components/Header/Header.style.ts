@@ -13,12 +13,11 @@ export const HeaderContainer = styled.header`
     &:hover {
         opacity: 1;
     }
+    z-index: 10;
 `
 
 export const Logo = styled.h1`
     font-size: 1.6rem;
-    font-family: ${(p) => p.theme.fonts.cursive};
-
     a {
         text-decoration: none;
         color: ${(p) => p.theme.colors.gray};

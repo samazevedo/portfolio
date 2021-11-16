@@ -4,7 +4,7 @@ import { createGlobalStyle } from 'styled-components'
 export const theme = {
     fonts: {
         basic: 'helvetica, sans-serif',
-        mainFont: '"Suwannaphum", serif',
+        mainFont: 'Suwannaphum, serif',
     },
     colors: {
         green: '#CFFA41',
