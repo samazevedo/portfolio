@@ -8,6 +8,9 @@ export const NotificationWrapper = styled.div``
 export const CssClass = styled.div<NotificationProps>`
     position: absolute;
     top: 5%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -19,6 +22,7 @@ export const CssClass = styled.div<NotificationProps>`
     width: 100%;
     max-width: 350px;
     border-radius: 5px;
+    z-index: 999;
     & h2 {
         font-size: 1rem;
         margin: 0;

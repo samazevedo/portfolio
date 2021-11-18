@@ -40,7 +40,12 @@ const BGImage = () => {
     if (width && height) {
         return (
             <Box>
-                <Image src='/images/sam.jpg' layout='fill' objectFit='cover' />
+                <Image
+                    src='/images/sam.jpg'
+                    alt='sam'
+                    layout='fill'
+                    objectFit='cover'
+                />
             </Box>
         )
     } else {
