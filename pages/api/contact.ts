@@ -29,11 +29,11 @@ export default async function Contact(
         }
         // console.log(newMessage)
 
+        const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clutername}.imcvb.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`
+
         let client
         try {
-            client = await MongoClient.connect(
-                'mongodb+srv://sam-azev00:S7WBrUEYcoGIjkUb@cluster0.imcvb.mongodb.net/samWebsite?retryWrites=true&w=majority'
-            )
+            client = await MongoClient.connect(connectionString)
         } catch (error) {
             res.status(500).json({ message: 'Cannot connect to database.' })
             return
