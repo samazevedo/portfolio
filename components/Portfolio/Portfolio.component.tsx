@@ -12,11 +12,11 @@ export const Portfolio = () => {
                     check my Github account for more.
                 </p>
                 <ProjectItem
-                    title='Monsters App'
-                    description='my project description'
-                    projectURL='http://google.com'
-                    image={`/images/projects/monsters-app.png`}
-                    tags={['tag1', 'tag2']}
+                    title='Next JS Blog'
+                    description='This is a simple blog website built using React, Next JS, Typescript, Gray Matter and MongoDB. '
+                    projectURL='https://vercel.com/samazevedo/next-blog'
+                    image={`/images/projects/next-blog.png`}
+                    tags={[`/icons/react.svg`, `/icons/nextdotjs.svg`, `/icons/mongodb.svg`,`/icons/typescript.svg`]}
                     githubURL='https://github.com/samazevedo'
                 />
             </PortfolioStyles>
