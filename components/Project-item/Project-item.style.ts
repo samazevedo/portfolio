@@ -8,7 +8,7 @@ export const StyledProjectItem = styled.div`
     width: 100%;
     overflow: hidden;
     padding: 5%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     color: ${({ theme }) => theme.colors.white};
 `
 export const StyledImage = styled.div`
