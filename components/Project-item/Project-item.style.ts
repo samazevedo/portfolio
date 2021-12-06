@@ -8,24 +8,23 @@ export const StyledProjectItem = styled.div`
     width: 100%;
     overflow: hidden;
     padding: 5%;
-    background-color: rgba(255, 255, 255, 0.5);
-    color: ${({ theme }) => theme.colors.black};
+    background-color: rgba(0, 0, 0, 0.5);
+    color: ${({ theme }) => theme.colors.white};
 `
 export const StyledImage = styled.div`
-    max-height: 450px;
-    max-width: 550px;
     margin: 0 auto;
     overflow: hidden;
-    border: 15px solid ${({ theme }) => theme.colors.green};
-    border-radius: 5px;
+    border: none;
     & img {
         width: 100%;
     }
 `
 export const StyledTitle = styled.h3`
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     font-weight: bolder;
-    color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.colors.white};
+    text-align: center;
+    margin: 1rem 0;
 `
 export const StyledDescription = styled.div`
     font-size: 1rem;
@@ -33,7 +32,11 @@ export const StyledDescription = styled.div`
     & ul {
         list-style: none;
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        & li {
+            margin: 0.5rem 0;
+            width: 50%;
+        }
     }
 `
 export const ButtonsBox = styled.div`

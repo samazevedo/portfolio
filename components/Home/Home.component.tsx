@@ -40,7 +40,7 @@ const HomeComponent = () => {
                                 .pauseFor(100)
                                 .deleteAll()
                                 .typeString(
-                                    'I enjoy building interactive and resposible web apps.'
+                                    'I enjoy building interactive and respossible web apps.'
                                 )
                                 .pauseFor(500)
                                 .deleteAll()

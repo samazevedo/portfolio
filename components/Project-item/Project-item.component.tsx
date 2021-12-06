@@ -33,7 +33,9 @@ export const ProjectItem: React.FC<ProjectProps> = ({
                 <p>{description}</p>
                 <ul>
                     {tags.map((tag) => (
-                        <li key={tag}>{tag}</li>
+                        <li key={tag}>
+                            <img src={tag} alt={tag}/>
+                            </li>
                     ))}
                 </ul>
             </StyledDescription>

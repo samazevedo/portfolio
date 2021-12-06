@@ -14,10 +14,15 @@ export const Portfolio = () => {
                 <ProjectItem
                     title='Next JS Blog'
                     description='This is a simple blog website built using React, Next JS, Typescript, Gray Matter and MongoDB. '
-                    projectURL='https://vercel.com/samazevedo/next-blog'
+                    projectURL='https://next-blog-delta-puce.vercel.app/'
                     image={`/images/projects/next-blog.png`}
-                    tags={[`/icons/react.svg`, `/icons/nextdotjs.svg`, `/icons/mongodb.svg`,`/icons/typescript.svg`]}
-                    githubURL='https://github.com/samazevedo'
+                    tags={[
+                        `/icons/react.svg`,
+                        `/icons/nextdotjs.svg`,
+                        `/icons/mongodb.svg`,
+                        `/icons/typescript.svg`,
+                    ]}
+                    githubURL='https://github.com/samazevedo/next-blog'
                 />
             </PortfolioStyles>
         </Container>
