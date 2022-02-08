@@ -29,7 +29,7 @@ export default async function Contact(
         }
         // console.log(newMessage)
 
-        const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clutername}.imcvb.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`
+        const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.imcvb.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`
 
         let client
         try {
