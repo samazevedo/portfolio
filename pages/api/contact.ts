@@ -35,7 +35,9 @@ export default async function Contact(
         try {
             client = await MongoClient.connect(connectionString)
         } catch (error) {
-            res.status(500).json({ message: 'Cannot connect to database.' })
+            res.status(500).json({
+                message: 'Sorry! Cannot stablish connection .',
+            })
             return
         }
         // insert data into the database
