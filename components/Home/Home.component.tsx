@@ -35,17 +35,19 @@ const HomeComponent = () => {
                         onInit={(typewriter) => {
                             typewriter
                                 .typeString(
-                                    'I am a Front End Web Developer & Design.'
+                                    'I am a Front End Web Developer & Designer.'
                                 )
-                                .pauseFor(100)
+                                .pauseFor(70)
                                 .deleteAll()
                                 .typeString(
-                                    'I enjoy building interactive and respossible web apps.'
+                                    'I enjoy building interactive and respossible Web Applications.'
                                 )
-                                .pauseFor(500)
+                                .pauseFor(400)
                                 .deleteAll()
-                                .typeString(` I'm specializing in MERN Stack`)
-                                .pauseFor(500)
+                                .typeString(
+                                    ` I'm currently specializing in MERN Stack`
+                                )
+                                .pauseFor(400)
                                 .deleteAll()
                                 .start()
                         }}

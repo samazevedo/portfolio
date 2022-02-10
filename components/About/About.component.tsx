@@ -63,8 +63,7 @@ export const About = () => {
                         learning new technologies and tools.
                     </p>
                     <p>
-                        I am also currently learning React, TypeScript, and
-                        Node.js.
+                        I am currently learning React, TypeScript, and Node.js.
                     </p>
                 </div>
                 <h2>My Current Stacks Are</h2>
