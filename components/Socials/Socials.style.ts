@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.ul`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 0 5rem 0 5rem;
+    padding: 0 2rem 0 2rem;
 `
 export const SocialItem = styled.li`
     font-size: 1rem;
