@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.ul`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 0.7rem;
+    padding: 0 5rem 0 5rem;
 `
 export const SocialItem = styled.li`
     font-size: 1rem;
@@ -14,7 +14,6 @@ export const SocialItem = styled.li`
     display: flex;
     justify-content: center;
     align-items: center;
-
     transition: transform 0.5s;
     &:hover {
         transform: scale(1.2);
