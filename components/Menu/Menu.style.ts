@@ -20,9 +20,9 @@ export const StyledMenu = styled.nav<NavProps>`
     background-color: rgba(0, 0, 0, 0.8);
     transition: transform 0.5s ease-in-out;
     & a {
-        font-size: 2rem;
+        font-size: 1.2rem;
         text-transform: uppercase;
-        padding: 2rem 1rem;
+        padding: 1rem 1rem;
         color: ${(props) => props.theme.colors.green};
         font-weight: bold;
         &:hover {

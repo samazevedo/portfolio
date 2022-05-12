@@ -1,43 +1,45 @@
 import { Container, SocialItem } from './Socials.style'
-import { useState } from 'react'
-
-const ShowAndHide = () => {
-    const [show, setShow] = useState(false)
-}
 
 const Socials = () => {
-    const [show, setShow] = useState(false)
-    const Socials = {
-        github: {
+    const socialItems = [
+        {
+            name: 'Github',
             id: 1,
             link: 'https://github.com/samazevedo',
             icon: './icons/github.svg',
         },
-        linkedin: {
+        {
+            name: 'Linkedin',
             id: 2,
-            link: 'https://www.linkedin.com/in/samazevedo/',
+            link: 'https://www.linkedin.com/in/samuel-azevedo-santos-908a5b53/',
             icon: './icons/linkedin.svg',
         },
 
-        twitter: {
+        {
+            name: 'Twitter',
             id: 3,
-            link: '',
+            link: 'https://twitter.com/SamAzevedo4',
             icon: './icons/twitter.svg',
         },
-        instagram: {
+
+        {
+            name: 'Instagram',
             id: 4,
-            link: '',
+            link: 'https://www.instagram.com/sam_azevedooo/',
             icon: './icons/instagram.svg',
         },
-    }
+    ]
 
     return (
         <div>
             <Container>
-                <SocialItem>Git</SocialItem>
-                <SocialItem>s</SocialItem>
-                <SocialItem>t</SocialItem>
-                <SocialItem>t</SocialItem>
+                {socialItems.map((item) => (
+                    <SocialItem key={item.id}>
+                        <a href={item.link}>
+                            <img src={item.icon} alt={item.name} />
+                        </a>
+                    </SocialItem>
+                ))}
             </Container>
         </div>
     )

@@ -1,26 +1,17 @@
+import Socials from '../Socials/Socials.component'
 import { Container } from './Footer.style'
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear()
     return (
         <Container>
-            &copy; copyright <a href='#home'> Sam Azevedo </a> | {currentYear} |
-            All rights reserved
+            <p>
+                &copy; copyright <a href='#home'> Sam Azevedo </a> |{' '}
+                {currentYear} | All rights reserved
+            </p>
+
             <div>
-                <ul>
-                    <li>
-                        <a href='#'>G</a>
-                    </li>
-                    <li>
-                        <a href='#'>L</a>
-                    </li>
-                    <li>
-                        <a href='#'>T</a>
-                    </li>
-                    <li>
-                        <a href='#'>I</a>
-                    </li>
-                </ul>
+                <Socials />
             </div>
         </Container>
     )

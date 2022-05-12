@@ -1,26 +1,26 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.ul`
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    padding: 0.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0.7rem;
 `
-export const SocialItem = styled.div`
-    font-size: 2rem;
+export const SocialItem = styled.li`
+    font-size: 1rem;
     font-weight: 900;
     border-radius: 50%;
-    height: 3rem;
-    width: 3rem;
+    height: 2rem;
+    width: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #4b4b4b;
+
     transition: transform 0.5s;
     &:hover {
-        transform: rotateY(180deg);
+        transform: scale(1.2);
     }
-    box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.5),
-        0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    margin-bottom: 1rem;
+    @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+        height: 1rem;
+        width: 1rem;
+    }
 `
