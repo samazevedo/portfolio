@@ -29,7 +29,7 @@ export const theme = {
 
 export type MainThemeProps = ThemeProps<typeof theme>
 export const GlobalStyle = createGlobalStyle<MainThemeProps>`
-html {scroll-behavior: smooth;};
+html {scroll-behavior: smooth;}
 body {
     margin: 0;
     font-family: ${({ theme }) => theme.fonts.mainFont};

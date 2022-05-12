@@ -22,7 +22,6 @@ const HomeComponent = () => {
 
     return (
         <Container id='home'>
-            <BGImage />
             <Intro>
                 <div>
                     <h2>Hello, {greeting} !</h2>

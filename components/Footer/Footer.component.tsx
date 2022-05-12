@@ -1,9 +1,10 @@
 import { Container } from './Footer.style'
+
 export const Footer = () => {
     const currentYear = new Date().getFullYear()
     return (
         <Container>
-            &copy; copyright <a href='#home'>Sam Azevedo </a> | {currentYear} |
+            &copy; copyright <a href='#home'> Sam Azevedo </a> | {currentYear} |
             All rights reserved
             <div>
                 <ul>

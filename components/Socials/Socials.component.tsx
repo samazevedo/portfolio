@@ -1,5 +1,4 @@
 import { Container, SocialItem } from './Socials.style'
-import Github from './icons/github.svg'
 import { useState } from 'react'
 
 const ShowAndHide = () => {
@@ -18,6 +17,17 @@ const Socials = () => {
             id: 2,
             link: 'https://www.linkedin.com/in/samazevedo/',
             icon: './icons/linkedin.svg',
+        },
+
+        twitter: {
+            id: 3,
+            link: '',
+            icon: './icons/twitter.svg',
+        },
+        instagram: {
+            id: 4,
+            link: '',
+            icon: './icons/instagram.svg',
         },
     }
 

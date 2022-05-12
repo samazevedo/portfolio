@@ -1,15 +1,20 @@
 import styled from 'styled-components'
+
 export const Container = styled.footer`
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
     text-align: center;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 15px;
     color: ${({ theme }) => theme.colors.white};
     background-color: rgba(0, 0, 0, 0.5);
-    & a {
-        color: ${({ theme }) => theme.colors.white};
-        transition: all 0.3s ease-in-out;
-        &:hover {
-            color: ${({ theme }) => theme.colors.green};
-
+    & ul {
+        list-style: none;
+    }
+    & li {
+        display: inline-block;
+        margin-right: 15px;
     }
 `
