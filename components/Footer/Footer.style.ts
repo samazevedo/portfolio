@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 export const Container = styled.footer`
-    z-index: 10;
+    margin-top: 2.5rem;
     width: 100%;
     height: 100%;
-    min-height: 20vh;
+    min-height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,9 +17,9 @@ export const Container = styled.footer`
     }
     & li {
         display: inline-block;
-        margin-right: 15px;
+        margin-right: 1.5rem;
     }
     @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 `

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Intro = styled.div`
     height: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     width: 100%;
     display: grid;
     align-items: center;

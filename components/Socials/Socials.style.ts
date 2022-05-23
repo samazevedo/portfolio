@@ -9,17 +9,17 @@ export const SocialItem = styled.li`
     font-size: 1rem;
     font-weight: 900;
     border-radius: 50%;
-    height: 2rem;
-    width: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.5s;
     &:hover {
-        transform: scale(1.2);
+        transform: scale(1.3);
     }
     @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-        height: 1rem;
-        width: 1rem;
+        height: 2rem;
+        width: 2rem;
     }
 `

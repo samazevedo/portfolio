@@ -52,5 +52,4 @@ const BGImage = () => {
         return null
     }
 }
-
 export default BGImage

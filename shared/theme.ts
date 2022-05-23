@@ -7,12 +7,14 @@ export const theme = {
         mainFont: 'Suwannaphum, serif',
     },
     colors: {
-        green: '#CFFA41',
+        green: '#A9ED33',
         blue: '#60C2FB',
         orange: '#FF8E25',
         white: '#FFFFFF',
         black: '#000000',
         gray: '#696969',
+        darkBlue: '#2C3E50',
+        mainBg: '#8B8D8BFB',
     },
     breakpoints: {
         mobile: '576px',
@@ -35,6 +37,7 @@ body {
     font-family: ${({ theme }) => theme.fonts.mainFont};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: ${({ theme }) => theme.colors.mainBg};
     }
     *,
     *::after,

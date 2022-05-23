@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import BGImage from '../BGImage/BGImage'
 import Typewritter from 'typewriter-effect'
 import { Button } from '../Button/Button.component'
+
 const HomeComponent = () => {
     const [greeting, setGreeting] = useState('')
     useEffect(() => {
@@ -25,7 +26,7 @@ const HomeComponent = () => {
             <Intro>
                 <div>
                     <h2>Hello, {greeting} !</h2>
-                    <h1>Sam Azevedo</h1>
+
                     <Typewritter
                         options={{
                             autoStart: true,
@@ -33,26 +34,25 @@ const HomeComponent = () => {
                         }}
                         onInit={(typewriter) => {
                             typewriter
-                                .typeString(
-                                    'I am a Front End Web Developer & Designer.'
-                                )
-                                .pauseFor(70)
+                                .typeString('Welcome to my website!')
+                                .pauseFor(30)
+                                .deleteAll()
+                                .typeString('I am a Web Developer & Designer.')
+                                .pauseFor(30)
                                 .deleteAll()
                                 .typeString(
                                     'I enjoy building interactive and respossible Web Applications.'
                                 )
-                                .pauseFor(400)
+                                .pauseFor(30)
                                 .deleteAll()
-                                .typeString(
-                                    ` I'm currently specializing in MERN Stack`
-                                )
-                                .pauseFor(400)
+                                .typeString(` I'm specializing in MERN Stack.`)
+                                .pauseFor(300)
                                 .deleteAll()
                                 .start()
                         }}
                     />
                     <p>
-                        Click here to know more <a href='#about'>about me.</a>
+                        Click here to know more <a href='#about'>about me</a>
                     </p>
                     <ButtonBox>
                         <a href='#portfolio'>
