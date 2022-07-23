@@ -7,7 +7,7 @@ export const theme = {
         mainFont: 'Suwannaphum, serif',
     },
     colors: {
-        green: '#AD93FB',
+        green: '#E4FF35',
         blue: '#60C2FB',
         orange: '#7FC4F8',
         white: '#FFFFFF',
@@ -31,15 +31,16 @@ export const theme = {
 
 export type MainThemeProps = ThemeProps<typeof theme>
 export const GlobalStyle = createGlobalStyle<MainThemeProps>`
-html {scroll-behavior: smooth;}
+html {scroll-behavior: smooth;
+    width: 100%;
+}
 body {
     margin: 0;
     font-family: ${({ theme }) => theme.fonts.mainFont};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${({ theme }) => theme.colors.mainBg};
-
-
+    color: ${({ theme }) => theme.colors.white};
 
     }
     *,
@@ -55,8 +56,10 @@ body {
     .main {
     padding: 70px 0 20px;
     min-height: calc(100vh - 50px);
+    width: 100%;
     color: ${({ theme }) => theme.colors.green};
     background-color: rgba(0, 0, 0, 0.75);
     
     }
+    
 `

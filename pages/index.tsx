@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import HomeComponent from '../components/Home/Home.component'
+import BGImage from '../components/BGImage/BGImage'
 export default function Home() {
     return (
         <div>
@@ -9,6 +10,7 @@ export default function Home() {
                 <link rel='icon' href='/images/glasses-logo.svg' />
             </Head>
             <main>
+                <BGImage />
                 <HomeComponent />
             </main>
         </div>

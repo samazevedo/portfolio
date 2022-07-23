@@ -24,7 +24,7 @@ export const BurgerStyles = styled.button<ButtonProps>`
         height: 0.15rem;
         transition: all 0.3s linear;
         transform-origin: 2px;
-        background-color: ${({ isOpen }) => (isOpen ? '#fff' : '#AD93FB')};
+        background-color: ${({ isOpen }) => (isOpen ? '#fff' : '#E4FF35')};
         &:nth-child(1) {
             transform: ${({ isOpen }) =>
                 isOpen ? 'rotate(45deg)' : 'rotate(0)'};

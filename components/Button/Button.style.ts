@@ -15,12 +15,10 @@ export const StyledButton = styled.button`
     & a {
         color: ${(props) => props.theme.colors.white};
     }
-    & a:hover {
-        color: ${(props) => props.theme.colors.gray};
-    }
     &:hover {
         background-color: ${(props) => props.theme.colors.green};
-        color: ${(props) => props.theme.colors.white};
+        color: ${(props) => props.theme.colors.black};
+        transform: translateY(-0.1rem);
     }
     &:active {
         transform: scale(0.95);

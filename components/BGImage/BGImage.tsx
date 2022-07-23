@@ -8,6 +8,22 @@ const Box = styled.div`
     width: 100%;
     height: 100%;
     z-index: -1;
+    background-color: aliceblue;
+    & img {
+        opacity: 95%;
+        animation: color-change 10s ease-in-out infinite;
+    }
+    @keyframes color-change {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+        50% {
+            filter: hue-rotate(360deg);
+        }
+        100% {
+            filter: hue-rotate(0deg);
+        }
+    }
 `
 
 function useWindowSize() {
@@ -41,7 +57,7 @@ const BGImage = () => {
         return (
             <Box>
                 <Image
-                    src='/images/sam.jpg'
+                    src='/images/bulb.jpg'
                     alt='sam'
                     layout='fill'
                     objectFit='cover'
