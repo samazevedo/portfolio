@@ -10,7 +10,7 @@ export const StyledButton = styled.button`
     font-size: 0.5rem;
     padding: 0.3rem 0.7rem;
     text-transform: uppercase;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.5s ease-in-out;
     cursor: pointer;
     & a {
         color: ${(props) => props.theme.colors.white};
@@ -20,7 +20,7 @@ export const StyledButton = styled.button`
     }
     &:hover {
         background-color: ${(props) => props.theme.colors.green};
-        color: ${(props) => props.theme.colors.gray};
+        color: ${(props) => props.theme.colors.white};
     }
     &:active {
         transform: scale(0.95);

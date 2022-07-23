@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const ContactStyles = styled.div`
+    z-index: 5;
     padding: 5%;
     font-weight: 500;
     & h1 {
@@ -14,6 +15,7 @@ export const ContactStyles = styled.div`
         padding: 0;
         margin: 0;
         margin-left: 0.5rem;
+    }
 `
 export const Container = styled.div`
     position: relative;

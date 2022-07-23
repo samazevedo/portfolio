@@ -9,28 +9,29 @@ import { About } from '../components/About/About.component'
 import { Portfolio } from '../components/Portfolio/Portfolio.component'
 import { GlobalStyle, theme } from '../shared/theme'
 import { Contact } from '../components/Contact/Contact.component'
-
 export default function MyApp({ Component, pageProps }) {
     return (
-        <ThemeProvider theme={theme}>
-            <GlobalStyle />
-            <Head>
-                <title>Sam Azevedo</title>
-                <meta
-                    name='viewport'
-                    content='initial-scale=1.0, width=device-width'
-                />
-            </Head>
-            <Header />
-            <main>
-                <Container>
-                    <Component {...pageProps} />
-                </Container>
-                <About />
-                <Portfolio />
-                <Contact />
-            </main>
-            <Footer />
-        </ThemeProvider>
+        <>
+            <ThemeProvider theme={theme}>
+                <GlobalStyle />
+                <Head>
+                    <title>Sam Azevedo</title>
+                    <meta
+                        name='viewport'
+                        content='initial-scale=1.0, width=device-width'
+                    />
+                </Head>
+                <Header />
+                <main>
+                    <Container>
+                        <Component {...pageProps} />
+                    </Container>
+                    <About />
+                    <Portfolio />
+                    <Contact />
+                </main>
+                <Footer />
+            </ThemeProvider>
+        </>
     )
 }

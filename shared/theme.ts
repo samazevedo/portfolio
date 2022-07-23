@@ -7,14 +7,14 @@ export const theme = {
         mainFont: 'Suwannaphum, serif',
     },
     colors: {
-        green: '#A9ED33',
+        green: '#AD93FB',
         blue: '#60C2FB',
-        orange: '#FF8E25',
+        orange: '#7FC4F8',
         white: '#FFFFFF',
         black: '#000000',
         gray: '#696969',
         darkBlue: '#2C3E50',
-        mainBg: '#8B8D8BFB',
+        mainBg: '#FFFFFFFB',
     },
     breakpoints: {
         mobile: '576px',
@@ -38,6 +38,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${({ theme }) => theme.colors.mainBg};
+
+
+
     }
     *,
     *::after,
@@ -46,6 +49,7 @@ body {
     a { 
         color: ${({ theme }) => theme.colors.green};
         text-decoration: none;
+        transition: all 0.3s ease-in-out;
      }
     a:hover { color: ${({ theme }) => theme.colors.orange} }
     .main {

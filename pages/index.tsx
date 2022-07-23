@@ -1,7 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
 import HomeComponent from '../components/Home/Home.component'
-
 export default function Home() {
     return (
         <div>
