@@ -57,7 +57,7 @@ const BGImage = () => {
         return (
             <Box>
                 <Image
-                    src='/images/bulb.jpg'
+                    src='/images/0.jpg'
                     alt='sam'
                     layout='fill'
                     objectFit='cover'

@@ -10,7 +10,6 @@ export default function Home() {
                 <link rel='icon' href='/images/glasses-logo.svg' />
             </Head>
             <main>
-                <BGImage />
                 <HomeComponent />
             </main>
         </div>

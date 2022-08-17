@@ -39,7 +39,7 @@ body {
     font-family: ${({ theme }) => theme.fonts.mainFont};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${({ theme }) => theme.colors.mainBg};
+    background-color: ${({ theme }) => theme.colors.black};
     color: ${({ theme }) => theme.colors.white};
 
     }
