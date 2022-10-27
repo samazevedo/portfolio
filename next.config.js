@@ -1,8 +1,8 @@
-module.exports = {
-    env: {
-        mongodb_username: 'sam-main123',
-        mongodb_password: 'InkubzfOWnVouSYl',
-        mongodb_clustername: 'cluster0',
-        mongodb_database: 'samWebsite',
-    },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  experimental: { appDir: true },
 }
+
+module.exports = nextConfig
