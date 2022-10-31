@@ -1,9 +1,17 @@
-import { Nav } from './nav/Nav'
-import { Home } from './home/Home'
-import { About } from './about/About'
-import { Projects } from './projects/Projects'
-import { Contact } from './contact/Contact'
-import { Footer } from './footer/Footer'
-// import { CanvasL } from './canvas/CanvasL'
+// components
+import { Dom } from './layout/dom'
+import { Header } from './header/header'
+import { Logo } from './logo/logo'
+import { Nav } from './navigation/nav'
+import { Home } from './home/home'
+import { About } from './about/about'
+import { Projects } from './projects/projects'
+import { Contact } from './contact/contact'
 
-export { Nav, Home, About, Projects, Contact, Footer }
+export { Dom, Header, Logo, Nav, Home, About, Projects, Contact }
+
+// mesh components
+import { CanvasL } from './layout/canvas'
+import { Text } from './canvas/text'
+
+export { Text, CanvasL }

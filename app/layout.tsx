@@ -1,25 +1,23 @@
-import '../styles/globals.css'
-import { Nav, Footer } from './components'
+import './styles/global.css'
+import localFont from '@next/font/local'
+
+const Jost = localFont({
+  src: './assets/fonts/Jost/static/Jost-Thin.ttf',
+})
 
 interface RootProps {
   children: React.ReactNode
 }
 
 export default function RootLayout({ children }: RootProps) {
-  console.log('rendering here not there')
+  console.log('This is server side ')
+
   return (
-    <html className='bg-gray-800 text-lime-100 antialiased font-extralight font-mono'>
-      <head>
+    <html className={Jost.className}>
+      <head lang='en'>
         <title>Sam Azevedo</title>
       </head>
-      <body className='overflow-y-scroll'>
-        <header className='border-b p-3 grid gap-1 grid-cols-2 w-screen'>
-          <div className='logo '>Sam Azevedo</div>
-          <Nav />
-        </header>
-        {children}
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   )
 }

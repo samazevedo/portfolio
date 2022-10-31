@@ -7,6 +7,7 @@ interface NavLinkProps {
   href: string
   children: React.ReactNode
 }
+
 export default function NavLink({ href, children }: NavLinkProps) {
   let segment = useSelectedLayoutSegment
   console.log('segment: ', segment)
