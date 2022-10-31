@@ -65,7 +65,7 @@ export default function Page() {
 
         {/* <R3F /> */}
         <button onClick={handleTheme} className='theme-btn'>
-          <Image src={icon} alt='theme icon' width={13} />
+          <Image src={icon} alt='theme icon' width={15} />
         </button>
         <DOM />
       </ThemeProvider>

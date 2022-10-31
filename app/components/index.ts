@@ -7,8 +7,9 @@ import { Home } from './home/home'
 import { About } from './about/about'
 import { Projects } from './projects/projects'
 import { Contact } from './contact/contact'
+import { Socials } from './socials/socials'
 
-export { Dom, Header, Logo, Nav, Home, About, Projects, Contact }
+export { Dom, Header, Logo, Nav, Home, About, Projects, Contact, Socials }
 
 // mesh components
 import { CanvasL } from './layout/canvas'

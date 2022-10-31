@@ -6,12 +6,16 @@ export const darkTheme = {
   text: '#363636',
   toggleBorder: '#ffffff',
   background: '#363636',
+  filter:
+    'invert(93%) sepia(24%) saturate(362%) hue-rotate(20deg) brightness(95%) contrast(93%)',
 }
 export const lightTheme = {
   color: '#363537',
   text: '#FAFAFA',
   toggleBorder: '#EBFFB4',
   background: '#DBE8B3',
+  filter:
+    'invert(17%) sepia(1%) saturate(2939%) hue-rotate(20deg) brightness(106%) contrast(89%)',
 }
 
 export type MainThemeProps = ThemeProps<typeof darkTheme>
@@ -43,6 +47,10 @@ a {
 	color:${({ theme }) => theme.color};
 	
 }
+img {
+	color:${({ theme }) => theme.color};
+
+}
 ul,
 li {
   list-style: none;
@@ -61,5 +69,9 @@ button {
 	color: ${({ theme }) => theme.background}
 	background-color: ${({ theme }) => theme.background}
 	
+}
+.socials img {
+	filter: ${({ theme }) => theme.filter}
+
 }
 `

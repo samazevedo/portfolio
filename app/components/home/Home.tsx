@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Socials } from '../'
 // import BGImage from '../BGImage/BGImage'
 // import Typewritter from 'typewriter-effect'
 // import { gsap } from 'gsap'
@@ -21,15 +22,18 @@ export const Home = () => {
 
   return (
     <div id='home'>
-      <h2>Hello, {greeting} !!!</h2>
+      <div className='home-greeting'>
+        <h2>Hello, {greeting} !!!</h2>
+      </div>
       <div className='home-intro'>
         <h1 className='home-name'>Sam Azevedo</h1>
         <h2>Front-end Web Developer </h2>
       </div>
       <div className='home-info'>
-        <div>
+        <Socials />
+        <div className='home-btn'>
           <div>
-            <a href='#portfolio'>
+            <a href='#projects'>
               <button>see my work</button>
             </a>
           </div>
@@ -41,7 +45,7 @@ export const Home = () => {
         </div>
 
         <p>
-          Click here to know more <a href='#about'>about me</a>
+          Know more  --------> <a href='#about'>about me</a>
         </p>
       </div>
     </div>
