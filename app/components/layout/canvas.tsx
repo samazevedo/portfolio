@@ -10,7 +10,7 @@ const Loading = () => <div>Loading . . .</div>
 
 const LoadingS = styled.div``
 
-export const CanvasL = ({ children }: CanvasProp) => {
+export default function CanvasL({ children }: CanvasProp) {
   return (
     <div id='canvas'>
       <Canvas shadows>

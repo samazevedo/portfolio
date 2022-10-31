@@ -1,5 +1,6 @@
 import { StyledNav, StyledNavList } from './nav.styled'
-export const Nav = () => {
+
+export default function Nav() {
   return (
     <StyledNav>
       <StyledNavList>

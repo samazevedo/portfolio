@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import { Socials } from '../'
+import { Socials } from '../socials/socials'
 // import BGImage from '../BGImage/BGImage'
 // import Typewritter from 'typewriter-effect'
 // import { gsap } from 'gsap'
 
-export const Home = () => {
+export default function Home() {
   const [greeting, setGreeting] = useState('')
   useEffect(() => {
     const changeGreeting = () => {

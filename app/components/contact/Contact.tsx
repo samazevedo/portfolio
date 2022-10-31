@@ -1,7 +1,7 @@
 import { ContactStyles } from './contact.styled'
 import { ContactForm } from './contact-form'
 
-export const Contact = () => {
+export default function Contact() {
   return (
     <div id='contact'>
       <h1> Contact</h1>

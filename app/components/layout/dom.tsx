@@ -4,7 +4,7 @@ import styled from 'styled-components'
 interface domProps {
   children?: ReactNode
 }
-export const Dom = ({ children }: domProps) => {
+export default function Dom({ children }: domProps) {
   const ref = useRef(null!)
 
   return <StyledDOM ref={ref}>{children}</StyledDOM>

@@ -7,18 +7,18 @@ import { ThemeProvider } from 'styled-components'
 import { GlobalStyles, darkTheme, lightTheme } from './styles/theme'
 import { ScrollControls, Scroll } from '@react-three/drei'
 // components
-import {
-  Dom,
-  Header,
-  Logo,
-  Nav,
-  Home,
-  About,
-  Projects,
-  Contact,
-} from './components'
+import Dom from './components/layout/dom'
+import Header from './components/header/header'
+import Logo from './components/logo/logo'
+import Nav from './components/navigation/nav'
+import Home from './components/home/home'
+import About from './components/about/about'
+import Projects from './components/projects/projects'
+import Contact from './components/contact/contact'
+
 // three components
-import { CanvasL, Text } from './components'
+import CanvasL from './components/layout/canvas'
+import Text from './components/canvas/text'
 
 const R3F = () => {
   return (

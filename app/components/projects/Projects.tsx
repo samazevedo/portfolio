@@ -1,4 +1,4 @@
-export const Projects = () => {
+export default function Projects() {
   return (
     <div id='projects' style={{ height: '100vh' }}>
       <h1>Projects</h1>

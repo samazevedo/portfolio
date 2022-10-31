@@ -22,7 +22,7 @@ interface TextProps {
   font?: string
 }
 
-export const Text = ({ children, ...props }: TextProps) => {
+export default function Text({ children, ...props }: TextProps) {
   const ref = useRef<THREE.Mesh>(null!)
   const config = useMemo(
     () => ({
