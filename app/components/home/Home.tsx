@@ -23,11 +23,11 @@ export const Home = () => {
   return (
     <div id='home'>
       <div className='home-greeting'>
-        <h2>Hello, {greeting} !!!</h2>
+        <h3>Hello, {greeting} !!!</h3>
       </div>
       <div className='home-intro'>
         <h1 className='home-name'>Sam Azevedo</h1>
-        <h2>Front-end Web Developer </h2>
+        <h3>Front-end Web Developer </h3>
       </div>
       <div className='home-info'>
         <Socials />
@@ -45,7 +45,7 @@ export const Home = () => {
         </div>
 
         <p>
-          Know more  --------> <a href='#about'>about me</a>
+          more &rarr; <a href='#about'>about me</a>
         </p>
       </div>
     </div>

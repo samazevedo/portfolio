@@ -110,9 +110,9 @@ export const ContactForm = () => {
           value={enteredMessage}
           onChange={(event) => setEnteredMessage(event.target.value)}
         />
-        <Button type='submit' form='contact-form'>
+        <button type='submit' form='contact-form'>
           Send Message
-        </Button>
+        </button>
       </StyledForm>
       {notification && (
         <Notification

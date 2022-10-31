@@ -60,6 +60,7 @@ h6,
 p {
   margin: 0;
 }
+
 button {
   color: #363636;
   background-color: #dbe8b3;
@@ -109,22 +110,26 @@ main {
   grid-template-rows: repeat(4, 1fr);
   margin: 0 auto;
 }
-#home {
+#home,
+#about,
+#projects,
+#contact {
   height: 100vh;
   padding: 0 1.5rem;
-  display: grid;
-  grid-template-rows: 0.5fr 0.5fr 1fr;
-  justify-items: center;
 }
 .home-greeting {
   align-self: flex-end;
-  font-size: 1.5rem;
+}
+#home {
+  display: grid;
+  grid-template-rows: 0.5fr 0.5fr 1fr;
+  justify-items: center;
 }
 .home-intro {
   align-self: center;
 }
 .home-name {
-  font-size: 6rem;
+  font-size: 6.5rem;
 }
 .home-info {
   width: 100%;
@@ -156,6 +161,14 @@ main {
   margin: 0 1rem;
   cursor: crosshair;
 }
-.home-info p {
-  font-size: 2rem;
+#about {
+  width: 100%;
+}
+.about-stack-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.about-stack-list li {
+  margin: 1rem 2rem;
 }
