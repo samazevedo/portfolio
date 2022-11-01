@@ -1,4 +1,5 @@
 'use client'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import sun from './assets/icons/sun.svg'
 import moon from './assets/icons/moon.svg'
@@ -8,13 +9,40 @@ import { GlobalStyles, darkTheme, lightTheme } from './styles/theme'
 import { ScrollControls, Scroll } from '@react-three/drei'
 // components
 import Dom from './components/layout/dom'
-import Header from './components/header/header'
-import Logo from './components/logo/logo'
-import Nav from './components/navigation/nav'
-import Home from './components/home/home'
-import About from './components/about/about'
-import Projects from './components/projects/projects'
-import Contact from './components/contact/contact'
+import Home from './components/dom/home/home'
+import Header from './components/dom/header/header'
+import Logo from './components/dom/logo/logo'
+import Nav from './components/dom/navigation/nav'
+import About from './components/dom/about/about'
+import Projects from './components/dom/projects/projects'
+import Contact from './components/dom/contact/contact'
+
+// const Dom = dynamic(() => import('./components/layout/dom'), {
+//   ssr: false,
+// })
+// const Home = dynamic(() => import('./components/dom/home/home'), {
+//   ssr: false,
+// })
+
+// const Header = dynamic(() => import('./components/dom/header/header'), {
+//   ssr: false,
+// })
+// const Logo = dynamic(() => import('./components/dom/logo/logo'), {
+//   ssr: false,
+// })
+// const Nav = dynamic(() => import('./components/dom/navigation/nav'), {
+//   ssr: false,
+// })
+// const About = dynamic(() => import('./components/dom/about/about'), {
+//   ssr: false,
+// })
+// const Projects = dynamic(() => import('./components/dom/projects/projects'), {
+//   ssr: false,
+// })
+
+// const Contact = dynamic(() => import('./components/dom/contact/contact'), {
+//   ssr: false,
+// })
 
 // three components
 import CanvasL from './components/layout/canvas'

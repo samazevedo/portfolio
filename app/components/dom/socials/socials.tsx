@@ -1,6 +1,6 @@
-import github from '../../assets/icons/social/github.svg'
-import linkedin from '../../assets/icons/social/linkedin.svg'
-import twitter from '../../assets/icons/social/twitter.svg'
+import github from './../../../assets/icons/social/github.svg'
+import linkedin from './../../../assets/icons/social/linkedin.svg'
+import twitter from './../../../assets/icons/social/twitter.svg'
 
 import Image from 'next/image'
 interface SocialsProps {

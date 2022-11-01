@@ -6,7 +6,7 @@ import {
 } from './contact.styled'
 import { Button } from '../button/button'
 import { useEffect, useState } from 'react'
-import { Notification } from '../notification//notification'
+import { Notification } from '../notification/notification'
 
 const sendContactData = async (contactDetails: any) => {
   const response = await fetch('/api/contact', {
