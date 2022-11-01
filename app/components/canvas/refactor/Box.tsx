@@ -7,7 +7,7 @@ export default function Box() {
 
   const clock = new THREE.Clock()
 
-  useFrame(() => {
+  useFrame(({ mouse }) => {
     let elapsedTime = clock.getElapsedTime()
 
     ref.current.rotation.x = Math.sin(elapsedTime) * 2

@@ -1,11 +1,11 @@
-import create, { sta } from 'zustand'
+import create from 'zustand'
 
-interface LinkState extends State {
-  router: any
-  dom: any
+interface StateProps {
+  router: string | null
+  dom: React.ReactNode
 }
 
-const useStore = create<LinkState>((set, get) => ({
+const useStore = create<StateProps>()((set) => ({
   router: null,
   dom: null,
 }))
