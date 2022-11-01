@@ -10,8 +10,6 @@ interface RootProps {
 }
 
 export default function RootLayout({ children }: RootProps) {
-  console.log('This is server side ')
-
   return (
     <html className={Jost.className}>
       <head lang='en'>
