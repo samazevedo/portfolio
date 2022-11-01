@@ -47,15 +47,15 @@ import Contact from './components/dom/contact/contact'
 // three components
 import CanvasL from './components/layout/canvas'
 import Text from './components/canvas/text'
+import Box from './components/canvas/refactor/Box'
 
 const R3F = () => {
   return (
     <CanvasL>
+      <Box />
       <ScrollControls pages={4}>
-        <Scroll html></Scroll>
-        <Scroll>
-          <Text>Sam Azevedo</Text>
-        </Scroll>
+        {/* <Scroll html></Scroll> */}
+        <Scroll></Scroll>
       </ScrollControls>
     </CanvasL>
   )

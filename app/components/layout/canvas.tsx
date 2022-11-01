@@ -14,10 +14,11 @@ export default function CanvasL({ children }: CanvasProp) {
   return (
     <div id='canvas'>
       <Canvas shadows>
+        <ambientLight intensity={0.2} />
+        <spotLight position={[10, 10, 10]} intensity={1} />
         {/* <color attach='background' args={['#dadada']} /> */}
-        {/* <spotLight position={[10, 10, 10]} intensity={1} />
-        <ambientLight intensity={0.2} /> */}
-        <PerspectiveCamera
+        {/* 
+        {/* <PerspectiveCamera
           makeDefault
           far={100}
           near={0.1}
@@ -36,7 +37,7 @@ export default function CanvasL({ children }: CanvasProp) {
             intensity={2}
             shadow-bias={-0.0001}
           />
-        </PerspectiveCamera>
+        </PerspectiveCamera> */}
 
         <Suspense fallback={null}>{children}</Suspense>
       </Canvas>
