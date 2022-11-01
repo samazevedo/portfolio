@@ -63,7 +63,7 @@ export default function Page() {
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <GlobalStyles />
 
-        {/* <R3F /> */}
+        <R3F />
         <button onClick={handleTheme} className='theme-btn'>
           <Image src={icon} alt='theme icon' width={15} />
         </button>

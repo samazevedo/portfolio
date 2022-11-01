@@ -70,10 +70,10 @@ export default function About() {
       <div>
         <p>
           Hello there, my name is Samuel Azevedo, you can call me Sam. I am a
-          Front-end Web Developer based in Sao Paulo, Brazil. I'm currently
+          Front-end Web Developer based in Sao Paulo, Brazil. I am currently
           focus on developing and create beautiful and intuitive web
           appliacations, making use of clean, responsive designs and reusable
-          code. My main goal is to work with ReactJS. I'm also learning how to
+          code. My main goal is to work with ReactJS. I am also learning how to
           make use of WebGL, also tools like ThreeJS and React Three Fiber to
           use 3D animation for the web. I have a variety of interests from
           animations, graphic design, gaming, photography to sports like soccer
