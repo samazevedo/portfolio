@@ -1,7 +1,8 @@
 import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
 import styled from 'styled-components'
-import { PerspectiveCamera } from '@react-three/drei'
+import { PerspectiveCamera, Loader } from '@react-three/drei'
+
 interface CanvasProp {
   children: React.ReactNode
 }
@@ -41,6 +42,7 @@ export default function CanvasL({ children }: CanvasProp) {
 
         <Suspense fallback={null}>{children}</Suspense>
       </Canvas>
+			<Loader/>
     </div>
   )
 }

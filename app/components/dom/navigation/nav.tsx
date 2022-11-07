@@ -1,10 +1,10 @@
-import { StyledNav, StyledNavList } from './nav.styled'
+import styled from 'styled-components'
 
 export default function Nav() {
   return (
-    <StyledNav>
-      <StyledNavList>
-        <li>
+    <NavStyled>
+			<ul>
+				<li>
           <a href='#about'>About</a>
         </li>
         <li>
@@ -13,7 +13,25 @@ export default function Nav() {
         <li>
           <a href='#contact'>Contact</a>
         </li>
-      </StyledNavList>
-    </StyledNav>
+			</ul>
+    </NavStyled>
   )
 }
+
+export const NavStyled = styled.nav`
+  width: 100%;
+	& ul {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		align-items: center;
+		justify-items: center;
+		z-index: 10;
+		@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+		display: none;
+  	}
+	}
+`
+export const StyledNavList = styled.ul`
+  
+`

@@ -1,25 +1,78 @@
 import { ThemeProps } from 'styled-components'
 import { createGlobalStyle } from 'styled-components'
+import localFont from '@next/font/local'
+
+const mainFont = localFont({
+  src: './../assets/fonts/Bulgatry/Bulgatry.otf',
+})
 
 export const darkTheme = {
-  color: '#DBE8B3',
-  text: '#363636',
-  toggleBorder: '#ffffff',
-  background: '#363636',
-  btnColor: '#363537',
-  btnBackground: '#DBE8B3',
-  filter:
-    'invert(93%) sepia(24%) saturate(362%) hue-rotate(20deg) brightness(95%) contrast(93%)',
-  filterReversed:
-    'invert(17%) sepia(1%) saturate(2939%) hue-rotate(20deg) brightness(106%) contrast(89%)',
+	fonts:{
+		main: mainFont,
+		secondary: 'sans-serif',
+	},
+	colors: {
+		background:'#434343',
+		primary:'##c3fe72',
+		secondary:'#8F95D3',
+		text:'#F4F7F5',
+		btnText:'#F4F7F5',
+		btnBG: '#a288e3',
+		filter:'invert(83%) sepia(22%) saturate(919%) hue-rotate(37deg) brightness(109%) contrast(99%);',
+		fiterReversed:'invert(62%) sepia(29%) saturate(484%) hue-rotate(197deg) brightness(92%) contrast(93%);',
+	},
+	breakpoints:{
+		mobile:'640px',
+		tablet:'768px',
+		laptop:'1024px',
+		desktop:'1536px'
+	},
+	size:{
+		xs: '0.75rem',
+		sm: '0.875rem',
+		md: '1rem',
+		lg: '1.125rem',
+		xl: '1.5rem',
+		xxl: '2rem',
+		xxxl: '3.0rem',
+	}
 }
 export const lightTheme = {
-  color: '#363537',
-  text: '#FAFAFA',
-  toggleBorder: '#EBFFB4',
-  background: '#DBE8B3',
-  btnColor: '#DBE8B3',
-  btnBackground: '#363537',
+	fonts:{
+		main: "mainFont",
+		secondary: 'sans-serif',
+	},
+	colors: {
+		background:'#434343',
+		primary:'##c3fe72',
+		secondary:'#a288e3',
+		text:'#F4F7F5',
+		btnText:'#F4F7F5',
+		btnBG: '#a288e3',
+		filter:'invert(62%) sepia(29%) saturate(484%) hue-rotate(197deg) brightness(92%) contrast(93%);',
+		fiterReversed:'invert(83%) sepia(22%) saturate(919%) hue-rotate(37deg) brightness(109%) contrast(99%);',
+	},
+	breakpoints:{
+		mobile:'640px',
+		tablet:'768px',
+		laptop:'1024px',
+		desktop:'1536px'
+	},
+	size:{
+		xs: '0.75rem',
+		sm: '0.875rem',
+		md: '1.0rem',
+		lg: '1.125rem',
+		xl: '1.5rem',
+		xxl: '2.0rem',
+		xxxl: '3.0rem',
+	},
+  color: '#0F0F0F',
+  text: '#DCDCDC',
+  toggleBorder: '#DCDCDC',
+  background: '#DCDCDC',
+  btnColor: '#DCDCDC',
+  btnBackground: '#0F0F0F',
   filter:
     'invert(17%) sepia(1%) saturate(2939%) hue-rotate(20deg) brightness(106%) contrast(89%)',
   filterReversed:
@@ -36,14 +89,14 @@ body,
   margin:0;
   width:100%;
   height: 100%;
-	background-color: ${({ theme }) => theme.background};
-	color:${({ theme }) => theme.color};
+	background-color: ${({ theme }) => theme.colors.background};
+	color:${({ theme }) => theme.colors.primary};
 	transition: all 0.5s ease-in-out ;
-
+	font-family: ${({theme})=> theme.fonts.main}
 }
 html {
+  font-size:10px;
   scroll-behavior: smooth;
-  font-size: 10px;
 }
 *,
 *::before, 
@@ -52,13 +105,13 @@ html {
 }
 a {
   text-decoration: none;
-	color:${({ theme }) => theme.color};
-	
+  cursor: crosshair;
+	color:${({ theme }) => theme.colors.secondary};
+	&:hover {
+		color:${({ theme }) => theme.colors.primary};
+	}
 }
 img {
-	color:${({ theme }) => theme.color};
-
-
 }
 ul,
 li {
@@ -69,40 +122,40 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   margin:0;
-	margin-bottom: 1rem
+	letter-spacing: ${({theme}) => theme.size.xs};
+}
+
+p {
+	color: ${({theme}) => theme.colors.text};
+  font-size: ${({theme}) => theme.size.sm};
+	letter-spacing: ${({theme}) => theme.size.xs};
+	line-height: ${({theme}) => theme.size.xxxl};
 
 }
+
 button {
 	border: none;
 	outline: none;
-	color: ${({ theme }) => theme.btnColor};
-	background-color: ${({ theme }) => theme.btnBackground};
-	
 }
 .socials img {
-	filter: ${({ theme }) => theme.filter}
 }
 .theme-btn {
-	background: ${({ theme }) => theme.btnBackground};
-	color: ${({ theme }) => theme.btnColor};
 }
 .theme-btn img {
-	filter: ${({ theme }) => theme.filterReversed}
 }
 h1 {
-	font-size: 5rem;
+	font-size: ${({theme}) => theme.size.xxl};
+	color: ${({theme}) => theme.colors.primary};
 }
 h2 {
-	font-size: 4rem;
+	font-size: ${({theme}) => theme.size.xl};
+	color: ${({theme}) => theme.colors.secondary};
 }
 h3{
-	font-size:2.5rem;
-}
-p {
-  font-size: 2rem;
-	margin:0.5rem 0;
+	 ${({theme}) => theme.size.lg};
 }
 
 

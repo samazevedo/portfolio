@@ -17,7 +17,7 @@ const socialItems = [
   {
     id: '02',
     name: 'LinkedIn',
-    url: 'https://github.com/samazevedo',
+    url: 'https://www.linkedin.com/in/samuel-azevedo-santos-908a5b53/',
     icon: linkedin,
   },
   {
