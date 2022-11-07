@@ -139,6 +139,18 @@ p {
 button {
 	border: none;
 	outline: none;
+	font-size: ${({theme})=> theme.size.xl};
+	padding:0.7rem 1rem;
+	cursor: pointer;
+	transition: all 0.2s linear;
+	&:active {
+		transform: translateY(0.2rem);
+	}
+	&:hover {
+		background-color:${({theme})=> theme.colors.secondary};
+		color:${({theme})=> theme.colors.text};
+		transform: scale(1.07)
+	}
 }
 .socials img {
 }
@@ -156,6 +168,10 @@ h2 {
 }
 h3{
 	 ${({theme}) => theme.size.lg};
+}
+section {
+	min-height: 85vh;
+	margin: 0.3rem auto;
 }
 
 

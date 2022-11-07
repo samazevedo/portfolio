@@ -26,22 +26,25 @@ export default function Menu({menuOpen}:MenuProps) {
 	)
 }
 
-const MenuStyled = styled.nav`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #C4FE7216;${({ menuOpen }) => menuOpen ? '#C4FE7216' : '#C4FE7216'};
-	width:100vw;
-  height: 100vh;
-  text-align: left;
-  padding: 2rem;
-  position: absolute;
+ 
+const MenuStyled = styled.nav<MenuProps>`
+	position: fixed;	
   top: 0;
   right: 0;
+  background: #393939B5;
+	width:100%;
+  height: 100%;
+	text-shadow: 0 0.01rem 0.1rem #FFFFFF;
+  padding: 2rem;
   transition: transform 0.3s ease-in-out;
   transform: ${({ menuOpen }) => menuOpen ? 'translateX(50%)' : 'translateX(100%)'};
 	@media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
 			display: none;
+	}
+	ul {
+		width:100%;
+		display: grid;
+		align-items:center;
 	}
 
   a {

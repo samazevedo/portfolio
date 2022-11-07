@@ -1,11 +1,8 @@
 import github from './../../../assets/icons/social/github.svg'
 import linkedin from './../../../assets/icons/social/linkedin.svg'
 import twitter from './../../../assets/icons/social/twitter.svg'
-
+import styled from 'styled-components'
 import Image from 'next/image'
-interface SocialsProps {
-  children?: React.ReactNode
-}
 
 const socialItems = [
   {
@@ -27,10 +24,10 @@ const socialItems = [
     icon: twitter,
   },
 ]
-export const Socials = ({ children }: SocialsProps) => {
+export const Socials = () => {
   return (
-    <>
-      <ul className='socials'>
+    <SocialStyled>
+
         {socialItems.map((item) => (
           <li key={item.id}>
             <a href={item.url}>
@@ -38,8 +35,18 @@ export const Socials = ({ children }: SocialsProps) => {
             </a>
           </li>
         ))}
-      </ul>
-      {children}
-    </>
+    </SocialStyled>
   )
 }
+
+const SocialStyled = styled.ul`
+	width:100%;
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: flex-start;
+	justify-items:center;
+	& img {
+		filter: ${({theme}) => theme.colors.fiterReversed};
+	}
+
+`

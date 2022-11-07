@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Socials } from '../socials/socials'
-// import BGImage from '../BGImage/BGImage'
-// import Typewritter from 'typewriter-effect'
-// import { gsap } from 'gsap'
+import styled from 'styled-components'
 
 export default function Home() {
   const [greeting, setGreeting] = useState('')
@@ -21,12 +19,12 @@ export default function Home() {
   }, [])
 
   return (
-    <div id='home'>
+    <HomeStyled id='home'>
       <div className='home-greeting'>
         <h3>Hello, {greeting} !!!</h3>
       </div>
       <div className='home-intro'>
-        <h1 className='home-name'>Sam Azevedo</h1>
+        <h1 >Sam Azevedo</h1>
         <h3>Front-end Web Developer </h3>
       </div>
       <div className='home-info'>
@@ -43,11 +41,44 @@ export default function Home() {
             </a>
           </div>
         </div>
-
-        <p>
-          more &rarr; <a href='#about'>about me</a>
-        </p>
+				<div>
+					<p>
+          More &rarr; <a href='#about'>about me</a>
+        	</p>
+				</div>
       </div>
-    </div>
+    </HomeStyled>
   )
 }
+
+const HomeStyled = styled.section`
+	width:100%;
+	height:100%;
+	display:grid;
+	grid-template-rows: 0.5fr 1fr 0.5fr;
+	justify-items:center;
+	& .home-greeting {
+		font-size:${({theme})=> theme.size.xs};
+		align-self: end;
+	}
+	& .home-intro {
+		align-self: center;
+		& h3 {
+			font-size:${({theme})=> theme.size.xs};
+		}
+	}
+	& .home-info {
+		width:100%;
+		display: grid;
+		align-self: start;
+		justify-items:center;
+		grid-template-rows:: 1fr 1fr 1fr;
+	}
+	& .home-btn {
+		width:100%;
+		display:grid;
+		grid-template-columns: repeat(2,1fr);
+		align-items:center;
+		justify-items:center;
+	}
+`

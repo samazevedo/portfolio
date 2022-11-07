@@ -29,6 +29,7 @@ import { Router } from 'next/router'
 
 // hooks
 import {useOnclickOutside} from './hooks/hooks'
+import Main from './components/dom/main/main'
 
 
 const R3F = () => {
@@ -61,6 +62,9 @@ const DOM = ({children}:DOMProps) => {
 					<Menu menuOpen={menuOpen}  />
 				</div>
 			</Header>
+			<Main>
+				<Home/>
+			</Main>
 		</Dom>
 	)
 	
