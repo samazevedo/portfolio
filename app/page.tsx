@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import sun from './assets/icons/sun.svg'
 import moon from './assets/icons/moon.svg'
-import { useState, useEffect, Suspense } from 'react'
+import { useState, useEffect, Suspense, useRef } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles, darkTheme, lightTheme } from './styles/theme'
 import { ScrollControls, Scroll, Center } from '@react-three/drei'
@@ -17,15 +17,18 @@ import About from './components/dom/about/about'
 import Projects from './components/dom/projects/projects'
 import Contact from './components/dom/contact/contact'
 import Loading from './loading'
+import Burger from './components/dom/burger/burger'
+import Menu from './components/dom/menu/menu'
 
 
 // three components
 import CanvasL from './components/layout/canvas'
-
 import Box from './components/canvas/refraction/Box'
 import CursorObj from './components/canvas/cursor/Cursor'
 import { Router } from 'next/router'
-import Burger from './components/dom/burger/burger'
+
+// hooks
+import {useOnclickOutside} from './hooks/hooks'
 
 
 const R3F = () => {
@@ -45,13 +48,18 @@ interface DOMProps {
 }
 
 const DOM = ({children}:DOMProps) => {
-	
+	const [menuOpen, setMenuOpen] =  useState(false)
+	const node = useRef(null)
+	useOnclickOutside(node, () => setMenuOpen(false))
   return (
 		<Dom>
 			<Header>
 				<Logo/>
 				<Nav/>
-				<Burger/>
+				<div ref={node}>
+					<Burger menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+					<Menu menuOpen={menuOpen}  />
+				</div>
 			</Header>
 		</Dom>
 	)

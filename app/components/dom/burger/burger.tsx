@@ -1,11 +1,19 @@
 import styled from "styled-components"
 
-export default function Burger() {
+interface BurgerProps {
+	menuOpen: boolean,
+	setMenuOpen: (arg0: boolean) => void,
+}
+
+export default function Burger({menuOpen, setMenuOpen}:BurgerProps) {
+	const handleClick = () => {
+		setMenuOpen(!menuOpen)
+	}
 	return(
-		<BurgerStyled>
-			<div className="line"></div>
-			<div className="line"></div>
-			<div className="line"></div>
+		<BurgerStyled onClick={handleClick} menuOpen={menuOpen}>
+				<div className="line"></div>
+				<div className="line"></div>
+				<div className="line"></div>
 		</BurgerStyled>
 	)
 }
@@ -18,18 +26,19 @@ const BurgerStyled = styled.div`
   flex-direction: column;
   justify-content: space-around;
 	align-items: center;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   background: transparent;
   border: none;
   cursor: crosshair;
   padding: 0;
+	z-index:3;
   &:focus {
     outline: none;
   }
 	@media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
 		display: none;
-  	}
+	}
   
   & .line {
 		width:100%;
@@ -40,5 +49,17 @@ const BurgerStyled = styled.div`
     position: relative;
     transform-origin: 1px;
   }
+	& :first-child {
+      transform: ${({ menuOpen }) => menuOpen ? 'rotate(45deg)' : 'rotate(0)'};
+    }
+
+	& :nth-child(2) {
+      opacity: ${({ menuOpen }) => menuOpen ? '0' : '1'};
+      transform: ${({ menuOpen }) => menuOpen ? 'translateX(20px)' : 'translateX(0)'};
+    }
+
+	& :nth-child(3) {
+      transform: ${({ menuOpen }) => menuOpen ? 'rotate(-45deg)' : 'rotate(0)'};
+    }
 
 `
