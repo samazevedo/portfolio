@@ -64,6 +64,9 @@ const DOM = ({children}:DOMProps) => {
 			</Header>
 			<Main>
 				<Home/>
+				<About/>
+				<Projects/>
+				<Contact/>
 			</Main>
 		</Dom>
 	)

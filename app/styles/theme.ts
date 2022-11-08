@@ -28,7 +28,7 @@ export const darkTheme = {
 		desktop:'1536px'
 	},
 	size:{
-		xs: '0.75rem',
+		xs: '0.70rem',
 		sm: '0.875rem',
 		md: '1rem',
 		lg: '1.125rem',
@@ -171,7 +171,11 @@ h3{
 }
 section {
 	min-height: 85vh;
-	margin: 0.3rem auto;
+	max-height: 95vh;
+	margin: 0.5rem 1rem;
+	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+			font-size: ${({theme}) => theme.size.xs};
+	}
 }
 
 

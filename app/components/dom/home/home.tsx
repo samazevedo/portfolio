@@ -41,7 +41,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-				<div>
+				<div className='home-more'>
 					<p>
           More &rarr; <a href='#about'>about me</a>
         	</p>
@@ -55,7 +55,6 @@ const HomeStyled = styled.section`
 	width:100%;
 	height:100%;
 	display:grid;
-	grid-template-rows: 0.5fr 1fr 0.5fr;
 	justify-items:center;
 	& .home-greeting {
 		font-size:${({theme})=> theme.size.xs};
@@ -76,9 +75,13 @@ const HomeStyled = styled.section`
 	}
 	& .home-btn {
 		width:100%;
+		max-width:60rem;
 		display:grid;
 		grid-template-columns: repeat(2,1fr);
 		align-items:center;
 		justify-items:center;
+	}
+	& .home-more {
+		margin-top:2rem;
 	}
 `

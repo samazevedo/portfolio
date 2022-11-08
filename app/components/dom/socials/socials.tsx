@@ -40,10 +40,9 @@ export const Socials = () => {
 }
 
 const SocialStyled = styled.ul`
-	width:100%;
+	width:30rem;
 	display:grid;
 	grid-template-columns: repeat(3, 1fr);
-	align-items: flex-start;
 	justify-items:center;
 	& img {
 		filter: ${({theme}) => theme.colors.fiterReversed};
