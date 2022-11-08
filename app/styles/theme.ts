@@ -177,7 +177,7 @@ h4 {
 
 }
 section {
-	min-height: 90vh;
+	min-height: 95vh;
 	max-height: 100vh;
 	margin: 1rem 0;
 	transition: all 0.5s ease-in-out;

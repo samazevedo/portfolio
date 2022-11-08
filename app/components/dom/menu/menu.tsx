@@ -37,7 +37,7 @@ const MenuStyled = styled.nav<MenuProps>`
 	text-shadow: 0 0.01rem 0.1rem #FFFFFF;
   padding: 2rem;
   transition: transform 0.3s ease-in-out;
-  transform: ${({ menuOpen }) => menuOpen ? 'translateX(50%)' : 'translateX(100%)'};
+  transform: ${({ menuOpen }) => menuOpen ? 'translateX(30%)' : 'translateX(100%)'};
 	@media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
 			display: none;
 	}
