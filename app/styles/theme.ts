@@ -28,6 +28,7 @@ export const darkTheme = {
 		desktop:'1536px'
 	},
 	size:{
+		xxs: '0.5rem',
 		xs: '0.70rem',
 		sm: '0.875rem',
 		md: '1rem',
@@ -168,15 +169,33 @@ h2 {
 }
 h3{
 	 ${({theme}) => theme.size.lg};
+		color: ${({theme}) => theme.colors.primary};
+
+}
+h4 {
+	 ${({theme}) => theme.colors.primary};
+
 }
 section {
-	min-height: 85vh;
-	max-height: 95vh;
-	margin: 0.5rem 1rem;
-	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-			font-size: ${({theme}) => theme.size.xs};
-	}
+	min-height: 90vh;
+	max-height: 100vh;
+	margin: 1rem 0;
+	transition: all 0.5s ease-in-out;
 }
 
+@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+	h1 {
+		font-size: ${({theme}) => theme.size.xl};
+	}
+	h2 {
+		font-size: ${({theme}) => theme.size.lg};
+	}
+	h3 {
+		font-size: ${({theme}) => theme.size.md};
+	}
+	p {
+  	font-size: ${({theme}) => theme.size.xs};
+	}
 
+}
 `

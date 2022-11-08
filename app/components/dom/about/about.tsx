@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import html from './../../../assets/icons/stack/html5.svg'
 import css from './../../../assets/icons/stack/css3.svg'
 import sass from './../../../assets/icons/stack/sass.svg'
@@ -65,18 +66,16 @@ const stackItems = [
 
 export default function About() {
   return (
-    <div id='about'>
+    <AboutStyled id='about'>
       <h1>About</h1>
       <div>
         <p>
-          Hello there, my name is Samuel Azevedo, you can call me Sam. I am a
-          Front-end Web Developer based in Sao Paulo, Brazil. I am currently
-          focus on developing and create beautiful and intuitive web
+          Hello there, my name is <span className='about-highlight'>Samuel Azevedo</span>, you can call me Sam. 
+					I am a Front-end Web Developer based in Sao Paulo, Brazil. I really enjoy to create beautiful and intuitive web
           appliacations, making use of clean, responsive designs and reusable
-          code. My main goal is to work with ReactJS. I am also learning how to
-          make use of WebGL, also tools like ThreeJS and React Three Fiber to
-          use 3D animation for the web. I have a variety of interests from
-          animations, graphic design, gaming, photography to sports like soccer
+          code. My main goal is to work with ReactJS and Typescritp. 
+					I am currently learning  how to use WebGL, and libraries like ThreeJS and React Three Fiber to use 3D animation on my projects the web.
+					I have a variety of interests from animations, graphic design, gaming, photography to sports like soccer
           basketball.
         </p>
       </div>
@@ -88,6 +87,19 @@ export default function About() {
           </li>
         ))}
       </ul>
-    </div>
+    </AboutStyled>
   )
 }
+
+const AboutStyled = styled.section`
+	width:100%;
+	height:100%;
+	display:grid;
+	h3 {
+		margin-top: 3rem;
+	}
+	& .about-stack-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+	}
+`
