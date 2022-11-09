@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import './styles/styles.scss'
 import localFont from '@next/font/local'
 import Loading from './loading'
-import favicon from './assets/favicon.png'
 const mainFont = localFont({
   src: './assets/fonts/Bulgatry/Bulgatry.otf',
 })

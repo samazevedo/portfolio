@@ -36,28 +36,30 @@ export const CssClass = styled.div<NotificationProps>`
   align-items: center;
   color: var(--black-color);
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
-  height: 5rem;
+  height: 7rem;
   width: 100%;
-  max-width: 40rem;
+  max-width: 50rem;
   border-radius: 0.2rem;
   z-index: 999;
 	overflow: hidden;
 	text-align:center;
   & p {
-    font-size:1.5rem;
+    font-size:2rem;
     margin: 0;
+		padding: 0;
 		font-family: sans;
+		color:#000000;
   }
   background-color: ${({ status }) =>
     status === 'success'
-      ? '#CFFA41'
+      ? 'rgba(195, 254, 114, 1)'
       : status === 'error'
       ? 'rgba(255, 46, 46, 1)'
       : 'rgba(255, 255, 255, 1)'};
   color: ${({ status }) =>
     status === 'success'
-      ? '#000000'
+      ? 'black'
       : status === 'error'
       ? '#ffffff'
-      : '#000000'};
+      : '#000000'};!important
 `

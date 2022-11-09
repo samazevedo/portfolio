@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Button } from '../button/button'
 import { useEffect, useState } from 'react'
 import { Notification } from '../notification/notification'
 
@@ -7,6 +6,7 @@ const sendContactData = async (contactDetails: any) => {
   const response = await fetch('/api/contact', {
     method: 'POST',
     headers: {
+			'Accept': 'application/json, text/plain, */*',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(contactDetails),
@@ -19,9 +19,9 @@ const sendContactData = async (contactDetails: any) => {
 }
 
 export const ContactForm = () => {
-  const [enteredEmail, setEnteredEmail] = useState('')
-  const [enteredName, setEnteredName] = useState('')
-  const [enteredMessage, setEnteredMessage] = useState('')
+  const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
+  const [message, setMessage] = useState('')
   // success || error || pending
   const [requestStatus, setRequestStatus] = useState('')
   const [requestError, setRequestError] = useState('')
@@ -44,14 +44,14 @@ export const ContactForm = () => {
     setRequestStatus('pending')
     try {
       await sendContactData({
-        name: enteredName,
-        email: enteredEmail,
-        message: enteredMessage,
+				name,
+        email,
+				message,
       })
       setRequestStatus('success')
-      setEnteredName('')
-      setEnteredEmail('')
-      setEnteredMessage('')
+      setName('')
+      setEmail('')
+      setMessage('')
     } catch (error: any) {
       setRequestStatus('error')
       setRequestError(error.message)
@@ -88,22 +88,22 @@ export const ContactForm = () => {
           type='text'
           placeholder='Name'
           required
-          value={enteredName}
-          onChange={(event) => setEnteredName(event.target.value)}
+          value={name}
+          onChange={(event) => setName(event.target.value)}
         />
         <ContactFormInput
           type='email'
           placeholder='Email'
           required
-          value={enteredEmail}
-          onChange={(event) => setEnteredEmail(event.target.value)}
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
         />
         <ContactFormTextarea
           placeholder='Message'
           rows={10}
           required
-          value={enteredMessage}
-          onChange={(event) => setEnteredMessage(event.target.value)}
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
         />
         <button type='submit' form='contact-form' className='contact-btn'>
           Send Message
