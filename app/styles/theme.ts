@@ -54,7 +54,7 @@ export const lightTheme = {
 		fiterReversed:'invert(83%) sepia(22%) saturate(919%) hue-rotate(37deg) brightness(109%) contrast(99%);',
 	},
 	breakpoints:{
-		mobile:'640px',
+		mobile:'660px',
 		tablet:'768px',
 		laptop:'1024px',
 		desktop:'1536px'

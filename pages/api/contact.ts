@@ -3,7 +3,7 @@ require('dotenv').config()
 import mail from '@sendgrid/mail'
 
 const KEY = process.env.SENDGRID_API_KEY
-mail.setApiKey(KEY!)
+mail.setApiKey(KEY!) 
 
 
 export default function handler(req:NextApiRequest, res:NextApiResponse ){
