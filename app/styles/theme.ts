@@ -54,7 +54,7 @@ export const lightTheme = {
 		fiterReversed:'invert(83%) sepia(22%) saturate(919%) hue-rotate(37deg) brightness(109%) contrast(99%);',
 	},
 	breakpoints:{
-		mobile:'660px',
+		mobile:'670px',
 		tablet:'768px',
 		laptop:'1024px',
 		desktop:'1536px'
@@ -178,20 +178,19 @@ h4 {
 }
 section {
 	min-height: 95vh;
-	max-height: 100vh;
-	margin: 1rem 0;
+	margin-bottom: 2rem;
 	transition: all 0.5s ease-in-out;
 }
 
 @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
 	h1 {
-		font-size: ${({theme}) => theme.size.xl};
-	}
-	h2 {
 		font-size: ${({theme}) => theme.size.lg};
 	}
-	h3 {
+	h2 {
 		font-size: ${({theme}) => theme.size.md};
+	}
+	h3 {
+		font-size: ${({theme}) => theme.size.sm};
 	}
 	p {
   	font-size: ${({theme}) => theme.size.xs};

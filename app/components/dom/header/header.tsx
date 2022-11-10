@@ -13,5 +13,5 @@ const HeaderStyled = styled.header`
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
   justify-items: center;
-	margin:0 0.5rem;
+	margin:1rem 0.5rem;
 `
