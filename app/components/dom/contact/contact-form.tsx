@@ -128,8 +128,8 @@ const ContactFormWrapper = styled.div`
   justify-content: center;
   width: 100%;
 	& .contact-btn {
-		max-width: 20rem;
-		padding: 1.5rem 1rem;
+		max-width: 15rem;
+		padding: 1rem 0.5rem;
 	}
 `
 const StyledForm = styled.form`
