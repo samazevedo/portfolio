@@ -22,7 +22,7 @@ export const darkTheme = {
 		fiterReversed:'invert(62%) sepia(29%) saturate(484%) hue-rotate(197deg) brightness(92%) contrast(93%);',
 	},
 	breakpoints:{
-		mobile:'640px',
+		mobile:'660px',
 		tablet:'768px',
 		laptop:'1024px',
 		desktop:'1536px'

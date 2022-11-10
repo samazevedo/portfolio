@@ -1,24 +1,26 @@
 import styled from "styled-components"
 
 interface BurgerProps {
-	menuOpen: boolean,
-	setMenuOpen: (arg0: boolean) => void,
+	menuOpen: boolean ,
+	setMenuOpen: (args:boolean) => void
 }
 
 export default function Burger({menuOpen, setMenuOpen}:BurgerProps) {
-	const handleClick = () => {
-		setMenuOpen(!menuOpen)
-	}
+	
+
 	return(
-		<BurgerStyled onClick={handleClick} menuOpen={menuOpen}>
-				<div className="line"></div>
-				<div className="line"></div>
-				<div className="line"></div>
-		</BurgerStyled>
+		<>
+			<BurgerStyled menuOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>				
+					<div className="line"></div>
+					<div className="line"></div>
+					<div className="line"></div>
+			</BurgerStyled>			
+		</>
 	)
 }
 
-const BurgerStyled = styled.div`
+
+const BurgerStyled = styled.div<{menuOpen:boolean}>`
 	position: absolute;
 	top:3%;
   right: 5%;
