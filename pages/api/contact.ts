@@ -1,6 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next"
+require('dotenv').config()
+import mail from '@sendgrid/mail'
+
+const KEY = process.env.SENDGRID_API_KEY
+mail.setApiKey(KEY!)
+
 
 export default function handler(req:NextApiRequest, res:NextApiResponse ){
+	
 	
 	// check if the request is valid => if POST
 	if(req.method === 'POST') {
@@ -35,5 +42,24 @@ export default function handler(req:NextApiRequest, res:NextApiResponse ){
 			message: 'Message sent succesfully!',
 			Message: newMessage
 		})
+
+
+		
+		const sendMessage = `
+
+		Name: ${newMessage.name}\r\n
+		Email: ${newMessage.email}\r\n
+		Message: ${newMessage.message}\r\n
+	`
+	const data = {
+		to: 'samuel.azevedo@live.com',
+		from: 'hello@samazevedo.com',
+		subject: 'New Web Message',
+		text: sendMessage,
+		html: message.replace(/\r\n/g, '<br>')
 	}
+	mail.send(data)
+
+	}
+	
 }
