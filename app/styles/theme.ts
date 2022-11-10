@@ -190,7 +190,7 @@ section {
 		font-size: ${({theme}) => theme.size.md};
 	}
 	h3 {
-		font-size: ${({theme}) => theme.size.sm};
+		font-size: ${({theme}) => theme.size.xs};
 	}
 	p {
   	font-size: ${({theme}) => theme.size.xs};

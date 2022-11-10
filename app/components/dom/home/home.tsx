@@ -57,14 +57,12 @@ const HomeStyled = styled.section`
 	display:grid;
 	justify-items:center;
 	& .home-greeting {
-		font-size:${({theme})=> theme.size.xs};
+
 		align-self: end;
 	}
 	& .home-intro {
 		align-self: center;
-		& h3 {
-			font-size:${({theme})=> theme.size.xs};
-		}
+
 	}
 	& .home-info {
 		width:100%;
