@@ -80,7 +80,7 @@ body,
 	background-color: ${({ theme }) => theme.colors.background};
 	color:${({ theme }) => theme.colors.primary};
 	transition: all 0.5s ease-in-out ;
-	font-family: ${({theme})=> theme.fonts.main}
+	font-family: ${({theme})=> theme.fonts.main} ${({theme})=> theme.fonts.secondary};
 }
 html {
   font-size:10px;
