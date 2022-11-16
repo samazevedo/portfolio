@@ -1,13 +1,3 @@
-import create from 'zustand'
+import { atom  } from 'jotai'
 
-interface StateProps {
-  router: string | null
-  dom: React.ReactNode
-}
-
-const useStore = create<StateProps>()((set) => ({
-  router: null,
-  dom: null,
-}))
-
-export default useStore
+export const themeAtom = atom ('dark')

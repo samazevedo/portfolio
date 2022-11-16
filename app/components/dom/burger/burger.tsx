@@ -34,7 +34,7 @@ const BurgerStyled = styled.div<{menuOpen:boolean}>`
   border: none;
   cursor: crosshair;
   padding: 0;
-	z-index:3;
+	z-index:4;
   &:focus {
     outline: none;
   }

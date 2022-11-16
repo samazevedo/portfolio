@@ -19,7 +19,7 @@ export default function RootLayout({ children}: RootProps) {
 		if(children) { 
 			setTimeout(() => {
 				setLoading(false)
-			}, 3000);
+			}, 1000);
 		}
 	})
   return (

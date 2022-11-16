@@ -29,13 +29,13 @@ export default function Menu({menuOpen}:MenuProps) {
  
 const MenuStyled = styled.nav<MenuProps>`
 	position: fixed;	
+	z-index:3;
   top: 0;
   right: 0;
   background: #393939B5;
 	width:100%;
   height: 100%;
 	text-shadow: 0 0.01rem 0.1rem #FFFFFF;
-  padding: 2rem;
   transition: transform 0.3s ease-in-out;
   transform: ${({ menuOpen }) => menuOpen ? 'translateX(30%)' : 'translateX(100%)'};
 	@media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -43,8 +43,11 @@ const MenuStyled = styled.nav<MenuProps>`
 	}
 	ul {
 		width:100%;
+		height: 50%;
 		display: grid;
-		align-items:center;
+		grid-template-rows: repeat(4, 1fr);
+		align-items:start;
+		justify-items:start;
 	}
 
   a {

@@ -26,11 +26,12 @@ import CanvasL from './components/layout/canvas'
 import Box from './components/canvas/refraction/Box'
 import CursorObj from './components/canvas/cursor/Cursor'
 import { Router } from 'next/router'
-
 // hooks
 import {useOnclickOutside} from './hooks/hooks'
 import Main from './components/dom/main/main'
-
+import Switch from './components/dom/switch/switch'
+import { useAtom } from "jotai"
+import { themeAtom } from "./hooks/store"
 
 const R3F = () => {
   return (
@@ -74,14 +75,17 @@ const DOM = ({children}:DOMProps) => {
 }
 
 export default function Page() {
-  const [theme, setTheme] = useState('dark')
-  const [icon, setIcon] = useState(sun)
-	const [loading, setLoading] = useState(false)
+  // const [theme, setTheme] = useState('dark')
 
+  const [icon, setIcon] = useState(sun)
+	// const [loading, setLoading] = useState(false)
+
+	const [theme, setTheme] = useAtom(themeAtom)
   const handleTheme = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light')
     theme === 'light' ? setIcon(sun) : setIcon(moon)
   }
+
 
 	
 
@@ -89,10 +93,12 @@ export default function Page() {
 		<>
 		<ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <GlobalStyles />
+					{/* <Switch handleTheme={handleTheme} theme={theme}/> */}
+
         <DOM >
-					<button onClick={handleTheme} className='theme-btn'>
+					{/* <button onClick={handleTheme} className='theme-btn'>
           <	Image src={icon} alt='theme icon' width={20}  />
-        	</button>
+        	</button> */}
 				</DOM>
         {/* <R3F /> */}
       </ThemeProvider>

@@ -40,12 +40,17 @@ export const Socials = () => {
 }
 
 const SocialStyled = styled.ul`
-	width:30rem;
+	width:100%;
 	display:grid;
 	grid-template-columns: repeat(3, 1fr);
 	justify-items:center;
 	& img {
-		filter: ${({theme}) => theme.colors.fiterReversed};
+		filter: ${({theme}) => theme.colors.filter};
+		transition: all 0.2s ease-in;
+		&:hover {
+			transform: scale(1.5);
+			filter: ${({theme}) => theme.colors.filterReversed};
+		}
 	}
 
 `

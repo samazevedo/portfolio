@@ -13,13 +13,10 @@ export const darkTheme = {
 	},
 	colors: {
 		background:'#434343',
-		primary:'##c3fe72',
+		primary:'#c3fe72',
 		secondary:'#8F95D3',
 		text:'#F4F7F5',
-		btnText:'#F4F7F5',
-		btnBG: '#a288e3',
-		filter:'invert(83%) sepia(22%) saturate(919%) hue-rotate(37deg) brightness(109%) contrast(99%);',
-		fiterReversed:'invert(62%) sepia(29%) saturate(484%) hue-rotate(197deg) brightness(92%) contrast(93%);',
+		filter:'invert(62%) sepia(29%) saturate(484%) hue-rotate(197deg) brightness(92%) contrast(93%);',
 	},
 	breakpoints:{
 		mobile:'660px',
@@ -28,6 +25,7 @@ export const darkTheme = {
 		desktop:'1536px'
 	},
 	size:{
+		xxxs: '0.3rem',
 		xxs: '0.5rem',
 		xs: '0.70rem',
 		sm: '0.875rem',
@@ -40,44 +38,33 @@ export const darkTheme = {
 }
 export const lightTheme = {
 	fonts:{
-		main: "mainFont",
+		main: mainFont,
 		secondary: 'sans-serif',
 	},
 	colors: {
-		background:'#434343',
-		primary:'##c3fe72',
-		secondary:'#a288e3',
-		text:'#F4F7F5',
-		btnText:'#F4F7F5',
-		btnBG: '#a288e3',
-		filter:'invert(62%) sepia(29%) saturate(484%) hue-rotate(197deg) brightness(92%) contrast(93%);',
-		fiterReversed:'invert(83%) sepia(22%) saturate(919%) hue-rotate(37deg) brightness(109%) contrast(99%);',
+		background:'#FFFFFF',
+		primary:'#8F95D3',
+		secondary:'#c3fe72',
+		text:'#434343',
+		filter:'invert(83%) sepia(22%) saturate(619%) hue-rotate(37deg) brightness(109%) contrast(99%);',
 	},
 	breakpoints:{
-		mobile:'670px',
+		mobile:'660px',
 		tablet:'768px',
 		laptop:'1024px',
 		desktop:'1536px'
 	},
 	size:{
-		xs: '0.75rem',
+		xxxs: '0.3rem',
+		xxs: '0.5rem',
+		xs: '0.70rem',
 		sm: '0.875rem',
-		md: '1.0rem',
+		md: '1rem',
 		lg: '1.125rem',
 		xl: '1.5rem',
-		xxl: '2.0rem',
+		xxl: '2rem',
 		xxxl: '3.0rem',
-	},
-  color: '#0F0F0F',
-  text: '#DCDCDC',
-  toggleBorder: '#DCDCDC',
-  background: '#DCDCDC',
-  btnColor: '#DCDCDC',
-  btnBackground: '#0F0F0F',
-  filter:
-    'invert(17%) sepia(1%) saturate(2939%) hue-rotate(20deg) brightness(106%) contrast(89%)',
-  filterReversed:
-    'invert(93%) sepia(24%) saturate(362%) hue-rotate(20deg) brightness(95%) contrast(93%)',
+	}
 }
 
 export type MainThemeProps = ThemeProps<typeof darkTheme>
@@ -140,17 +127,19 @@ p {
 button {
 	border: none;
 	outline: none;
+	text-transform: uppercase;
 	font-size: ${({theme})=> theme.size.xl};
-	padding:0.7rem 1rem;
+	background-color:${({theme})=> theme.colors.primary};
+	padding:1rem 1.2rem;
 	cursor: pointer;
 	transition: all 0.2s linear;
 	&:active {
-		transform: translateY(0.2rem);
+		transform: translateY(0.1rem);
 	}
 	&:hover {
 		background-color:${({theme})=> theme.colors.secondary};
 		color:${({theme})=> theme.colors.text};
-		transform: scale(1.07)
+		transform: scale(1.04)
 	}
 }
 .socials img {
@@ -168,13 +157,12 @@ h2 {
 	color: ${({theme}) => theme.colors.secondary};
 }
 h3{
-	 ${({theme}) => theme.size.lg};
-		color: ${({theme}) => theme.colors.primary};
-
+	font-size: ${({theme}) => theme.size.lg};
+	color: ${({theme}) => theme.colors.primary};
 }
 h4 {
-	 ${({theme}) => theme.colors.primary};
-
+	font-size: ${({theme}) => theme.size.md};
+	color: ${({theme}) => theme.colors.primary};
 }
 section {
 	min-height: 95vh;
@@ -192,8 +180,16 @@ section {
 	h3 {
 		font-size: ${({theme}) => theme.size.xs};
 	}
+	h4 {
+	font-size: ${({theme}) => theme.size.xxs};
+	color: ${({theme}) => theme.colors.primary};
+	}
 	p {
-  	font-size: ${({theme}) => theme.size.xs};
+  	font-size: ${({theme}) => theme.size.xxs};
+	}
+	button {
+		font-size: ${({theme})=> theme.size.lg};
+
 	}
 
 }

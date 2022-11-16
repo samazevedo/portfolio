@@ -74,7 +74,7 @@ export default function About() {
 					I am a Front-end Web Developer based in Sao Paulo, Brazil. I really enjoy to create beautiful and intuitive web
           appliacations, making use of clean, responsive designs and reusable
           code. My main goal is to work with ReactJS and Typescritp. 
-					I am currently learning  how to use WebGL, and libraries like ThreeJS and React Three Fiber to use 3D animation on my projects the web.
+					I am currently learning  how to use WebGL, and libraries like ThreeJS and React Three Fiber to use animation on my projects the web.
 					I have a variety of interests from animations, graphic design, gaming, photography to sports like soccer
           basketball.
         </p>

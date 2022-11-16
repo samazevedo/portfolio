@@ -106,7 +106,7 @@ export const ContactForm = () => {
           onChange={(event) => setMessage(event.target.value)}
         />
         <button type='submit' form='contact-form' className='contact-btn'>
-          Send Message
+          Submit
         </button>
       </StyledForm>
       {notification && (
