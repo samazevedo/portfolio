@@ -62,6 +62,7 @@ const HomeStyled = styled.section`
 	justify-items:center;
 	& .home-intro {
 		display: grid;
+		justify-items:center;
 		& .home-greeting {
 			align-self: end;
 		}

@@ -6,7 +6,7 @@ import moon from './assets/icons/moon.svg'
 import { useState, useEffect, Suspense, useRef } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles, darkTheme, lightTheme } from './styles/theme'
-import { ScrollControls, Scroll, Center } from '@react-three/drei'
+import { ScrollControls, Scroll, Center, Stars } from '@react-three/drei'
 // components
 import Dom from './components/layout/dom'
 import Home from './components/dom/home/home'
@@ -32,21 +32,21 @@ import Main from './components/dom/main/main'
 import Switch from './components/dom/switch/switch'
 import { useAtom } from "jotai"
 import { themeAtom } from "./hooks/store"
+import HtmlPage from './components/dom/html/html'
 
 const R3F = () => {
   return (
     <CanvasL>
-      <Box />
       <CursorObj />
-      <ScrollControls pages={4}>
-        <Scroll html>          
-        </Scroll>
-      </ScrollControls>
+			<ScrollControls pages={4}>
+				<HtmlPage/>
+			</ScrollControls>
+			<Stars/>
     </CanvasL>
   )
 }
 interface DOMProps {
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 const DOM = ({children}:DOMProps) => {
@@ -54,7 +54,7 @@ const DOM = ({children}:DOMProps) => {
 	const node = useRef(null)
 	useOnclickOutside(node, () => setMenuOpen(false))
   return (
-		<Dom>
+		<Dom >
 			<Header>
 				<Logo/>
 				<Nav/>
@@ -82,7 +82,7 @@ export default function Page() {
 
 	const [theme, setTheme] = useAtom(themeAtom)
   const handleTheme = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light')
+    theme === 'light' ? setTheme('dark') : setTheme('dark')
     theme === 'light' ? setIcon(sun) : setIcon(moon)
   }
 
@@ -91,18 +91,16 @@ export default function Page() {
 
   return (
 		<>
-		<ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+		<ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
         <GlobalStyles />
 					{/* <Switch handleTheme={handleTheme} theme={theme}/> */}
 
-        <DOM >
-					{/* <button onClick={handleTheme} className='theme-btn'>
-          <	Image src={icon} alt='theme icon' width={20}  />
-        	</button> */}
-				</DOM>
         {/* <R3F /> */}
+        <DOM />
       </ThemeProvider>
 		</>
       
   )
 }
+
+

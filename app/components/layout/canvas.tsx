@@ -14,10 +14,10 @@ const LoadingS = styled.div``
 export default function CanvasL({ children }: CanvasProp) {
   return (
     <div id='canvas'>
-      <Canvas shadows>
-        <ambientLight intensity={0.2} />
+      <Canvas shadows >
+        <ambientLight intensity={0.3} />
         <spotLight position={[10, 10, 10]} intensity={1} />
-        {/* <color attach='background' args={['#dadada']} /> */}
+        <color attach='background' args={['#434343']} />
         {/* 
         {/* <PerspectiveCamera
           makeDefault

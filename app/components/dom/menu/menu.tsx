@@ -32,7 +32,7 @@ const MenuStyled = styled.nav<MenuProps>`
 	z-index:3;
   top: 0;
   right: 0;
-  background: #393939B5;
+  background: #393939CE;
 	width:100%;
   height: 100%;
 	text-shadow: 0 0.01rem 0.1rem #FFFFFF;

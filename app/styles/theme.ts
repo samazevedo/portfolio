@@ -5,6 +5,7 @@ import localFont from '@next/font/local'
 const mainFont = localFont({
   src: './../assets/fonts/Bulgatry/Bulgatry.otf',
 })
+		// background:'#434343',
 
 export const darkTheme = {
 	fonts:{
@@ -39,7 +40,6 @@ export const darkTheme = {
 export const lightTheme = {
 	fonts:{
 		main: mainFont,
-		secondary: 'sans-serif',
 	},
 	colors: {
 		background:'#FFFFFF',
@@ -80,7 +80,7 @@ body,
 	background-color: ${({ theme }) => theme.colors.background};
 	color:${({ theme }) => theme.colors.primary};
 	transition: all 0.5s ease-in-out ;
-	font-family: ${({theme})=> theme.fonts.main} ${({theme})=> theme.fonts.secondary};
+	font-family: ${({theme})=> theme.fonts.main};
 }
 html {
   font-size:10px;
@@ -189,8 +189,6 @@ section {
 	}
 	button {
 		font-size: ${({theme})=> theme.size.lg};
-
 	}
-
 }
 `

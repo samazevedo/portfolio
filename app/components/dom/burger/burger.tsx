@@ -22,7 +22,7 @@ export default function Burger({menuOpen, setMenuOpen}:BurgerProps) {
 
 const BurgerStyled = styled.div<{menuOpen:boolean}>`
 	position: absolute;
-	top:3%;
+	top:2%;
   right: 5%;
   display: flex;
   flex-direction: column;

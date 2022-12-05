@@ -12,6 +12,6 @@ const LogoStyled = styled.div `
 	font-size: ${({theme}) => theme.size.xxl};
 	
 	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-		font-size: ${({theme}) => theme.size.lg};
+		font-size: ${({theme}) => theme.size.md};
   }
 `

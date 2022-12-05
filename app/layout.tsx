@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import './styles/styles.scss'
 import localFont from '@next/font/local'
 import Loading from './loading'
+import CanvasL from './components/layout/canvas'
 const mainFont = localFont({
   src: './assets/fonts/Bulgatry/Bulgatry.otf',
 })
@@ -41,7 +42,6 @@ export default function RootLayout({ children}: RootProps) {
 				<meta name="twitter:title" content="Sam Azevedo" />
 				<meta name="twitter:description" content="Sam Azevedo Front-end Web Developer" />
 				<meta name="twitter:image" content="" />
-
 			</head>
 			<body>
 				{ loading ? ( <Loading/> ) : ( <>{children}</> )}
