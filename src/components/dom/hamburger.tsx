@@ -17,15 +17,22 @@ export default function HamburgerMenu() {
                 aria-label='Options'
                 icon={<HamburgerIcon />}
                 variant='ghost'
+                bg={useColorModeValue('primary.light', 'primary.dark')}
             />
             <MenuList bg={useColorModeValue('primary.light', 'primary.dark')}>
-                <MenuItem>
+                <MenuItem
+                    bg={useColorModeValue('primary.light', 'primary.dark')}
+                >
                     <Link href='/'>About</Link>
                 </MenuItem>
-                <MenuItem>
+                <MenuItem
+                    bg={useColorModeValue('primary.light', 'primary.dark')}
+                >
                     <Link href='/portfolio'>Portfolio</Link>
                 </MenuItem>
-                <MenuItem>
+                <MenuItem
+                    bg={useColorModeValue('primary.light', 'primary.dark')}
+                >
                     <Link href='/contact'>Contact</Link>
                 </MenuItem>
             </MenuList>
