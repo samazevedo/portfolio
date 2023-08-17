@@ -4,9 +4,9 @@ import {
     IconButton,
     MenuList,
     MenuItem,
-    Link,
     useColorModeValue,
 } from '@chakra-ui/react'
+import { Link } from '@chakra-ui/next-js'
 import { HamburgerIcon } from '@chakra-ui/icons'
 
 export default function HamburgerMenu() {
