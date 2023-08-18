@@ -17,6 +17,7 @@
     "@fontsource-variable/raleway": "^5.0.9",
     "@fontsource/buda": "^5.0.8",
     "@react-spring/three": "^9.7.3",
+    "@react-spring/web": "^9.7.3",
     "@react-three/drei": "^9.80.3",
     "@react-three/fiber": "^8.13.7",
     "@types/node": "20.5.0",
@@ -29,7 +30,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "three": "^0.155.0",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "valtio": "^1.11.2"
   },
   "devDependencies": {
     "@types/three": "^0.155.0"
