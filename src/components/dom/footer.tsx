@@ -7,6 +7,8 @@ const FootStyled = styled.footer`
     align-items: center;
     justify-content: center;
     height: 2rem;
+    position: fixed;
+    bottom: 0;
 `
 
 export const Footer = () => {
