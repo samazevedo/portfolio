@@ -134,79 +134,57 @@ export default function Home() {
                     <Paragraph>
                         Find me through my social media accounts.
                     </Paragraph>
-                    <Text as='p'>
-                        <Text as='span' fontWeight='bolder'>
-                            <Link href='https://github.com/samazevedo'>
-                                <Box
-                                    display='grid'
-                                    gridTemplateColumns='repeat(2, 1fr)'
-                                    justifyItems='start'
-                                    maxW='9rem'
-                                >
-                                    <Image
-                                        src='/icons/github.svg'
-                                        alt='github'
-                                        borderRadius='full'
-                                        boxSize='1.5rem'
-                                        mb={5}
-                                    />
-                                    <Paragraph>@samazevedo</Paragraph>
-                                </Box>
-                            </Link>
-                            <Link href='https://'>
-                                <Box
-                                    display='grid'
-                                    gridTemplateColumns='repeat(2, 1fr)'
-                                    justifyItems='start'
-                                    maxW='9rem'
-                                >
-                                    <Image
-                                        src='/icons/twitter.svg'
-                                        alt='twitter'
-                                        borderRadius='full'
-                                        boxSize='1.5rem'
-                                        mb={5}
-                                    />
-                                    <Paragraph>@samazevedo</Paragraph>
-                                </Box>
-                            </Link>
-                            <Link href='https://'>
-                                <Box
-                                    display='grid'
-                                    gridTemplateColumns='repeat(2, 1fr)'
-                                    justifyItems='start'
-                                    maxW='9rem'
-                                >
-                                    <Image
-                                        src='/icons/linkedin.svg'
-                                        alt='linkedin'
-                                        borderRadius='full'
-                                        boxSize='1.5rem'
-                                        mb={5}
-                                    />
-                                    <Paragraph>@samazevedo</Paragraph>
-                                </Box>
-                            </Link>
-                            <Link href=''>
-                                <Box
-                                    display='grid'
-                                    gridTemplateColumns='repeat(2, 1fr)'
-                                    justifyItems='start'
-                                    maxW='9rem'
-                                >
-                                    <Image
-                                        src='/icons/instagram.svg'
-                                        alt='instagram'
-                                        borderRadius='full'
-                                        boxSize='1.5rem'
-                                        mb={5}
-                                    />
-                                    <Paragraph>@samazevedo</Paragraph>
-                                </Box>
-                            </Link>
-                            <ul></ul>
-                        </Text>
-                    </Text>
+                    <Box
+                        w='100%'
+                        display='grid'
+                        justifyItems='center'
+                        gridTemplateColumns='repeat(4, 1fr)'
+                    >
+                        <Link href='https://github.com/samazevedo'>
+                            <Box maxW='15rem'>
+                                <Image
+                                    src='/assets/icons/github.svg'
+                                    alt='github'
+                                    borderRadius='full'
+                                    boxSize='1.5rem'
+                                    mb={5}
+                                />
+                            </Box>
+                        </Link>
+                        <Link href='https://twitter.com/SamAzevedo4'>
+                            <Box maxW='15rem'>
+                                <Image
+                                    src='/assets/svg/x.svg'
+                                    alt='twitter | X'
+                                    borderRadius='full'
+                                    boxSize='1.5rem'
+                                    mb={5}
+                                />
+                            </Box>
+                        </Link>
+                        <Link href='https://www.linkedin.com/in/samuel-azevedo-santos-908a5b53/'>
+                            <Box maxW='15rem'>
+                                <Image
+                                    src='/assets/icons/linkedin.svg'
+                                    alt='linkedin'
+                                    borderRadius='full'
+                                    boxSize='1.5rem'
+                                    mb={5}
+                                />
+                            </Box>
+                        </Link>
+                        <Link href='https://www.instagram.com/sam_azevedooo/'>
+                            <Box maxW='15rem'>
+                                <Image
+                                    src='/assets/icons/instagram.svg'
+                                    alt='instagram'
+                                    borderRadius='full'
+                                    boxSize='1.5rem'
+                                    mb={5}
+                                />
+                            </Box>
+                        </Link>
+                    </Box>
                 </Box>
             </Section>
         </Container>
