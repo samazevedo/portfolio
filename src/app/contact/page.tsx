@@ -23,7 +23,7 @@ export default function Page() {
                     For any questions or future work, please send me an email or
                     use the form below to send me a message.
                 </Paragraph>
-                <FormControl>
+                <FormControl isRequired action='api/contact'>
                     <FormLabel>Name</FormLabel>
                     <Input
                         type='text'
