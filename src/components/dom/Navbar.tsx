@@ -1,11 +1,8 @@
 import { Link } from '@chakra-ui/next-js'
 import { Grid } from '@chakra-ui/react'
+import type { GlobalProps } from '@/types/global'
 
-interface LinkItemProps {
-    href: string
-    children: React.ReactNode
-}
-const LinkItem = ({ href, children }: LinkItemProps) => {
+const LinkItem = ({ href, children }: GlobalProps['LinkItemProps']) => {
     return (
         <Link
             href={href}

@@ -1,20 +1,12 @@
 'use client'
 import { Section } from '@/components/dom/section'
-import { Paragraph } from '@/components/styles/styles'
-import {
-    Container,
-    FormControl,
-    FormLabel,
-    Text,
-    Input,
-    Textarea,
-    FormHelperText,
-    Button,
-} from '@chakra-ui/react'
+import { Paragraph } from '@/styles/styles'
+import { Container, Text } from '@chakra-ui/react'
 import { state, updateFormData } from '@/store/store'
 import { ContactForm } from '@/components/dom/contact-form'
 import axios from 'axios'
 import { useSnapshot } from 'valtio'
+import type { ContactFormData } from '@/types/global'
 
 export default function Page() {
     const data = useSnapshot(state.formData)

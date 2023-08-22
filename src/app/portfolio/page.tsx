@@ -1,6 +1,6 @@
 'use client'
 import { Section } from '@/components/dom/section'
-import { Paragraph } from '@/components/styles/styles'
+import { Paragraph } from '@/styles/styles'
 import { Container, Text } from '@chakra-ui/react'
 
 export default function Page() {

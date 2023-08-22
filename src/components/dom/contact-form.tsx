@@ -1,19 +1,18 @@
 import { state, updateFormData } from '@/store/store'
 import { useSpring, animated } from '@react-spring/web'
 import { useSnapshot } from 'valtio'
-import GlobalProps from '../../../types/global'
 import {
     FormControl,
     FormLabel,
-    Text,
     Input,
     Textarea,
     FormHelperText,
     Button,
     useToast,
 } from '@chakra-ui/react'
+import type { GlobalProps } from '@/types/global.d.ts'
 
-export const ContactForm = ({ onSubmit }: ContactFormProps) => {
+export const ContactForm = ({ onSubmit }: GlobalProps['ContactFormProps']) => {
     const formData = useSnapshot(state.formData)
     const toast = useToast()
     const animatedProps = useSpring({ opacity: 1, from: { opacity: 0 } })

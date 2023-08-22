@@ -6,10 +6,14 @@ interface ContactFormData {
     message: string
 }
 
-interface GlobalProps {
-    // define anh other global props interfaces here
+export interface GlobalProps {
+    // PROPS
     ContactFormProps: {
         onSubmit: (data: ContactFormData) => void
+    }
+    LinkItemProps: {
+        href: string
+        children: React.ReactNode
     }
 }
 

@@ -5,7 +5,7 @@ import MyComponent from '@/components/canvas/blob'
 import { Section } from '@/components/dom/section'
 import { useEffect } from 'react'
 import { state } from '@/store/store'
-import { BioSection, BioYear, Paragraph } from '@/components/styles/styles'
+import { BioSection, BioYear, Paragraph } from '@/styles/styles'
 import { Link } from '@chakra-ui/next-js'
 
 export default function Home() {
