@@ -1,13 +1,8 @@
 import { animated, useTransition, config } from '@react-spring/web'
 import { state } from '@/store/store'
+import type { GlobalProps } from '@/types/global'
 
-interface SectionProps {
-    // isVisible: boolean
-    children: React.ReactNode
-    delay?: number
-}
-
-export const Section = ({ children, delay }: SectionProps) => {
+export const Section = ({ children, delay }: GlobalProps['SectionProps']) => {
     const transitions = useTransition((state.isVisible = true), {
         from: { opacity: 0, transform: 'translateY(30px)' },
         enter: { opacity: 1, transform: 'translateY(0)' },

@@ -10,33 +10,42 @@ import {
     Button,
     useToast,
 } from '@chakra-ui/react'
-import type { GlobalProps } from '@/types/global.d.ts'
+import type { GlobalProps } from '@/types/global'
+import axios from 'axios'
 
-export const ContactForm = ({ onSubmit }: GlobalProps['ContactFormProps']) => {
-    const formData = useSnapshot(state.formData)
+export const ContactForm = () => {
+    const { formData } = useSnapshot(state)
     const toast = useToast()
     const animatedProps = useSpring({ opacity: 1, from: { opacity: 0 } })
 
-    const handleChange = (
+    const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
         const { name, value } = e.target
-        updateFormData({ [name]: value })
+        updateFormData({ ...formData, [name]: value })
     }
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
+        // const { name, email, message } = formData
+
         try {
-            await onSubmit(formData)
+            // SEND FORM DATA TO NEXT API ROUTE
+            await axios.post('/api/mail', formData)
+
+            // HANDLE SUCCESS
             toast({
-                title: 'Email Sent',
+                title: 'Message Sent',
                 description: 'Your email has been sent successfully!',
                 status: 'success',
                 duration: 5000,
                 isClosable: true,
             })
+
+            // CLEAR | UPDATE FORM FIELDS
             updateFormData({ name: '', email: '', message: '' })
         } catch (error) {
+            // HANDLE ERROr
             toast({
                 title: 'Error',
                 description: 'An error occurred while sending the email.',
@@ -58,7 +67,7 @@ export const ContactForm = ({ onSubmit }: GlobalProps['ContactFormProps']) => {
                     variant='flushed'
                     focusBorderColor='primary.green'
                     value={formData.name}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                 />
                 <FormLabel>Email</FormLabel>
                 <Input
@@ -69,7 +78,7 @@ export const ContactForm = ({ onSubmit }: GlobalProps['ContactFormProps']) => {
                     placeholder='Email Address'
                     focusBorderColor='primary.green'
                     value={formData.email}
-                    onChange={(e) => (state.formData.email = e.target.value)}
+                    onChange={handleInputChange}
                 />
                 <FormLabel>Message</FormLabel>
                 <Textarea
@@ -77,7 +86,7 @@ export const ContactForm = ({ onSubmit }: GlobalProps['ContactFormProps']) => {
                     placeholder='Your message'
                     focusBorderColor='primary.green'
                     value={formData.message}
-                    onChange={(e) => (state.formData.message = e.target.value)}
+                    onChange={handleInputChange}
                 />
                 <FormHelperText></FormHelperText>
                 <Button size='md' bg='primary.green' type='submit'>

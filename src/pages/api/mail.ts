@@ -1,21 +1,28 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { state } from '@/store/store'
 import sgMail from '@sendgrid/mail'
+import { ContactFormData } from '@/types/global'
 
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
-    res.status(200).json({ status: 'ok' })
+    // provide a default value By using the nullish coalescing operator
+    const sendGridApiKey = process.env.SENDGRID_API_KEY ?? ''
+
     if (req.method === 'POST') {
-        // sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+        sgMail.setApiKey(sendGridApiKey)
+
+        const formData: ContactFormData = req.body
+        console.log(formData)
 
         const msg = {
             to: 'samuel.azevedo@live.com',
-            from: state.formData.email,
-            subject: 'New Contact Form Submission',
-            text: state.formData.message,
+            from: formData.email,
+            subject: `New message from ${formData.name}`,
+            text: formData.message,
         }
+        console.log(msg)
+
         try {
             await sgMail.send(msg)
             res.status(200).json({ message: 'Email send seccesfully' })
@@ -23,9 +30,7 @@ export default async function handler(
             console.error('Error sending email', error)
             res.status(500).json({ message: 'Error sending email' })
         }
-
-        console.log(msg)
     } else {
-        res.status(405).json({ message: 'Method not allowed' })
+        res.status(405).json({ message: 'METHOD NOT ALLOWED' })
     }
 }

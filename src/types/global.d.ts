@@ -1,6 +1,6 @@
 // define global inerfaces and types here
 
-interface ContactFormData {
+export interface ContactFormData {
     name: string
     email: string
     message: string
@@ -14,6 +14,10 @@ export interface GlobalProps {
     LinkItemProps: {
         href: string
         children: React.ReactNode
+    }
+    SectionProps: {
+        children: React.ReactNode
+        delay?: number
     }
 }
 
