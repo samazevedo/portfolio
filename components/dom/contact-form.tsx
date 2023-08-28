@@ -15,6 +15,7 @@ import axios from 'axios'
 
 export const ContactForm = () => {
     const { formData } = useSnapshot(state)
+
     const toast = useToast()
     const animatedProps = useSpring({ opacity: 1, from: { opacity: 0 } })
 
@@ -25,57 +26,44 @@ export const ContactForm = () => {
         updateFormData({ ...formData, [name]: value })
     }
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        fetch('/api/mail', {
-            method: 'POST',
-            body: JSON.stringify({
-                name: formData.name,
-                email: formData.email,
-                message: formData.email,
-            }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-        // CLEAR | UPDATE FORM FIELDS
-        updateFormData({ name: '', email: '', message: '' })
+        // COPY PROXY OBJ TO A REGULAR JS OBJ
 
-        // try {
-        //     // SEND FORM DATA TO NEXT API ROUTE
-        //     await axios.post(
-        //         'api/mail',
-        //         {
-        //             formData,
-        //         },
-        //         {
-        //             headers: {
-        //                 'Content-Type': 'application/json',
-        //             },
-        //         }
-        //     )
-        //     // HANDLE SUCCESS
-        //     toast({
-        //         title: 'Message Sent',
-        //         description: 'Your email has been sent successfully!',
-        //         status: 'success',
-        //         duration: 5000,
-        //         isClosable: true,
-        //     })
+        const updatedFormData = { ...formData }
+        // const { name, email, message } = updatedFormData
+        // console.log(updatedFormData, typeof updatedFormData)
 
-        //     // CLEAR | UPDATE FORM FIELDS
-        //     updateFormData({ name: '', email: '', message: '' })
-        // } catch (error) {
-        //     // HANDLE ERROr
-        //     toast({
-        //         title: 'Error',
-        //         description: `An error occurred while sending the email.`,
-        //         status: 'error',
-        //         duration: 5000,
-        //         isClosable: true,
-        //     })
-        // }
+        try {
+            // SEND FORM DATA TO NEXT API ROUTE
+            await axios.post('/api/mail', {
+                name: updatedFormData.name,
+                email: updatedFormData.email,
+                message: updatedFormData.message,
+            })
+
+            // HANDLE SUCCESS
+            toast({
+                title: 'Message Sent',
+                description: 'Your email has been sent successfully!',
+                status: 'success',
+                duration: 5000,
+                isClosable: true,
+            })
+
+            // CLEAR | UPDATE FORM FIELDS
+            // updateFormData({ name: '', email: '', message: '' })
+        } catch (error) {
+            // HANDLE ERROr
+            toast({
+                title: 'Error',
+                description: `An error occurred while sending the email.`,
+                status: 'error',
+                duration: 5000,
+                isClosable: true,
+            })
+        }
     }
 
     return (
@@ -91,6 +79,7 @@ export const ContactForm = () => {
                     focusBorderColor='primary.green'
                     value={formData.name}
                     onChange={handleInputChange}
+                    minLength={3}
                 />
             </FormControl>
             <FormControl isRequired>

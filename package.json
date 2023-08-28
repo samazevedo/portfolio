@@ -31,6 +31,7 @@
     "next": "13.4.16",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.4",
     "three": "^0.155.0",
     "typescript": "5.1.6",
     "valtio": "^1.11.2"
