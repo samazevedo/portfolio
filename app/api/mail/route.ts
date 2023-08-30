@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import sgMail from '@sendgrid/mail'
 import { ContactFormData } from '@/types/global'
+import sgMail from '@sendgrid/mail'
 
 export async function GET() {
     return NextResponse.json({
@@ -9,8 +9,10 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest, res: NextResponse) {
-    const sendGridApiKey = process.env.SENDGRID_API_KEY ?? ''
-    sgMail.setApiKey(sendGridApiKey)
+    // const sendGridApiKey = process.env.SENDGRID_API_KEY ?? ''
+    // sgMail.setApiKey(sendGridApiKey)
+
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY!)
 
     // read the request
     try {
@@ -24,30 +26,22 @@ export async function POST(req: NextRequest, res: NextResponse) {
         // let email = formData.get('email')
         // let message = formData.get('message')
 
-        const messageData = `
-          Name: ${name}\r\n
-          Email: ${email}\r\n
-          Message: ${message}
-        `
-
         const msg = {
-            to: 'samuel.azevedo@live.com',
-            from: 'samuel.azevedo@live.com',
-            subject: `New web form message`,
-            text: messageData,
+            to: 'sam@azevedochang.com',
+            from: `${email}`,
+            subject: 'New Form Submission',
+            text: `${message}`,
         }
-        await sgMail
-            .send(msg)
-            .then(() => {
-                console.log('Form sent succesfully!')
-            })
-            .catch((error) => {
-                console.error(error)
-            })
+        await sgMail.send(msg)
 
-        new Response('Form submitted successfully')
+        return NextResponse.json({
+            status: 200,
+            message: 'Form submitted successfully',
+        })
     } catch (error) {
-        return new Response('fail')
+        console.error('Error sending email:', error)
+        return NextResponse.json({
+            error: ' An error occurred while sending the email',
+        })
     }
-    return new Response('success')
 }
