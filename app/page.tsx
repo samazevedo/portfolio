@@ -1,7 +1,6 @@
 'use client'
 import { Button, Icon, Image } from '@chakra-ui/react'
 import { Box, Container, Text } from '@chakra-ui/react'
-import MyComponent from '@/components/canvas/blob'
 import { Section } from '@/components/dom/section'
 import { useEffect } from 'react'
 import { state } from '@/store/store'
