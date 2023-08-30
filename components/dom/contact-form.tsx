@@ -53,7 +53,7 @@ export const ContactForm = () => {
             })
 
             // CLEAR | UPDATE FORM FIELDS
-            // updateFormData({ name: '', email: '', message: '' })
+            updateFormData({ name: '', email: '', message: '' })
         } catch (error) {
             // HANDLE ERROr
             toast({
