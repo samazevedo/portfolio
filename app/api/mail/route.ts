@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import sgMail from '@sendgrid/mail'
 import { ContactFormData } from '@/types/global'
-export const config = { runtime: 'experiment-edge' }
 
 export async function GET() {
     return NextResponse.json({
