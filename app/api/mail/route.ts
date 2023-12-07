@@ -8,7 +8,7 @@ export async function GET() {
     })
 }
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: Request) {
     // const sendGridApiKey = process.env.SENDGRID_API_KEY ?? ''
     // sgMail.setApiKey(sendGridApiKey)
 
@@ -16,11 +16,9 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
     // read the request
     try {
-        const requestBody = await req.text()
+        const requestBody = await req.json()
 
-        const { name, message, email } = JSON.parse(
-            requestBody
-        ) as ContactFormData
+        const { name, message, email } = requestBody
         // const formData = await req.formData()
         // let name = formData.get('name')
         // let email = formData.get('email')
@@ -28,10 +26,12 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
         const msg = {
             to: 'sam@azevedochang.com',
-            from: `${name + ' ' + email}`,
-            subject: 'New Form Submission',
+            from: `${email}`,
+            subject: `New Email from ${name}`,
             text: `${message}`,
         }
+        console.log(msg)
+
         await sgMail.send(msg)
 
         return NextResponse.json({
