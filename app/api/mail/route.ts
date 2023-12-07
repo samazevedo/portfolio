@@ -28,7 +28,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
         const msg = {
             to: 'sam@azevedochang.com',
-            from: `${email}`,
+            from: `${name + ' ' + email}`,
             subject: 'New Form Submission',
             text: `${message}`,
         }
