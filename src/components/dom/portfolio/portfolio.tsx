@@ -24,7 +24,7 @@ export default function Portfolio() {
 					<Card>
 						<CardContent>
 							<Image
-								src="/placeholder.svg"
+								src="/next.svg"
 								alt="Project 1"
 								className="rounded-t-lg w-full aspect-[4/3] object-cover"
 								width={1920}
@@ -50,7 +50,7 @@ export default function Portfolio() {
 					<Card>
 						<CardContent>
 							<Image
-								src="/placeholder.svg"
+								src="/next.svg"
 								alt="Project 2"
 								className="rounded-t-lg w-full aspect-[4/3] object-cover"
 								width={1920}
@@ -76,7 +76,7 @@ export default function Portfolio() {
 					<Card>
 						<CardContent>
 							<Image
-								src="/placeholder.svg"
+								src="/next.svg"
 								alt="Project 3"
 								className="rounded-t-lg w-full aspect-[4/3] object-cover"
 								width={1920}

@@ -19,6 +19,8 @@ export const Logo3D = () => {
 				vertexShader={vertex}
 				fragmentShader={fragment}
 				uniforms={uniforms}
+				transparent
+				glslVersion={THREE.GLSL3}
 			/>
 		</mesh>
 	)

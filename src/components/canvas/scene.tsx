@@ -2,11 +2,12 @@
 import { Suspense } from "react"
 import { Canvas } from "@react-three/fiber"
 import { useTheme } from "next-themes"
+import { Mouse } from "./mouse/mouse"
 
 export default function Scene() {
 	const { theme } = useTheme()
 
-	const bg = theme === "dark" ? "#1D1C1C" : "#98B899"
+	// const bg = theme === "dark" ? "#1D1C1C" : "#98B899"
 
 	return (
 		<Canvas
@@ -21,7 +22,8 @@ export default function Scene() {
 		>
 			<ambientLight />
 			<pointLight position={[10, 10, 10]} />
-			<color attach="background" args={[bg]} />
+			{/* <color attach="background" args={[bg]} /> */}
+			<Suspense fallback={null}>{/* <Mouse /> */}</Suspense>
 		</Canvas>
 	)
 }

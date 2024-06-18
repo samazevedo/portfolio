@@ -1,5 +1,24 @@
 import Link from "next/link"
 import Image from "next/image"
+
+const tools = [
+	{ name: "HTML", icon: "/icons/tech/html5.svg" },
+	{ name: "CSS", icon: "/icons/tech/css3.svg" },
+	{ name: "Sass", icon: "/icons/tech/sass.svg" },
+	{ name: "Bootstrap", icon: "/icons/tech/bootstrap.svg" },
+	{ name: "Styled Components", icon: "/icons/tech/styledcomponents.svg" },
+	{ name: "Tailwind CSS", icon: "/icons/tech/tailwindcss.svg" },
+	{ name: "JavaScript", icon: "/icons/tech/javascript.svg" },
+	{ name: "TypeScript", icon: "/icons/tech/typescript.svg" },
+	{ name: "React.js", icon: "/icons/tech/react.svg" },
+	{ name: "Next.js", icon: "/icons/tech/nextdotjs.svg" },
+	{ name: "Three.js", icon: "/icons/tech/threedotjs.svg" },
+	{ name: "webGL", icon: "/icons/tech/webgl.svg" },
+	{ name: "Node.js", icon: "/icons/tech/nodedotjs.svg" },
+	{ name: "MongoDB", icon: "/icons/tech/mongodb.svg" },
+	{ name: "Chakra UI", icon: "/icons/tech/chakraui.svg" },
+	{ name: "Corel Draw", icon: "/icons/tech/coreldraw.svg" },
+]
 export default function About() {
 	return (
 		<section
@@ -22,70 +41,17 @@ export default function About() {
 					</div>
 					<h2>Tools I use:</h2>
 
-					<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-						<Image
-							src="/html.png"
-							alt="HTML"
-							className="rounded-t-lg w-full aspect-[4/3] object-cover"
-							width={1920}
-							height={1080}
-						/>
-						<Image
-							src="/css.png"
-							alt="CSS"
-							className="rounded-t-lg w-full aspect-[4/3] object-cover"
-							width={1920}
-							height={1080}
-						/>
-						<Image
-							src="/js.png"
-							alt="Javascript"
-							className="rounded-t-lg w-full aspect-[4/3] object-cover"
-							width={1920}
-							height={1080}
-						/>
-						<Image
-							src="/react.png"
-							alt="React"
-							className="rounded-t-lg w-full aspect-[4/3] object-cover"
-							width={1920}
-							height={1080}
-						/>
-						<Image
-							src="/next.png"
-							alt="Next"
-							className="rounded-t-lg w-full aspect-[4/3] object-cover"
-							width={1920}
-							height={1080}
-						/>
-						<Image
-							src="/tailwind.png"
-							alt="Tailwind"
-							className="rounded-t-lg w-full aspect-[4/3] object-cover"
-							width={1920}
-							height={1080}
-						/>
-						<Image
-							src="/ts.png"
-							alt="Typescript"
-							className="rounded-t-lg w-full aspect-[4/3] object-cover"
-							width={1920}
-							height={1080}
-						/>
-						<Image
-							src="/threejs.png"
-							alt="Threejs"
-							className="rounded-t-lg w-full aspect-[4/3] object-cover"
-							width={1920}
-							height={1080}
-						/>
-						<Image
-							src="/webgl.png"
-							alt="Webgl"
-							className="rounded-t-lg w-full aspect-[4/3] object-cover"
-							width={1920}
-							height={1080}
-						/>
+					<div className="grid grid-cols-3 md:grid-cols-7 gap-4">
+						{tools.map((tool) => (
+							<Image
+								key={tool.name}
+								src={tool.icon}
+								alt={tool.name}
+								className="w-full max-w-20 aspect-[3/3]   object-cover"
+								width={5}
+								height={5}
+							/>
+						))}
 					</div>
 
 					{/* <Link
