@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Socials from "../socials/socials"
 export default function Footer() {
 	const currentYear = new Date().getFullYear()
 	return (
@@ -8,7 +9,7 @@ export default function Footer() {
 			</p>
 			<nav className="sm:ml-auto flex gap-4 sm:gap-6">
 				<ul>
-					<li> github.com/samazevedo </li>
+					<Socials />
 				</ul>
 			</nav>
 		</footer>

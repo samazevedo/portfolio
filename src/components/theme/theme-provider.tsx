@@ -1,9 +1,27 @@
 "use client"
-import { ThemeProvider as NextThemeProvider } from "next-themes"
-import { type ThemeProviderProps } from "next-themes/dist/types"
+import { ThemeProvider as NextThemesProvider } from "next-themes"
+import { useEffect, useState } from "react"
 
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-	return <NextThemeProvider {...props}>{children}</NextThemeProvider>
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+	const [mounted, setMounted] = useState(false)
+
+	useEffect(() => {
+		setMounted(true)
+	}, [])
+
+	if (!mounted) {
+		return <>{children}</> // Prevent hydration mismatch
+	}
+
+	return (
+		<NextThemesProvider
+			attribute="class"
+			enableSystem={true}
+			enableColorScheme={false}
+			defaultTheme="dark"
+			themes={["dark", "light"]}
+		>
+			{children}
+		</NextThemesProvider>
+	)
 }
-
-export default ThemeProvider

@@ -4,7 +4,10 @@ import { Card, CardContent } from "@components/ui/card"
 
 export default function Portfolio() {
 	return (
-		<section className="w-full py-12 md:py-24 lg:py-32" id="portfolio">
+		<section
+			className="relative w-full h-[100vh] md:h-[100vh] lg:h-[100vh] overflow-hidden"
+			id="portfolio"
+		>
 			<div className="container px-4 md:px-6">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
 					<div className="space-y-2">

@@ -1,22 +1,22 @@
 import type { Metadata } from "next"
 import { Kalnia, Suwannaphum, Italiana } from "next/font/google"
 import { ThemeProvider } from "@components/theme/theme-provider"
+import { Layout } from "@components/dom/layout/Layout"
+// import Header from "@components/dom/header/header"
 import "./globals.css"
-import Header from "@components/dom/header/header"
-import Footer from "@components/dom/footer/footer"
 
-const kalnia = Kalnia({
-	subsets: ["latin"],
-	weight: "400",
-	variable: "--kalnia",
-})
-const suwannaphum = Suwannaphum({
-	subsets: ["latin"],
-	weight: "100",
-	variable: "--suwannaphum",
-})
+// const kalnia = Kalnia({
+// 	subsets: ["latin"],
+// 	weight: "400",
+// 	variable: "--kalnia",
+// })
+// const suwannaphum = Suwannaphum({
+// 	subsets: ["latin"],
+// 	weight: "100",
+// 	variable: "--suwannaphum",
+// })
 
-const farsan = Italiana({
+const italiana = Italiana({
 	subsets: ["latin"],
 	weight: "400",
 	variable: "--farsan",
@@ -37,12 +37,8 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${farsan.className}`}>
-				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-					<Header />
-					{children}
-					<Footer />
-				</ThemeProvider>
+			<body className={`${italiana.className}`}>
+				<ThemeProvider>{children}</ThemeProvider>
 			</body>
 		</html>
 	)

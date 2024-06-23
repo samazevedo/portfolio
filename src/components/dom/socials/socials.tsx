@@ -23,7 +23,7 @@ const SocialIcons = [
 	{
 		name: "twitter",
 		src: "/icons/socials/x.svg",
-		link: "https://twitter.com/samazevedo",
+		link: "https://twitter.com/SamAzevedo4",
 	},
 	{
 		name: "github",
@@ -33,7 +33,7 @@ const SocialIcons = [
 	{
 		name: "linkedin",
 		src: "/icons/socials/linkedin.svg",
-		link: "https://www.linkedin.com/in/sam-azevedo/",
+		link: "https://www.linkedin.com/in/samuel-azevedo-908a5b53/",
 	},
 	{
 		name: "behance",

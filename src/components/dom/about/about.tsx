@@ -18,11 +18,12 @@ const tools = [
 	{ name: "MongoDB", icon: "/icons/tech/mongodb.svg" },
 	{ name: "Chakra UI", icon: "/icons/tech/chakraui.svg" },
 	{ name: "Corel Draw", icon: "/icons/tech/coreldraw.svg" },
+	// bg-blue-100 dark:bg-blue-900
 ]
 export default function About() {
 	return (
 		<section
-			className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800"
+			className="relative w-full h-[100vh] md:h-[100vh] lg:h-[100vh] overflow-hidden "
 			id="about"
 		>
 			<div className="container px-4 md:px-6">

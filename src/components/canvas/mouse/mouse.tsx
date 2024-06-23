@@ -31,19 +31,19 @@ export const Mouse = () => {
 		})
 	})
 
-	useEffect(() => {
-		const handleMouseMove = (event: MouseEvent) => {
-			event.preventDefault()
-			const x = (event.clientX / window.innerWidth) * 2 + 1
-			const y = -(event.clientY / window.innerHeight) * 2 - 1
-			api.start({ position: [x, y, 0] })
-		}
+	// useEffect(() => {
+	// 	const handleMouseMove = (event: MouseEvent) => {
+	// 		event.preventDefault()
+	// 		const x = event.x / window.innerWidth
+	// 		const y = -(event.y / window.innerHeight)
+	// 		api.start({ position: [x, y, 0] })
+	// 	}
 
-		window.addEventListener("mousemove", handleMouseMove)
-		return () => {
-			window.removeEventListener("mousemove", handleMouseMove)
-		}
-	}, [api, viewport])
+	// 	window.addEventListener("mousemove", handleMouseMove)
+	// 	return () => {
+	// 		window.removeEventListener("mousemove", handleMouseMove)
+	// 	}
+	// }, [api, viewport])
 
 	return (
 		<a.mesh ref={meshRef} position={spring.position.to((x, y, z) => [x, y, z])}>

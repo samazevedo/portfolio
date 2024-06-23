@@ -1,10 +1,6 @@
-import Link from "next/link"
-import Image from "next/image"
+import { SmoothLink } from "../smooth-link/smooth-link"
 import { Sheet, SheetTrigger, SheetContent } from "@components/ui/sheet"
 import { Button } from "@components/ui/button"
-import { useMemo } from "react"
-import { transform } from "next/dist/build/swc"
-import { ModeSwitch } from "../mode-switcher/mode-switch"
 
 export default function Menu() {
 	return (
@@ -16,34 +12,34 @@ export default function Menu() {
 			</SheetTrigger>
 			<SheetContent side="left">
 				<div className="grid gap-2 py-6">
-					<Link
-						href="#"
+					<SmoothLink
+						href="home"
 						className="flex w-full items-center py-2 text-lg font-semibold"
 						prefetch={false}
 					>
 						Home
-					</Link>
-					<Link
-						href="#about"
+					</SmoothLink>
+					<SmoothLink
+						href="about"
 						className="flex w-full items-center py-2 text-lg font-semibold"
 						prefetch={false}
 					>
 						About
-					</Link>
-					<Link
-						href="#portfolio"
+					</SmoothLink>
+					<SmoothLink
+						href="portfolio"
 						className="flex w-full items-center py-2 text-lg font-semibold"
 						prefetch={false}
 					>
 						Portfolio
-					</Link>
-					<Link
-						href="#contact"
+					</SmoothLink>
+					<SmoothLink
+						href="contact"
 						className="flex w-full items-center py-2 text-lg font-semibold"
 						prefetch={false}
 					>
 						Contact
-					</Link>
+					</SmoothLink>
 				</div>
 			</SheetContent>
 		</Sheet>

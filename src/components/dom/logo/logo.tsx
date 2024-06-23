@@ -1,9 +1,13 @@
-import Link from "next/link"
+import { SmoothLink } from "../smooth-link/smooth-link"
 
 export default function Logo() {
 	return (
-		<Link href="#" className="inline-flex items-center gap-2" prefetch={false}>
+		<SmoothLink
+			href="home"
+			className="inline-flex items-center gap-2"
+			prefetch={false}
+		>
 			<span className="text-xl font-bold">Sam Azevedo</span>
-		</Link>
+		</SmoothLink>
 	)
 }

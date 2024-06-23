@@ -13,12 +13,12 @@ export default function Hero() {
 			/> */}
 			<div className="absolute inset-0  grid grid-rows-[1.5fr_1.0fr_0.5fr] justify-center">
 				<div className="text-center space-y-4 max-w-2xl px-4 md:px-6 self-end">
-					<h1 className="text-3xl font-bold tracking-tighter   sm:text-4xl md:text-6xl text-green-400">
+					<h1 className="text-5xl font-bold tracking-tighter   sm:text-5xl md:text-6xl text-black dark:text-lime-400">
 						Sam Azevedo
 					</h1>
 				</div>
 				<div className="text-center space-y-4 max-w-2xl px-4 md:px-6 self-start">
-					<p className="text-lg text-gray-400 sm:text-md md:text-xl">
+					<p className="text-lg text-gray-700 dark:text-gray-100 sm:text-md md:text-xl">
 						Front End Web Developer | Designer.
 					</p>
 				</div>
