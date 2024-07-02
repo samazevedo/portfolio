@@ -43,7 +43,7 @@ export const Scene = () => {
 			<Suspense fallback={null}>
 				<Logo3D />
 			</Suspense>
-			<Perf />
+			{/* <Perf /> */}
 		</Canvas>
 	)
 }
