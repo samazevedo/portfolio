@@ -42,14 +42,16 @@ export const Sphere = ({
 
 	return (
 		<a.mesh ref={meshRef} position={position}>
-			<boxGeometry args={[0.002, 0.005, 0.0002]} />
-			<rawShaderMaterial
+			<boxGeometry args={[0.0005, 0.0005, 0.0005]} />
+			{/* <rawShaderMaterial
 				vertexShader={vertex}
 				fragmentShader={fragment}
 				uniforms={uniforms}
 				transparent
+				wireframe
 				glslVersion={THREE.GLSL3}
-			/>
+			/> */}
+			{/* <meshStandardMaterial map={texture} /> */}
 		</a.mesh>
 	)
 }

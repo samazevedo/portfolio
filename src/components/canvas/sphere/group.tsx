@@ -8,7 +8,7 @@ export const SphereGroup = () => {
 	const group1Ref = useRef<THREE.Group>(null!)
 	const group2Ref = useRef<THREE.Group>(null!)
 	// sphere count
-	const sphereCount = 500
+	const sphereCount = 100
 	const radius = 0.15
 
 	// sphere position
@@ -57,11 +57,11 @@ export const SphereGroup = () => {
 					<Sphere key={i} position={[pos.x, pos.y, pos.z]} />
 				))}
 			</group>
-			<group ref={group2Ref}>
+			{/* <group ref={group2Ref}>
 				{spherePosition2.map((pos, i) => (
 					<Sphere2 key={i} position={[pos.x, pos.y, pos.z]} />
 				))}
-			</group>
+			</group> */}
 		</group>
 	)
 }

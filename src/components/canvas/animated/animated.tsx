@@ -1,6 +1,7 @@
 import { MeshProps } from "@react-three/fiber"
 import { a, useSpring } from "@react-spring/three"
 interface AnimatedProps extends MeshProps {
+	style?: React.CSSProperties
 	scrollY: number
 	configs: {
 		start: number
