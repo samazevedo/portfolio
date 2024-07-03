@@ -9,7 +9,7 @@ export default function Header() {
 			{/* <Logo /> */} <div> {""}</div>
 			<Nav />
 			<Menu />
-			<ModeSwitch />
+			{/* <ModeSwitch /> */}
 		</header>
 	)
 }

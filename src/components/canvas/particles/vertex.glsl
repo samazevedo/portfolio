@@ -13,7 +13,6 @@ uniform sampler2D uDisplacement;
 
 void main(){
     vUv = uv;
-
     // Final Position 
     // vec4 modelPostion = modelViewMatrix * vec4(position, 1.0);
     // vec4 viewPosition = modelViewMatrix * modelPostion;

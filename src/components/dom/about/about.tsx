@@ -23,23 +23,38 @@ const tools = [
 export default function About() {
 	return (
 		<section
-			className="relative w-full h-[100vh] md:h-[100vh] lg:h-[100vh] overflow-hidden "
+			className="relative w-full h-[100vh] md:h-[100vh] lg:h-[100vh] overflow-hidden  "
 			id="about"
 		>
-			<div className="container px-4 md:px-6">
+			<div className="container px-4 md:px-6 mt-10">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
 					<div className="space-y-2">
-						<div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+						{/* <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
 							About Me
-						</div>
+						</div> */}
 						<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-							Get to Know Me
+							Who am I?
 						</h2>
-						<p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-							I&apos;m a front-end web developer and designer who loves creating
-							beautiful, responsive and interactive websites.
+						<p className="max-w-[900px] text-gray-900 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+							Hello! My name is <span className="text-lime-600">Samuel Azevedo</span>,
+							and I am a passionate{" "}
+							<span className="text-lime-600">Front-end Developer</span> and{" "}
+							<span className="text-lime-600">Designer</span>. I specialize in creating
+							visually stunning, responsive, and interactive web applications that
+							provide seamless user experiences.
 						</p>
-					</div>
+						<p className="max-w-[900px] text-gray-900 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+							With a keen eye for detail and a dedication to the craft, I bring ideas
+							to life through code and design. Whether it's building from scratch or
+							enhancing existing projects, I thrive on delivering high-quality results.
+						</p>
+						<p className="max-w-[900px] text-gray-900 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+							Currently, I am working as a freelancer, collaborating with clients to
+							create web applications that not only look great but also function
+							flawlessly. Let's build something amazing together!
+						</p>
+						<div></div>
+						{/* </div>
 					<h2>Tools I use:</h2>
 
 					<div className="grid grid-cols-3 md:grid-cols-7 gap-4">
@@ -52,7 +67,7 @@ export default function About() {
 								width={5}
 								height={5}
 							/>
-						))}
+						))} */}
 					</div>
 
 					{/* <Link
