@@ -39,31 +39,43 @@ export const Logo3D = () => {
 			start: 0,
 			end: 300,
 			startProps: {
-				position: [0, 0, -0.3],
+				position: [0, 0, -0.2],
 				scale: 0.4,
 				rotation: [0, 0, 0],
 			},
 			endProps: {
-				position: [0, 0, 0.5],
+				position: [0, 0, -30.5],
 				scale: 1.0,
-				rotation: [0, 7, 0],
+				rotation: [0, 1, 0],
 			},
 		},
 		{
 			start: 300,
 			end: 500,
 			startProps: {
-				position: [0, 0, 0.5],
+				position: [0, 0, -20.5],
 				scale: 1.0,
-				rotation: [0, 7, 0],
+				rotation: [0, 0, 0],
 			},
-			endProps: { position: [-0.3, 0.8, 0], scale: 0.01, rotation: [0, 0, 0] },
+			endProps: {
+				position: [-0.3, 0.72, 0],
+				scale: 0.1,
+				rotation: [0.6, 0, 0],
+			},
 		},
 		{
 			start: 500,
 			end: 4000,
-			startProps: { position: [-0.3, 0.8, 0], scale: 0.1, rotation: [0, 0, 0] },
-			endProps: { position: [-0.3, 0.8, 0], scale: 0.1, rotation: [0, 0, 0] },
+			startProps: {
+				position: [-0.3, 0.72, 0],
+				scale: 0.1,
+				rotation: [0.6, 0, 0],
+			},
+			endProps: {
+				position: [-0.3, 0.72, 0],
+				scale: 0.1,
+				rotation: [0.7, 0, 0],
+			},
 		},
 	]
 

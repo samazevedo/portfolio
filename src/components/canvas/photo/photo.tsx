@@ -132,10 +132,12 @@ export const Photo = () => {
 			endProps: { position: [3, 0, 0], scale: 0.4, rotation: [0, 0, 0] },
 		},
 	]
+	const scale = 0.4
+	const { size } = useThree((state) => state)
 
 	return (
 		<Animated scrollY={scrollY} configs={config}>
-			<points ref={pointsRef} position={[0, 0, -2]}>
+			<points ref={pointsRef} position={[0, 0.7, -2]}>
 				<planeGeometry args={[3, 3, 128, 128]} />
 				{/* <bufferGeometry>
 				<bufferAttribute

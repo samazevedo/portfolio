@@ -23,7 +23,7 @@ const tools = [
 export default function About() {
 	return (
 		<section
-			className="relative w-full h-[100vh] md:h-[100vh] lg:h-[100vh] overflow-hidden  "
+			className="relative w-full h-[100vh] md:h-[100vh] lg:h-[100vh] "
 			id="about"
 		>
 			<div className="container px-4 md:px-6 mt-10">

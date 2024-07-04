@@ -5,7 +5,7 @@ import { Card, CardContent } from "@components/ui/card"
 export default function Portfolio() {
 	return (
 		<section
-			className="relative w-full h-[100vh] md:h-[100vh] lg:h-[100vh] overflow-hidden"
+			className="relative w-full h-[100vh] md:h-[100vh] lg:h-[100vh] overflow-hidden "
 			id="portfolio"
 		>
 			<div className="container px-4 md:px-6">
