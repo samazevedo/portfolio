@@ -3,7 +3,7 @@ import { useTheme } from "next-themes"
 export default function Socials() {
 	const { theme } = useTheme()
 	return (
-		<div className="flex gap-4 ">
+		<div className="grid grid-cols-4 place-items-center gap-4 text-center ">
 			{SocialIcons.map((social) => (
 				<a key={social.name} href={social.link} target="_blank" rel="noreferrer">
 					<Image

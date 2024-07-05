@@ -1,8 +1,8 @@
 import * as THREE from "three"
 import { useMemo, useRef, useState } from "react"
-// import vertex from "./vertex.glsl"
-// import fragment from "./fragment.glsl"
-import { Text3D, Center } from "@react-three/drei"
+import vertex from "./vertex.glsl"
+import fragment from "./fragment.glsl"
+import { Text3D, Center, MeshTransmissionMaterial } from "@react-three/drei"
 import { useFrame, useLoader, useThree } from "@react-three/fiber"
 import { useSpring, a } from "@react-spring/three"
 import { Animated } from "../animated/animated"
@@ -10,15 +10,15 @@ import { useScrollPosition } from "@hooks/useScrollPosition"
 
 export const Logo3D = () => {
 	const meshRef = useRef<THREE.Mesh>(null!)
-	const texture = useLoader(THREE.TextureLoader, "/assets/matcaps/green.png")
+	const texture = useLoader(THREE.TextureLoader, "/assets/matcaps/mirror.png")
 	// const texture2 = useLoader(THREE.TextureLoader, "/assets/matcaps/orange.png")
-	// const uniforms = useMemo(
-	// 	() => ({
-	// 		uTime: { value: 0 },
-	// 		uTexture: { value: texture },
-	// 	}),
-	// 	[texture]
-	// )
+	const uniforms = useMemo(
+		() => ({
+			uTime: { value: 0 },
+			uTexture: { value: texture },
+		}),
+		[texture]
+	)
 	const scrollY = useScrollPosition()
 	console.log(scrollY)
 	const config: {
@@ -95,7 +95,7 @@ export const Logo3D = () => {
 	return (
 		<Animated configs={config} scrollY={scrollY} style={{ zIndex: 10 }}>
 			<Center>
-				<a.mesh ref={meshRef} rotation={[0, 0, 0]}>
+				<a.mesh ref={meshRef}>
 					<Text3D
 						castShadow
 						font="/fonts/italiana-regular.json"
@@ -107,18 +107,22 @@ export const Logo3D = () => {
 						bevelSize={0.02}
 						bevelOffset={0}
 						bevelSegments={5}
-						position={[0, 0, -2]}
+						position={[0, 0, -3]}
 					>
 						SAM
-						<meshMatcapMaterial map={texture} />
-					</Text3D>
-
-					{/* <rawShaderMaterial
+						{/* <rawShaderMaterial
 							vertexShader={vertex}
 							fragmentShader={fragment}
 							uniforms={uniforms}
 							glslVersion={THREE.GLSL3}
 						/> */}
+						<MeshTransmissionMaterial
+							map={texture}
+							roughness={0.1}
+							opacity={0.7}
+							transmission={1.5}
+						/>
+					</Text3D>
 				</a.mesh>
 			</Center>
 		</Animated>

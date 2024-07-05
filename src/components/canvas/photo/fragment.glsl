@@ -15,11 +15,11 @@ void main() {
 
     vec2 uv = gl_PointCoord;
     // float distanceToCenter = distance(uv, vec2(0.5));
-    float distanceToCenter = length(uv - vec2(0.5));
+    float distanceToCenter = length(uv - vec2(0.7));
     if(distanceToCenter > 0.5){
         discard;
     }
 
     // fragColor = vec4(vec3(distanceToCenter),1.0);
-    fragColor = vec4(vColor * uColor , 1.0);
+    fragColor = vec4(vColor * uColor , .3);
 }

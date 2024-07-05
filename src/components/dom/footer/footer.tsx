@@ -8,9 +8,7 @@ export default function Footer() {
 				&copy; {currentYear} Sam Azevedo - Portfolio | All rights reserved.
 			</p>
 			<nav className="sm:ml-auto flex gap-4 sm:gap-6">
-				<ul>
-					<Socials />
-				</ul>
+				<ul>{/* <Socials /> */}</ul>
 			</nav>
 		</footer>
 	)

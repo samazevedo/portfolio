@@ -21,7 +21,7 @@ export const Photo = () => {
 			uResolution: {
 				value: new THREE.Vector2(window.innerWidth, window.innerHeight),
 			},
-			uColor: { value: new THREE.Color("#e9e9e9") },
+			uColor: { value: new THREE.Color("#d5e3c3") },
 		}),
 		[theme]
 	)
@@ -107,7 +107,7 @@ export const Photo = () => {
 		},
 		{
 			start: 1250,
-			end: 1500,
+			end: 1400,
 			startProps: {
 				position: [0, 0, 0],
 				scale: 0.4,
@@ -120,7 +120,7 @@ export const Photo = () => {
 			},
 		},
 		{
-			start: 1500,
+			start: 1400,
 			end: 2000,
 			startProps: { position: [0, 0, 0], scale: 0.4, rotation: [0, 0, 0] },
 			endProps: { position: [3, 0, 0], scale: 0.4, rotation: [0, 0, 0] },

@@ -3,16 +3,10 @@ import { Input } from "@components/ui/input"
 import { Textarea } from "@components/ui/textarea"
 export default function Contact() {
 	return (
-		<section
-			className="relative w-full h-[80vh] md:h-[80vh] lg:h-[80vh] overflow-hidden"
-			id="contact"
-		>
+		<section className="min-h-[90vh] " id="contact">
 			<div className="container px-4 md:px-6">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
-					<div className="space-y-2">
-						<div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-							Contact Me
-						</div>
+					<div className="space-y-2 mt-20">
 						<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
 							Get in Touch
 						</h2>
@@ -21,8 +15,8 @@ export default function Contact() {
 							or inquiries.
 						</p>
 					</div>
-					<form className="mx-auto w-full max-w-sm space-y-2">
-						<Input type="text" placeholder="Name" className="max-w-lg flex-1" />
+					<form className="mx-auto w-full max-w-sm space-y-2 pt-20">
+						<Input type="text" placeholder="Name" className="max-w-lg flex-1 " />
 						<Input type="email" placeholder="Email" className="max-w-lg flex-1" />
 						<Textarea placeholder="Message" className="max-w-lg flex-1" />
 						<Button type="submit">Submit</Button>

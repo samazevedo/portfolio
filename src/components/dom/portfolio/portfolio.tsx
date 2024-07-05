@@ -4,16 +4,10 @@ import { Card, CardContent } from "@components/ui/card"
 
 export default function Portfolio() {
 	return (
-		<section
-			className="relative w-full h-[100vh] md:h-[100vh] lg:h-[100vh] overflow-hidden "
-			id="portfolio"
-		>
+		<section className="min-h-[100vh] " id="portfolio">
 			<div className="container px-4 md:px-6">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
-					<div className="space-y-2">
-						<div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-							My Projects
-						</div>
+					<div className="space-y-2 mt-20">
 						<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
 							Explore My Work
 						</h2>
@@ -27,16 +21,18 @@ export default function Portfolio() {
 					<Card>
 						<CardContent>
 							<Image
-								src="/next.svg"
+								src="/images/next-blog.png"
 								alt="Project 1"
 								className="rounded-t-lg w-full aspect-[4/3] object-cover"
-								width={1920}
-								height={1080}
+								width={200}
+								height={300}
+								objectFit="fill"
 							/>
 							<div className="p-4 space-y-2">
 								<h3 className="text-xl font-bold">Project 1</h3>
 								<p className="text-gray-500 dark:text-gray-400">
-									A brief description of the first project.
+									Next.js Blogging Web App, created with Next.js and deployed with
+									Vercel.
 								</p>
 								<div className="flex justify-end">
 									<Link

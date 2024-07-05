@@ -22,16 +22,10 @@ const tools = [
 ]
 export default function About() {
 	return (
-		<section
-			className="relative w-full h-[100vh] md:h-[100vh] lg:h-[100vh] "
-			id="about"
-		>
-			<div className="container px-4 md:px-6 mt-10">
+		<section className="min-h-[100vh]" id="about">
+			<div className="container px-4 md:px-6">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
-					<div className="space-y-2">
-						{/* <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-							About Me
-						</div> */}
+					<div className="space-y-2 mt-20">
 						<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
 							Who am I?
 						</h2>
@@ -77,6 +71,8 @@ export default function About() {
 					>
 						Learn More
 					</Link> */}
+					<div className="min-h-[50vh]"></div>
+					<div></div>
 				</div>
 			</div>
 		</section>
