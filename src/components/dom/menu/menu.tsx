@@ -1,45 +1,54 @@
 import { SmoothLink } from "../smooth-link/smooth-link"
 import { Sheet, SheetTrigger, SheetContent } from "@components/ui/sheet"
 import { Button } from "@components/ui/button"
+import Socials from "../socials/socials"
+import { ModeSwitch } from "../mode-switcher/mode-switch"
 
 export default function Menu() {
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
-				<Button variant="ghost" size="icon" className="ml-auto md:hidden">
+				<Button variant="ghost" size="icon" className="ml-auto md:hidden size-10">
 					<MenuIcon />
 				</Button>
 			</SheetTrigger>
-			<SheetContent side="left">
-				<div className="grid gap-2 py-6">
+			<SheetContent
+				side="top"
+				className="w-full h-full opacity-70 grid grid-rows-2 gap-2 p-2 "
+			>
+				<div className="grid gap-2 py-6 w-full h-full text-center mt-40 first:text-8xl font-bold ">
 					<SmoothLink
 						href="home"
-						className="flex w-full items-center py-2 text-lg font-semibold"
 						prefetch={false}
+						className="hover:text-lime-400 transition-all duration-300 ease-in-out "
 					>
 						Home
 					</SmoothLink>
 					<SmoothLink
 						href="about"
-						className="flex w-full items-center py-2 text-lg font-semibold"
 						prefetch={false}
+						className="hover:text-lime-400 transition-all duration-300 ease-in-out"
 					>
 						About
 					</SmoothLink>
 					<SmoothLink
 						href="portfolio"
-						className="flex w-full items-center py-2 text-lg font-semibold"
 						prefetch={false}
+						className="hover:text-lime-400 transition-all duration-300 ease-in-out"
 					>
 						Portfolio
 					</SmoothLink>
 					<SmoothLink
 						href="contact"
-						className="flex w-full items-center py-2 text-lg font-semibold"
 						prefetch={false}
+						className="hover:text-lime-400 transition-all duration-300 ease-in-out"
 					>
 						Contact
 					</SmoothLink>
+				</div>
+				<div className="grid grid-cols-2   h-5 align-items-center align-items-end mt-[32rem]">
+					<Socials />
+					<ModeSwitch />
 				</div>
 			</SheetContent>
 		</Sheet>

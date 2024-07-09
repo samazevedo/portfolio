@@ -8,76 +8,24 @@ import { useSpring, a } from "@react-spring/three"
 import { Animated } from "../animated/animated"
 import { useScrollPosition } from "@hooks/useScrollPosition"
 
-export const Logo3D = () => {
+interface Props {
+	children: string
+	position?: [number, number, number]
+	scale?: number
+	rotation?: [number, number, number]
+}
+
+export const Logo3D = ({ children, position, scale, rotation }: Props) => {
 	const meshRef = useRef<THREE.Mesh>(null!)
 	const texture = useLoader(THREE.TextureLoader, "/assets/matcaps/mirror.png")
 	// const texture2 = useLoader(THREE.TextureLoader, "/assets/matcaps/orange.png")
-	const uniforms = useMemo(
-		() => ({
-			uTime: { value: 0 },
-			uTexture: { value: texture },
-		}),
-		[texture]
-	)
-	const scrollY = useScrollPosition()
-	console.log(scrollY)
-	const config: {
-		start: number
-		end: number
-		startProps: {
-			position: [number, number, number]
-			scale: number
-			rotation: [number, number, number]
-		}
-		endProps: {
-			position: [number, number, number]
-			scale: number
-			rotation: [number, number, number]
-		}
-	}[] = [
-		{
-			start: 0,
-			end: 300,
-			startProps: {
-				position: [0, 0, -0.2],
-				scale: 0.4,
-				rotation: [0, 0, 0],
-			},
-			endProps: {
-				position: [0, 0, -30.5],
-				scale: 1.0,
-				rotation: [0, 1, 0],
-			},
-		},
-		{
-			start: 300,
-			end: 500,
-			startProps: {
-				position: [0, 0, -20.5],
-				scale: 1.0,
-				rotation: [0, 0, 0],
-			},
-			endProps: {
-				position: [-0.3, 0.72, 0],
-				scale: 0.1,
-				rotation: [0.6, 0, 0],
-			},
-		},
-		{
-			start: 500,
-			end: 4000,
-			startProps: {
-				position: [-0.3, 0.72, 0],
-				scale: 0.1,
-				rotation: [0.6, 0, 0],
-			},
-			endProps: {
-				position: [-0.3, 0.72, 0],
-				scale: 0.1,
-				rotation: [0.7, 0, 0],
-			},
-		},
-	]
+	// const uniforms = useMemo(
+	// 	() => ({
+	// 		uTime: { value: 0 },
+	// 		uTexture: { value: texture },
+	// 	}),
+	// 	[texture]
+	// )
 
 	// const [clicked, setClicked] = useState(false)
 
@@ -91,40 +39,40 @@ export const Logo3D = () => {
 	// 		precision: 0.0001,
 	// 	},
 	// }))
+	useFrame((state) => {
+		meshRef.current.geometry.center()
+	})
 
 	return (
-		<Animated configs={config} scrollY={scrollY} style={{ zIndex: 10 }}>
-			<Center>
-				<a.mesh ref={meshRef}>
-					<Text3D
-						castShadow
-						font="/fonts/italiana-regular.json"
-						size={0.5}
-						height={0.1}
-						curveSegments={10}
-						bevelEnabled
-						bevelThickness={0.1}
-						bevelSize={0.02}
-						bevelOffset={0}
-						bevelSegments={5}
-						position={[0, 0, -3]}
-					>
-						SAM
-						{/* <rawShaderMaterial
+		<Text3D
+			ref={meshRef}
+			position={position}
+			scale={scale}
+			rotation={rotation}
+			castShadow
+			font="/fonts/italiana-regular.json"
+			size={0.5}
+			height={0.1}
+			curveSegments={10}
+			bevelEnabled
+			bevelThickness={0.1}
+			bevelSize={0.02}
+			bevelOffset={0}
+			bevelSegments={5}
+		>
+			{children}
+			{/* <rawShaderMaterial
 							vertexShader={vertex}
 							fragmentShader={fragment}
 							uniforms={uniforms}
 							glslVersion={THREE.GLSL3}
 						/> */}
-						<MeshTransmissionMaterial
-							map={texture}
-							roughness={0.1}
-							opacity={0.7}
-							transmission={1.5}
-						/>
-					</Text3D>
-				</a.mesh>
-			</Center>
-		</Animated>
+			<MeshTransmissionMaterial
+				map={texture}
+				ior={0.2}
+				opacity={0.9}
+				transmission={2.5}
+			/>
+		</Text3D>
 	)
 }

@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
-import { Kalnia, Suwannaphum, Italiana } from "next/font/google"
+import { Italiana } from "next/font/google"
 import { ThemeProvider } from "@components/theme/theme-provider"
-import { Layout } from "@components/dom/layout/Layout"
 // import Header from "@components/dom/header/header"
 import "./globals.css"
 

@@ -2,7 +2,13 @@
 import * as THREE from "three"
 import { Suspense, useEffect, useRef } from "react"
 import { Canvas, useThree, useFrame } from "@react-three/fiber"
-import { Cloud, Environment, Sparkles } from "@react-three/drei"
+import {
+	Cloud,
+	Environment,
+	Scroll,
+	ScrollControls,
+	Sparkles,
+} from "@react-three/drei"
 import { useTheme } from "next-themes"
 import { Particle } from "../particles/particle"
 import { Perf } from "r3f-perf"
@@ -11,7 +17,7 @@ import { Photo } from "../photo/photo"
 import { Grid } from "../grid/grid"
 import { BG } from "../bg/bg"
 
-export const Scene = () => {
+export const Scene = ({ children }: { children: React.ReactNode }) => {
 	const canvasRef = useRef<HTMLCanvasElement>(null!)
 	// change canvas bg color based on theme
 	const { theme } = useTheme()
@@ -27,47 +33,27 @@ export const Scene = () => {
 				far: 100,
 			}}
 			dpr={[1, 2]}
-			style={{
-				position: "fixed",
-				overflow: "hidden",
-				top: 0,
-				left: 0,
-				width: "100%",
-				height: "100%",
-				zIndex: -1,
-			}}
 			gl={{
 				antialias: true,
 			}}
+			style={{
+				width: "100vw",
+				height: "100vh",
+
+				pointerEvents: "none",
+				position: "absolute",
+				top: 0,
+				left: 0,
+				zIndex: -1,
+				overflow: "hidden",
+			}}
 		>
-			<ambientLight intensity={0.05} />
-			{/* <pointLight position={[1, 1, 1]} /> */}
+			<ambientLight intensity={0.2} />
+
 			<color attach="background" args={[bg]} />
 
-			<Suspense fallback={null}>
-				<Logo3D />
-
-				<Photo />
-				{/* <BG /> */}
-				<Environment preset="night" />
-
-				<Sparkles
-					position={[0, 0, -1]}
-					count={50}
-					scale={1.9}
-					speed={0.3}
-					size={2.5}
-					noise={10.1}
-					color="#488d2d"
-				/>
-				<Cloud
-					position={[0, 0, -1]}
-					scale={0.7}
-					speed={0.05}
-					color={theme === "dark" ? "#ccbee1" : "#256722"}
-				/>
-			</Suspense>
-			{/* <Perf /> */}
+			<Suspense fallback={null}>{children}</Suspense>
+			<Perf />
 		</Canvas>
 	)
 }

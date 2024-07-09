@@ -79,35 +79,22 @@ export const Photo = () => {
 	}[] = [
 		{
 			start: 0,
-			end: 800,
+			end: 1200,
 			startProps: {
-				position: [-3, 0, 0],
+				position: [0, 0, -100],
 				scale: 0.4,
 				rotation: [0, 0, 0],
 			},
 			endProps: {
-				position: [-2, 0, 0.5],
+				position: [0, 0, -100],
 				scale: 0.4,
 				rotation: [0, 0, 0],
 			},
 		},
+
 		{
-			start: 800,
-			end: 1250,
-			startProps: {
-				position: [-2, 0, 0.5],
-				scale: 0.4,
-				rotation: [0, 0, 0],
-			},
-			endProps: {
-				position: [0, 0, 0],
-				scale: 0.4,
-				rotation: [0, 0, 0],
-			},
-		},
-		{
-			start: 1250,
-			end: 1400,
+			start: 1200,
+			end: 1600,
 			startProps: {
 				position: [0, 0, 0],
 				scale: 0.4,
@@ -120,20 +107,34 @@ export const Photo = () => {
 			},
 		},
 		{
-			start: 1400,
-			end: 2000,
-			startProps: { position: [0, 0, 0], scale: 0.4, rotation: [0, 0, 0] },
-			endProps: { position: [3, 0, 0], scale: 0.4, rotation: [0, 0, 0] },
+			start: 1600,
+			end: 1700,
+			startProps: {
+				position: [0, 0, 0],
+				scale: 0.4,
+				rotation: [0, 0, 0],
+			},
+			endProps: {
+				position: [0, 0, -100],
+				scale: 0.4,
+				rotation: [0, 0, 0],
+			},
 		},
 		{
-			start: 2000,
+			start: 1700,
 			end: 4000,
-			startProps: { position: [3, 0, 0], scale: 0.4, rotation: [0, 0, 0] },
-			endProps: { position: [3, 0, 0], scale: 0.4, rotation: [0, 0, 0] },
+			startProps: {
+				position: [0, 0, -100],
+				scale: 0.4,
+				rotation: [0, 0, 0],
+			},
+			endProps: {
+				position: [0, 0, -100],
+				scale: 0.4,
+				rotation: [0, 0, 0],
+			},
 		},
 	]
-	const scale = 0.4
-	const { size } = useThree((state) => state)
 
 	return (
 		<Animated scrollY={scrollY} configs={config}>
