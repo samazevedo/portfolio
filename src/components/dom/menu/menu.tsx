@@ -14,9 +14,9 @@ export default function Menu() {
 			</SheetTrigger>
 			<SheetContent
 				side="top"
-				className="w-[100vw] h-[100vh] opacity-70 grid grid-rows-2 gap-2 p-2 "
+				className="w-full  h-full opacity-70 grid grid-rows-[1.8fr_0.2fr] gap-2 p-2"
 			>
-				<div className="grid gap-2 py-6 w-full h-full text-center pt-40 lg:text-8xl md:text-5xl sm:text-5xl font-bold ">
+				<div className="grid grid-rows-4 gap-1 place-items-center text-4xl lg:text-8xl md:text-6xl font-bold mt-10">
 					<SmoothLink
 						href="home"
 						prefetch={false}
@@ -46,9 +46,11 @@ export default function Menu() {
 						Contact
 					</SmoothLink>
 				</div>
-				<div className="grid grid-cols-2   h-5 align-items-center align-items-end mt-[32rem]">
+				<div className="grid grid-cols-2 place-items-center gap-10  ">
 					<Socials />
-					<ModeSwitch />
+					<div className=" justify-self-end">
+						<ModeSwitch />
+					</div>
 				</div>
 			</SheetContent>
 		</Sheet>

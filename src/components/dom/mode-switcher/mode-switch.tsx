@@ -10,7 +10,6 @@ export function ModeSwitch() {
 		<Button
 			onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
 			variant="ghost"
-			className="w-9 h-9 p-0 justify-self-end md:grid"
 		>
 			<AnimatedIcon />
 		</Button>
