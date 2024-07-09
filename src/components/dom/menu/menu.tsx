@@ -14,9 +14,9 @@ export default function Menu() {
 			</SheetTrigger>
 			<SheetContent
 				side="top"
-				className="w-full h-full opacity-70 grid grid-rows-2 gap-2 p-2 "
+				className="w-[100vw] h-[100vh] opacity-70 grid grid-rows-2 gap-2 p-2 "
 			>
-				<div className="grid gap-2 py-6 w-full h-full text-center mt-40 first:text-8xl font-bold ">
+				<div className="grid gap-2 py-6 w-full h-full text-center mt-40 first:text-8xl sm:text-5xl font-bold ">
 					<SmoothLink
 						href="home"
 						prefetch={false}
