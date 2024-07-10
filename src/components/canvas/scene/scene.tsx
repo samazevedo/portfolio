@@ -16,44 +16,54 @@ import { Logo3D } from "../logo3d/logo3d"
 import { Photo } from "../photo/photo"
 import { Grid } from "../grid/grid"
 import { BG } from "../bg/bg"
-
-export const Scene = ({ children }: { children: React.ReactNode }) => {
+import {
+	EffectComposer,
+	Glitch,
+	ChromaticAberration,
+} from "@react-three/postprocessing"
+import { BlendFunction } from "postprocessing"
+export const Scene = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null!)
 	// change canvas bg color based on theme
 	const { theme } = useTheme()
-	const bg = theme === "dark" ? "#1C1C1C" : "#aec670"
+	const bg = theme === "dark" ? "#000000" : "#3d3d66"
+	const delay = new THREE.Vector2(0.8, 0.6)
+
+	const offset = new THREE.Vector2(0.01, 0.01)
 
 	return (
 		<Canvas
-			ref={canvasRef}
-			camera={{
-				position: [0, 0, 1],
-				fov: 75,
-				near: 0.1,
-				far: 100,
-			}}
+			camera={{ position: [0, 0, 2], fov: 75, near: 0.1, far: 100 }}
 			dpr={[1, 2]}
-			gl={{
-				antialias: true,
-			}}
+			gl={{ antialias: true }}
 			style={{
-				width: "100vw",
-				height: "100vh",
-
 				pointerEvents: "none",
 				position: "absolute",
 				top: 0,
 				left: 0,
 				zIndex: -1,
-				overflow: "hidden",
 			}}
+			shadows
 		>
-			<ambientLight intensity={0.2} />
-
 			<color attach="background" args={[bg]} />
 
-			<Suspense fallback={null}>{children}</Suspense>
-			<Perf />
+			<Logo3D />
+
+			<BG />
+			<Suspense fallback={null}>
+				<EffectComposer>
+					<Glitch blendFunction={BlendFunction.OVERLAY} active delay={delay} />
+					<ChromaticAberration
+						blendFunction={BlendFunction.NORMAL}
+						offset={offset}
+						radialModulation={true}
+						modulationOffset={0.01}
+					/>
+				</EffectComposer>
+				<ambientLight intensity={0.15} />
+				<Environment preset="night" />
+				<Perf />
+			</Suspense>
 		</Canvas>
 	)
 }

@@ -28,19 +28,7 @@ export default function Home() {
 
 	return (
 		<>
-			{/* <Scene>
-				<Cloud scale={0.5} position={[0, 0, 0]} castShadow />
-				<Sparkles
-					count={100}
-					scale={1}
-					position={[0, 0, -0.1]}
-					castShadow
-					speed={0.3}
-					color={"#268a1f"}
-				/>
-				<Logo3D children={"SAM"} position={[0, 0.1, 0]} scale={0.22} />
-				<Logo3D children={"AZEVEDO"} position={[0, -0.02, 0]} scale={0.2} />
-			</Scene> */}
+			<Scene />
 			<Main>
 				<Header />
 				<Hero />

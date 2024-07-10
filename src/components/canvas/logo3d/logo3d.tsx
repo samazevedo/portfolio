@@ -1,5 +1,5 @@
 import * as THREE from "three"
-import { useMemo, useRef, useState } from "react"
+import { useMemo, useRef, useEffect } from "react"
 import vertex from "./vertex.glsl"
 import fragment from "./fragment.glsl"
 import {
@@ -7,6 +7,7 @@ import {
 	Center,
 	MeshTransmissionMaterial,
 	MeshDistortMaterial,
+	Stage,
 } from "@react-three/drei"
 import { useFrame, useLoader, useThree } from "@react-three/fiber"
 import { useSpring, a } from "@react-spring/three"
@@ -14,15 +15,14 @@ import { Animated } from "../animated/animated"
 import { useScrollPosition } from "@hooks/useScrollPosition"
 
 interface Props {
-	children: string
 	position?: [number, number, number]
 	scale?: number
 	rotation?: [number, number, number]
 }
 
-export const Logo3D = ({ children, position, scale, rotation }: Props) => {
+export const Logo3D = ({ position, scale, rotation }: Props) => {
 	const meshRef = useRef<THREE.Mesh>(null!)
-	const texture = useLoader(THREE.TextureLoader, "/assets/matcaps/orange.png")
+	const texture = useLoader(THREE.TextureLoader, "/assets/matcaps/blue2.png")
 	// const texture2 = useLoader(THREE.TextureLoader, "/assets/matcaps/orange.png")
 	const uniforms = useMemo(
 		() => ({
@@ -31,6 +31,17 @@ export const Logo3D = ({ children, position, scale, rotation }: Props) => {
 		}),
 		[texture]
 	)
+	const mouse = new THREE.Vector2()
+	const handleMouseMove = (e: MouseEvent) => {
+		mouse.x = (e.clientX / window.innerWidth) * 2 - 1
+		mouse.y = -(e.clientY / window.innerHeight) * 2 + 1
+	}
+	useEffect(() => {
+		window.addEventListener("mousemove", handleMouseMove)
+		return () => {
+			window.removeEventListener("mousemove", handleMouseMove)
+		}
+	}, [handleMouseMove])
 
 	// const [clicked, setClicked] = useState(false)
 
@@ -43,9 +54,13 @@ export const Logo3D = ({ children, position, scale, rotation }: Props) => {
 	// 		duration: 0.5,
 	// 		precision: 0.0001,
 	// 	},
-	// }))
+	// }))\
+	const { pointer, viewport } = useThree()
 	useFrame((state) => {
 		meshRef.current.geometry.center()
+		meshRef.current.position.x = mouse.x * 0.1
+		meshRef.current.position.y = mouse.y * 0.1
+		meshRef.current.position.z = -4
 	})
 
 	return (
@@ -57,7 +72,7 @@ export const Logo3D = ({ children, position, scale, rotation }: Props) => {
 			castShadow
 			font="/fonts/italiana-regular.json"
 			size={0.5}
-			height={0.1}
+			height={0.2}
 			curveSegments={10}
 			bevelEnabled
 			bevelThickness={0.1}
@@ -65,26 +80,15 @@ export const Logo3D = ({ children, position, scale, rotation }: Props) => {
 			bevelOffset={0}
 			bevelSegments={5}
 		>
-			{children}
-			{/* <rawShaderMaterial
+			<rawShaderMaterial
 				vertexShader={vertex}
 				fragmentShader={fragment}
 				uniforms={uniforms}
 				glslVersion={THREE.GLSL3}
-			/> */}
-			{/* <MeshTransmissionMaterial
-				map={texture}
-				temporalDistortion={1.1}
-				transmission={1.5}
-				roughness={0.9}
-				ior={5.5}
-				attenuationDistance={10}
-				attenuationColor={new THREE.Color(0x000000)}
-			/> */}
-			<meshMatcapMaterial
-				// color={new THREE.Color("#60dbfa")}
-				map={texture}
+				transparent
 			/>
+			Sam Azevedo
+			{/* <meshMatcapMaterial color={new THREE.Color("#60dbfa")} map={texture} /> */}
 		</Text3D>
 	)
 }

@@ -17,7 +17,7 @@ out vec4 fragColor;
 // create hexagonal pattern
 float hexagon(vec2 p){
     p = abs(p);
-    return max(dot(p, vec2(0.8660254, 0.9)), p.y) - .09;
+    return max(dot(p, vec2(0.8660254, 1.5)), p.y) - .07;
 }
 
 void main() {
@@ -29,9 +29,6 @@ void main() {
     vec3 color = uColor;
     vec3 col = mix(vec3(0.1), color, smoothstep(0.0,0.01,h));
 
-
-
-
-    fragColor = vec4(col, 0.1);
+    fragColor = vec4(col, .5);
 
 }
