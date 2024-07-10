@@ -14,9 +14,9 @@ export default function Menu() {
 			</SheetTrigger>
 			<SheetContent
 				side="top"
-				className="w-full  h-full opacity-70 grid grid-rows-[1.8fr_0.2fr] gap-2 p-2"
+				className="w-full h-full opacity-70 grid grid-rows-[1.8fr_0.2fr] gap-2 p-2 "
 			>
-				<div className="grid grid-rows-4 gap-1 place-items-center text-4xl lg:text-8xl md:text-6xl font-bold mt-10">
+				<div className="grid grid-rows-4 place-items-center text-4xl lg:text-8xl sm:text-6xl font-bold mt-10">
 					<SmoothLink
 						href="home"
 						prefetch={false}
@@ -71,6 +71,7 @@ function MenuIcon(props: any) {
 			strokeWidth="2"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			className="hover:text-lime-400 transition-all duration-300 ease-in-out"
 		>
 			<line x1="1" x2="20" y1="6" y2="6" />
 			<line x1="1" x2="10" y1="10" y2="10" />

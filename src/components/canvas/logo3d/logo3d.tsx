@@ -69,9 +69,8 @@ export const Logo3D = ({ children, position, scale, rotation }: Props) => {
 						/> */}
 			<MeshTransmissionMaterial
 				map={texture}
-				ior={0.2}
-				opacity={0.9}
-				transmission={2.5}
+				temporalDistortion={0.5}
+				transmission={0.3}
 			/>
 		</Text3D>
 	)
