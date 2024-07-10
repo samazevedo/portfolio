@@ -2,7 +2,12 @@ import * as THREE from "three"
 import { useMemo, useRef, useState } from "react"
 import vertex from "./vertex.glsl"
 import fragment from "./fragment.glsl"
-import { Text3D, Center, MeshTransmissionMaterial } from "@react-three/drei"
+import {
+	Text3D,
+	Center,
+	MeshTransmissionMaterial,
+	MeshDistortMaterial,
+} from "@react-three/drei"
 import { useFrame, useLoader, useThree } from "@react-three/fiber"
 import { useSpring, a } from "@react-spring/three"
 import { Animated } from "../animated/animated"
@@ -17,15 +22,15 @@ interface Props {
 
 export const Logo3D = ({ children, position, scale, rotation }: Props) => {
 	const meshRef = useRef<THREE.Mesh>(null!)
-	const texture = useLoader(THREE.TextureLoader, "/assets/matcaps/mirror.png")
+	const texture = useLoader(THREE.TextureLoader, "/assets/matcaps/orange.png")
 	// const texture2 = useLoader(THREE.TextureLoader, "/assets/matcaps/orange.png")
-	// const uniforms = useMemo(
-	// 	() => ({
-	// 		uTime: { value: 0 },
-	// 		uTexture: { value: texture },
-	// 	}),
-	// 	[texture]
-	// )
+	const uniforms = useMemo(
+		() => ({
+			uTime: { value: 0 },
+			uTexture: { value: texture },
+		}),
+		[texture]
+	)
 
 	// const [clicked, setClicked] = useState(false)
 
@@ -62,15 +67,23 @@ export const Logo3D = ({ children, position, scale, rotation }: Props) => {
 		>
 			{children}
 			{/* <rawShaderMaterial
-							vertexShader={vertex}
-							fragmentShader={fragment}
-							uniforms={uniforms}
-							glslVersion={THREE.GLSL3}
-						/> */}
-			<MeshTransmissionMaterial
+				vertexShader={vertex}
+				fragmentShader={fragment}
+				uniforms={uniforms}
+				glslVersion={THREE.GLSL3}
+			/> */}
+			{/* <MeshTransmissionMaterial
 				map={texture}
-				temporalDistortion={0.5}
-				transmission={0.3}
+				temporalDistortion={1.1}
+				transmission={1.5}
+				roughness={0.9}
+				ior={5.5}
+				attenuationDistance={10}
+				attenuationColor={new THREE.Color(0x000000)}
+			/> */}
+			<meshMatcapMaterial
+				// color={new THREE.Color("#60dbfa")}
+				map={texture}
 			/>
 		</Text3D>
 	)
