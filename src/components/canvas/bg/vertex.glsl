@@ -10,6 +10,8 @@ out vec2 vUv;
 out vec3 vNormal;
 out vec3 vPosition;
 
+// customs attributes
+
 
 // stardard uniforms used for transforming the vertices
 uniform mat4 modelMatrix;
@@ -32,11 +34,12 @@ void main(){
     vec4 modelPosition =  modelMatrix * vec4(position,1.0);
     vec4 viewPosition = viewMatrix * modelPosition;
     vec4 projectedPosition = projectionMatrix * viewPosition;
+
+
     gl_Position = projectedPosition;
 
     //  // POINT SIZE
     // gl_PointSize = .01 *  pictureIntensity * uResolution.y;
     // gl_PointSize *= (1.0 / -viewPosition.z);
-
 
 }

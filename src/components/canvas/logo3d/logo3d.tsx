@@ -15,14 +15,18 @@ import { Animated } from "../animated/animated"
 import { useScrollPosition } from "@hooks/useScrollPosition"
 
 interface Props {
+	children?: React.ReactNode
 	position?: [number, number, number]
 	scale?: number
 	rotation?: [number, number, number]
 }
 
-export const Logo3D = ({ position, scale, rotation }: Props) => {
+export const Logo3D = ({ position, scale, rotation, children }: Props) => {
 	const meshRef = useRef<THREE.Mesh>(null!)
-	const texture = useLoader(THREE.TextureLoader, "/assets/matcaps/blue2.png")
+	const texture = useLoader(
+		THREE.TextureLoader,
+		"/assets/matcaps/green-metal.png"
+	)
 	// const texture2 = useLoader(THREE.TextureLoader, "/assets/matcaps/orange.png")
 	const uniforms = useMemo(
 		() => ({
@@ -32,16 +36,16 @@ export const Logo3D = ({ position, scale, rotation }: Props) => {
 		[texture]
 	)
 	const mouse = new THREE.Vector2()
-	const handleMouseMove = (e: MouseEvent) => {
-		mouse.x = (e.clientX / window.innerWidth) * 2 - 1
-		mouse.y = -(e.clientY / window.innerHeight) * 2 + 1
-	}
-	useEffect(() => {
-		window.addEventListener("mousemove", handleMouseMove)
-		return () => {
-			window.removeEventListener("mousemove", handleMouseMove)
-		}
-	}, [handleMouseMove])
+	// const handleMouseMove = (e: MouseEvent) => {
+	// 	mouse.x = (e.clientX / window.innerWidth) * 2 - 1
+	// 	mouse.y = -(e.clientY / window.innerHeight) * 2 + 1
+	// }
+	// useEffect(() => {
+	// 	window.addEventListener("mousemove", handleMouseMove)
+	// 	return () => {
+	// 		window.removeEventListener("mousemove", handleMouseMove)
+	// 	}
+	// }, [handleMouseMove])
 
 	// const [clicked, setClicked] = useState(false)
 
@@ -58,9 +62,8 @@ export const Logo3D = ({ position, scale, rotation }: Props) => {
 	const { pointer, viewport } = useThree()
 	useFrame((state) => {
 		meshRef.current.geometry.center()
-		meshRef.current.position.x = mouse.x * 0.1
-		meshRef.current.position.y = mouse.y * 0.1
-		meshRef.current.position.z = -4
+		// meshRef.current.position.x = mouse.x * 0.1
+		// meshRef.current.position.y = mouse.y * 0.1
 	})
 
 	return (
@@ -70,7 +73,7 @@ export const Logo3D = ({ position, scale, rotation }: Props) => {
 			scale={scale}
 			rotation={rotation}
 			castShadow
-			font="/fonts/italiana-regular.json"
+			font="/fonts/Anton/Anton.json"
 			size={0.5}
 			height={0.2}
 			curveSegments={10}
@@ -80,15 +83,17 @@ export const Logo3D = ({ position, scale, rotation }: Props) => {
 			bevelOffset={0}
 			bevelSegments={5}
 		>
-			<rawShaderMaterial
+			{/* <rawShaderMaterial
 				vertexShader={vertex}
 				fragmentShader={fragment}
 				uniforms={uniforms}
 				glslVersion={THREE.GLSL3}
 				transparent
-			/>
-			Sam Azevedo
-			{/* <meshMatcapMaterial color={new THREE.Color("#60dbfa")} map={texture} /> */}
+			/> */}
+
+			{/* <MeshTransmissionMaterial map={texture} roughness={0.5} transparent /> */}
+			{children}
+			<MeshDistortMaterial transparent map={texture} distort={0.05} />
 		</Text3D>
 	)
 }

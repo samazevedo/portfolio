@@ -26,7 +26,7 @@ export const Scene = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null!)
 	// change canvas bg color based on theme
 	const { theme } = useTheme()
-	const bg = theme === "dark" ? "#000000" : "#3d3d66"
+	const bg = theme === "dark" ? "#000000" : "#ffffff"
 	const delay = new THREE.Vector2(0.8, 0.6)
 
 	const offset = new THREE.Vector2(0.01, 0.01)
@@ -47,22 +47,23 @@ export const Scene = () => {
 		>
 			<color attach="background" args={[bg]} />
 
-			<Logo3D />
-
-			<BG />
 			<Suspense fallback={null}>
-				<EffectComposer>
-					<Glitch blendFunction={BlendFunction.OVERLAY} active delay={delay} />
-					<ChromaticAberration
+				{/* <Logo3D children={"SAM"} scale={0.2} position={[0, 0.23, 1]} /> */}
+				{/* <Logo3D children={"AZEVEDO"} scale={0.2} position={[0, 0.07, 1]} /> */}
+				<BG />
+				{/* <EffectComposer> */}
+				{/* <Glitch blendFunction={BlendFunction.OVERLAY} active delay={delay} /> */}
+				{/* <ChromaticAberration
 						blendFunction={BlendFunction.NORMAL}
 						offset={offset}
 						radialModulation={true}
 						modulationOffset={0.01}
-					/>
-				</EffectComposer>
-				<ambientLight intensity={0.15} />
-				<Environment preset="night" />
+					/> */}
+				{/* </EffectComposer> */}
 				<Perf />
+				<Environment preset="night" />
+				<ambientLight intensity={0.8} />
+				<spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
 			</Suspense>
 		</Canvas>
 	)

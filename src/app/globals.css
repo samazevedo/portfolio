@@ -71,6 +71,6 @@
 		@apply border-border;
 	}
 	body {
-		@apply bg-background text-foreground cursor-crosshair;
+		@apply bg-background text-foreground cursor-crosshair transition-all ease-linear duration-500;
 	}
 }

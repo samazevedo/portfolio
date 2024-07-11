@@ -9,16 +9,20 @@ import { useFrame, useLoader } from "@react-three/fiber"
 
 export const BG = () => {
 	const ref = useRef<THREE.Mesh>(null!)
+	const geometryRef = useRef<THREE.PlaneGeometry>(null!)
 	const texture = useLoader(THREE.TextureLoader, "/images/bg1.jpeg")
 	const { theme } = useTheme()
+	const { size } = useThree()
 	// const color = theme === "dark" ? "#1C1C1C" : "#aec670"
 	const color = "#0c0c0c"
+
 	const uniforms = useMemo(
 		() => ({
 			uTime: { value: 0 },
 			uMouse: { value: new THREE.Vector3(0, 0, 0) },
 			uTexture: { value: texture },
 			uColor: { value: new THREE.Color(color) },
+			uResolution: { value: new THREE.Vector2(size.width, size.height) },
 		}),
 		[color, texture]
 	)
@@ -31,18 +35,13 @@ export const BG = () => {
 
 	useFrame(({ clock }) => {
 		const time = clock.getElapsedTime()
-		if (ref.current.material instanceof THREE.RawShaderMaterial) {
-			ref.current.material.uniforms.uTime.value = time
-			ref.current.material.uniforms.uMouse.value = new THREE.Vector3(0, 0, 0)
-			ref.current.material.uniforms.uColor.value = new THREE.Color(color)
-		}
+		uniforms.uTime.value = time * 0.5
+		uniforms.uMouse.value = new THREE.Vector3(mouse.x, mouse.y, 0)
+
 		// update position based on mouse
 
-		ref.current.position.x = -mouse.x * 0.1
-		ref.current.position.y = -mouse.y * 0.1
-
-		ref.current.rotation.z = time * 0.05
-		// ref.current.rotation.x = time * 0.5
+		ref.current.position.x = -mouse.x * 0.05
+		ref.current.position.y = -mouse.y * 0.05
 	})
 
 	useEffect(() => {
@@ -53,8 +52,9 @@ export const BG = () => {
 	}, [handleMouseMove])
 
 	return (
-		<mesh ref={ref} position={[0, 0, -1]} scale={1} castShadow receiveShadow>
-			<planeGeometry args={[32, 32, 32, 32]} />
+		<mesh ref={ref} position={[0, 0, -1]} castShadow receiveShadow>
+			{/* <planeGeometry ref={geometryRef} args={[10, 10, 32, 32]} /> */}
+			<sphereGeometry args={[1.4, 32, 32]} />
 			<rawShaderMaterial
 				transparent
 				vertexShader={vertex}

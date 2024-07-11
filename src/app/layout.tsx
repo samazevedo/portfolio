@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Italiana } from "next/font/google"
+import { Italiana, Anton } from "next/font/google"
 import { ThemeProvider } from "@components/theme/theme-provider"
 // import Header from "@components/dom/header/header"
 import "./globals.css"
@@ -15,6 +15,11 @@ import "./globals.css"
 // 	variable: "--suwannaphum",
 // })
 
+const anton = Anton({
+	subsets: ["latin"],
+	weight: "400",
+	variable: "--freeman",
+})
 const italiana = Italiana({
 	subsets: ["latin"],
 	weight: "400",
@@ -36,7 +41,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${italiana.className}`}>
+			<body className={`${anton.className}`}>
 				<ThemeProvider>{children}</ThemeProvider>
 			</body>
 		</html>
