@@ -13,20 +13,21 @@ interface Props {
 
 export const Ring = ({ radius, height, segments, text }: Props) => {
 	const { theme } = useTheme()
-	const color = theme === "dark" ? "#ffffff" : "#bfdd48"
+	const color = theme === "dark" ? "#ffffff" : "#ddfa80"
 	const groupRef = useRef<THREE.Group>(null!)
 
 	// calc text position
 	const textPositions: {
 		x: number
 		z: number
+		rotation: number
 	}[] = []
 	const angleStep = (Math.PI * 2) / text.length
 	for (let i = 0; i < text.length; i++) {
 		const angle = angleStep * i
 		const x = radius * Math.sin(angle)
 		const z = radius * Math.cos(angle)
-		textPositions.push({ x, z })
+		textPositions.push({ x, z, rotation: -angle })
 	}
 	useFrame(() => {
 		groupRef.current.rotation.y -= 0.005
@@ -49,9 +50,10 @@ export const Ring = ({ radius, height, segments, text }: Props) => {
 				<Text
 					key={index}
 					position={[textPositions[index].x, 0, textPositions[index].z]}
-					rotation={[0, -angleStep * index + Math.PI / 2, 0]}
+					rotation={[0, textPositions[index].rotation, 0]}
 					fontSize={0.7}
-					lineHeight={1}
+					lineHeight={1.2}
+					fontWeight={700}
 					color={color}
 					textAlign="center"
 					anchorX="center"

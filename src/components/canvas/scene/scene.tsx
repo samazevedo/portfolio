@@ -17,6 +17,7 @@ import {
 	ChromaticAberration,
 } from "@react-three/postprocessing"
 import { BlendFunction } from "postprocessing"
+import { Socials } from "../socials/socials"
 export const Scene = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null!)
 	// change canvas bg color based on theme
@@ -46,7 +47,8 @@ export const Scene = () => {
 				{/* <Logo3D children={"SAM"} scale={0.2} position={[0, 0.23, 1]} /> */}
 				{/* <Logo3D children={"AZEVEDO"} scale={0.2} position={[0, 0.07, 1]} /> */}
 				{/* <BG /> */}
-				<Ring radius={2} height={0.7} segments={40} text="SAM AZEVEDO" />
+				<Ring radius={2} height={0.7} segments={40} text="SAM AZEVEDO  " />
+				{/* <Socials /> */}
 				{/* <EffectComposer>
 					<Glitch blendFunction={BlendFunction.OVERLAY} active delay={delay} />
 					<ChromaticAberration
@@ -56,7 +58,7 @@ export const Scene = () => {
 						modulationOffset={0.01}
 					/>
 				</EffectComposer> */}
-				<Perf />
+				{/* <Perf /> */}
 				{/* <Environment preset="night" /> */}
 				<ambientLight intensity={0.8} />
 				<spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
