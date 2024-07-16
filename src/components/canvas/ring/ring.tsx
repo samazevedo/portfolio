@@ -80,7 +80,7 @@ export const Ring = ({ radius, height, segments, text }: Props) => {
 		},
 		{
 			start: 500,
-			end: 4000,
+			end: 7000,
 			startProps: {
 				position: [0, 10, -10],
 				scale: 0.5,
