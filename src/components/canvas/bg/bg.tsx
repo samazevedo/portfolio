@@ -52,7 +52,7 @@ export const BG = () => {
 	}, [handleMouseMove])
 
 	return (
-		<mesh ref={ref} position={[0, 0, -1]} castShadow receiveShadow>
+		<mesh ref={ref} position={[-2, 2, -2]} scale={1.5}>
 			{/* <planeGeometry ref={geometryRef} args={[10, 10, 32, 32]} /> */}
 			<sphereGeometry args={[1.4, 32, 32]} />
 			<rawShaderMaterial

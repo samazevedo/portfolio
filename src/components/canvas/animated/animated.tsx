@@ -50,7 +50,7 @@ export const Animated = ({
 			config.startProps.rotation[2] +
 				(config.endProps.rotation[2] - config.startProps.rotation[2]) * progress,
 		],
-		config: { mass: 1, tension: 170, friction: 26 },
+		config: { mass: 1, tension: 170, friction: 26, precision: 0.0001 },
 	})
 
 	return (

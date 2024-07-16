@@ -2,7 +2,7 @@
 import * as THREE from "three"
 import { Suspense, useEffect, useRef } from "react"
 import { Canvas, useThree, useFrame } from "@react-three/fiber"
-import { Environment } from "@react-three/drei"
+import { Environment, Scroll, ScrollControls, View } from "@react-three/drei"
 import { useTheme } from "next-themes"
 import { Particle } from "../particles/particle"
 import { Perf } from "r3f-perf"
@@ -17,8 +17,10 @@ import {
 	ChromaticAberration,
 } from "@react-three/postprocessing"
 import { BlendFunction } from "postprocessing"
-import { Socials } from "../socials/socials"
-export const Scene = () => {
+
+import { Mouse } from "../mouse/mouse"
+import Socials from "@components/dom/socials/socials"
+export const Scene = ({ children }: { children: React.ReactNode }) => {
 	const canvasRef = useRef<HTMLCanvasElement>(null!)
 	// change canvas bg color based on theme
 	const { theme } = useTheme()
@@ -37,7 +39,7 @@ export const Scene = () => {
 				position: "absolute",
 				top: 0,
 				left: 0,
-				zIndex: -1,
+				zIndex: 1,
 			}}
 			shadows
 		>
@@ -47,22 +49,12 @@ export const Scene = () => {
 				{/* <Logo3D children={"SAM"} scale={0.2} position={[0, 0.23, 1]} /> */}
 				{/* <Logo3D children={"AZEVEDO"} scale={0.2} position={[0, 0.07, 1]} /> */}
 				{/* <BG /> */}
-				<Ring radius={2} height={0.7} segments={40} text="SAM AZEVEDO  " />
-				{/* <Socials /> */}
-				{/* <EffectComposer>
-					<Glitch blendFunction={BlendFunction.OVERLAY} active delay={delay} />
-					<ChromaticAberration
-						blendFunction={BlendFunction.NORMAL}
-						offset={offset}
-						radialModulation={true}
-						modulationOffset={0.01}
-					/>
-				</EffectComposer> */}
+
 				{/* <Perf /> */}
-				{/* <Environment preset="night" /> */}
-				<ambientLight intensity={0.8} />
-				<spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+				{children}
 			</Suspense>
+			<ambientLight intensity={0.8} />
+			<spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
 		</Canvas>
 	)
 }
