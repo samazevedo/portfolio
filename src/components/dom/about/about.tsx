@@ -1,6 +1,9 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Canvas } from "@react-three/fiber"
+import { View } from "@react-three/drei"
+import { Photo } from "@components/canvas/photo/photo"
+import { CanvasConfig } from "@components/canvas/config/config"
 
 const tools = [
 	{ name: "HTML", icon: "/icons/tech/html5.svg" },
@@ -46,20 +49,13 @@ export default function About() {
 							create web applications that not only look great but also function
 							flawlessly. Let's build something amazing together!
 						</p>
-						<div>
-							<Canvas></Canvas>
-						</div>
 					</div>
-
-					{/* <Link
-						href="#"
-						className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-						prefetch={false}
-					>
-						Learn More
-					</Link> */}
-					<div className="min-h-[50vh]"></div>
-					<div></div>
+					<div className="grid items-center rounded-full  w-60 h-60 md:w-96 md:h-96 bg-black overflow-hidden place-items-center">
+						<View className=" w-56 h-56 md:w-80 md:h-80 overflow-hidden">
+							<CanvasConfig />
+							<Photo />
+						</View>
+					</div>
 				</div>
 			</div>
 		</section>

@@ -37,10 +37,10 @@ void main() {
     // float pictureIntensity = texture(uTexture, uv).r;
     float pictureIntensity = texture(uTexture,  uv).r;
     // send pictureintensity to fragment
-    vColor = vec3(pow(pictureIntensity,3.0));
+    vColor = vec3(pow(pictureIntensity,2.0));
 
     // POINT SIZE
-    gl_PointSize = .01 *  pictureIntensity * uResolution.y;
+    gl_PointSize = .005 *  pictureIntensity * uResolution.y;
     gl_PointSize *= (1.0 / -viewPosition.z);
 
 }

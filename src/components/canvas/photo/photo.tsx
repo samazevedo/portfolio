@@ -9,21 +9,20 @@ import { useScrollPosition } from "@hooks/useScrollPosition"
 import { useTheme } from "next-themes"
 
 export const Photo = () => {
-	const { theme } = useTheme()
-	// const bg = theme === "dark" ? "#141311" : "#e8dfaa"
 	const pointsRef = useRef<THREE.Points>(null!)
 	const materialRef = useRef<THREE.RawShaderMaterial>(null!)
 	const uTexture = useLoader(THREE.TextureLoader, "/images/sam.jpg")
+	const { size } = useThree()
 	const uniforms = useMemo(
 		() => ({
 			uTime: { value: 0 },
 			uTexture: { value: uTexture },
 			uResolution: {
-				value: new THREE.Vector2(window.innerWidth, window.innerHeight),
+				value: new THREE.Vector2(1024, 1024),
 			},
-			uColor: { value: new THREE.Color("#d5e3c3") },
+			uColor: { value: new THREE.Color("#ffffff") },
 		}),
-		[theme]
+		[uTexture]
 	)
 
 	const SIZE = 128
@@ -79,57 +78,29 @@ export const Photo = () => {
 	}[] = [
 		{
 			start: 0,
-			end: 1200,
+			end: 2500,
 			startProps: {
-				position: [0, 0, -100],
-				scale: 0.4,
+				position: [0, 0, 0],
+				scale: 0,
 				rotation: [0, 0, 0],
 			},
 			endProps: {
-				position: [0, 0, -100],
-				scale: 0.4,
+				position: [0, 0, 0],
+				scale: 1,
 				rotation: [0, 0, 0],
 			},
 		},
 
 		{
-			start: 1200,
-			end: 1600,
-			startProps: {
-				position: [0, 0, 0],
-				scale: 0.4,
-				rotation: [0, 0, 0],
-			},
-			endProps: {
-				position: [0, 0, 0],
-				scale: 0.4,
-				rotation: [0, 0, 0],
-			},
-		},
-		{
-			start: 1600,
-			end: 1700,
-			startProps: {
-				position: [0, 0, 0],
-				scale: 0.4,
-				rotation: [0, 0, 0],
-			},
-			endProps: {
-				position: [0, 0, -100],
-				scale: 0.4,
-				rotation: [0, 0, 0],
-			},
-		},
-		{
-			start: 1700,
+			start: 1900,
 			end: 4000,
 			startProps: {
-				position: [0, 0, -100],
+				position: [0, 0, 0],
 				scale: 0.4,
 				rotation: [0, 0, 0],
 			},
 			endProps: {
-				position: [0, 0, -100],
+				position: [0, 0, 0],
 				scale: 0.4,
 				rotation: [0, 0, 0],
 			},
@@ -137,10 +108,10 @@ export const Photo = () => {
 	]
 
 	return (
-		<Animated scrollY={scrollY} configs={config}>
-			<points ref={pointsRef} position={[0, 0.7, -2]}>
-				<planeGeometry args={[3, 3, 128, 128]} />
-				{/* <bufferGeometry>
+		// <Animated scrollY={scrollY} configs={config}>
+		<points ref={pointsRef} position={[0, 0, -0.3]}>
+			<planeGeometry args={[1.5, 1.5, 128, 128]} />
+			{/* <bufferGeometry>
 				<bufferAttribute
                 attach="attributes-position"
                 array={positions}
@@ -154,15 +125,15 @@ export const Photo = () => {
                 itemSize={2}
 				/>
                 </bufferGeometry> */}
-				<rawShaderMaterial
-					ref={materialRef}
-					transparent
-					glslVersion={THREE.GLSL3}
-					vertexShader={vertex}
-					fragmentShader={fragment}
-					uniforms={uniforms}
-				/>
-			</points>
-		</Animated>
+			<rawShaderMaterial
+				ref={materialRef}
+				transparent
+				glslVersion={THREE.GLSL3}
+				vertexShader={vertex}
+				fragmentShader={fragment}
+				uniforms={uniforms}
+			/>
+		</points>
+		// </Animated>
 	)
 }

@@ -74,9 +74,9 @@
 		@apply bg-background text-foreground cursor-crosshair transition-all ease-linear duration-500;
 	}
 	h1 {
-		@apply text-5xl text-lime-600 md:text-9xl uppercase font-bold tracking-tighter;
+		@apply text-4xl text-lime-600 md:text-8xl lg:text-9xl uppercase font-bold tracking-tighter;
 	}
 	p {
-		@apply text-2xl md:text-3xl/relaxed font-semibold;
+		@apply text-lg/4 md:text-2xl/relaxed lg:text-4xl;
 	}
 }
