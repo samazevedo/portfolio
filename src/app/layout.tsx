@@ -1,25 +1,32 @@
 import type { Metadata } from "next"
-import { Italiana, Anton } from "next/font/google"
+import { Italiana, Kalnia, Sawarabi_Gothic } from "next/font/google"
 import { ThemeProvider } from "@components/theme/theme-provider"
+import localFont from "next/font/local"
 // import Header from "@components/dom/header/header"
 import "./globals.css"
 
-// const kalnia = Kalnia({
-// 	subsets: ["latin"],
-// 	weight: "400",
-// 	variable: "--kalnia",
-// })
+const kalnia = Kalnia({
+	subsets: ["latin"],
+	weight: "400",
+	variable: "--kalnia",
+})
+
+const sawarabi = Sawarabi_Gothic({
+	subsets: ["latin"],
+	weight: "400",
+	variable: "--sawarabi",
+})
 // const suwannaphum = Suwannaphum({
 // 	subsets: ["latin"],
 // 	weight: "100",
 // 	variable: "--suwannaphum",
 // })
 
-const anton = Anton({
-	subsets: ["latin"],
-	weight: "400",
-	variable: "--freeman",
-})
+// const anton = Kalnia({
+// 	subsets: ["latin"],
+// 	weight: "400",
+// 	variable: "--freeman",
+// })
 const italiana = Italiana({
 	subsets: ["latin"],
 	weight: "400",
@@ -41,7 +48,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${anton.className}`}>
+			<body className={`${sawarabi.className}`}>
 				<ThemeProvider>{children}</ThemeProvider>
 			</body>
 		</html>
