@@ -14,41 +14,25 @@ export default function Menu() {
 			</SheetTrigger>
 			<SheetContent
 				side="top"
-				className="w-full h-full opacity-70 grid grid-rows-[1.8fr_0.2fr] gap-2 p-2 "
+				className="w-full h-full opacity-50 grid grid-rows-[1.8fr_0.2fr] gap-2 p-2 "
 			>
-				<div className="grid grid-rows-4 place-items-center text-4xl lg:text-8xl sm:text-6xl font-bold mt-10">
-					<SmoothLink
-						href="home"
-						prefetch={false}
-						className="hover:text-lime-400 transition-all duration-300 ease-in-out "
-					>
+				<div className="grid grid-rows-4 place-items-center text-5xl md:text-8xl">
+					<SmoothLink href="home" prefetch={false}>
 						Home
 					</SmoothLink>
-					<SmoothLink
-						href="about"
-						prefetch={false}
-						className="hover:text-lime-400 transition-all duration-300 ease-in-out"
-					>
+					<SmoothLink href="about" prefetch={false}>
 						About
 					</SmoothLink>
-					<SmoothLink
-						href="portfolio"
-						prefetch={false}
-						className="hover:text-lime-400 transition-all duration-300 ease-in-out"
-					>
+					<SmoothLink href="portfolio" prefetch={false}>
 						Portfolio
 					</SmoothLink>
-					<SmoothLink
-						href="contact"
-						prefetch={false}
-						className="hover:text-lime-400 transition-all duration-300 ease-in-out"
-					>
+					<SmoothLink href="contact" prefetch={false}>
 						Contact
 					</SmoothLink>
 				</div>
 				<div className="grid grid-cols-2 place-items-center gap-10  ">
 					<Socials />
-					<div className=" justify-self-end">
+					<div>
 						<ModeSwitch />
 					</div>
 				</div>
