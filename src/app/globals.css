@@ -80,7 +80,7 @@
 		@apply text-xl/4 md:text-2xl/relaxed lg:text-4xl;
 	}
 	a {
-		@apply text-shadow-chromatic;
+		@apply text-shadow-chromatic text-white dark:text-black hover:line-through;
 	}
 }
 @layer utilities {
