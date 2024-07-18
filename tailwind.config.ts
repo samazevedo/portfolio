@@ -1,3 +1,4 @@
+import { plugin } from "postcss"
 import type { Config } from "tailwindcss"
 
 const config = {
@@ -74,7 +75,18 @@ const config = {
 			},
 		},
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		function ({ addUtilities }: any) {
+			const newUtilities = {
+				".text-shadow-chromatic": {
+					textShadow:
+						"1px 1px 0px #FF005D, 2px 2px 0px #00ff00, #0000ff 3px 3px 0px",
+				},
+			}
+			addUtilities(newUtilities, ["responsive", "hover"])
+		},
+	],
 } satisfies Config
 
 export default config

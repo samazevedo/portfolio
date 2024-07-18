@@ -74,9 +74,17 @@
 		@apply bg-background text-foreground cursor-crosshair transition-all ease-linear duration-500;
 	}
 	h1 {
-		@apply text-4xl text-lime-600 md:text-8xl lg:text-9xl uppercase font-bold tracking-tighter;
+		@apply text-4xl md:text-8xl lg:text-9xl uppercase font-bold tracking-tighter text-shadow-chromatic;
 	}
 	p {
-		@apply text-lg/4 md:text-2xl/relaxed lg:text-4xl;
+		@apply text-xl/4 md:text-2xl/relaxed lg:text-4xl;
+	}
+	a {
+		@apply text-shadow-chromatic;
+	}
+}
+@layer utilities {
+	.text-shadow-chromatic {
+		text-shadow: 2px 2px 0px #ff0000, -2px -2ps 0px #0000ff 1px 1ps 0px #00ff00;
 	}
 }

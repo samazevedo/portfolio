@@ -32,12 +32,20 @@ export default function About() {
 					<div className="space-y-2 mt-20">
 						<h1>Who am I?</h1>
 						<p>
-							Hello! My name is <span className="text-lime-600">Samuel Azevedo</span>,
-							and I am a passionate{" "}
-							<span className="text-lime-600">Front-end Developer</span> and{" "}
-							<span className="text-lime-600">Designer</span>. I specialize in creating
-							modern, responsive, and interactive web applications that provide
-							seamless user experiences.
+							Hello! My name is{" "}
+							<span className="text-white dark:text-black text-shadow-chromatic">
+								Samuel Azevedo
+							</span>
+							, and I am a passionate{" "}
+							<span className="text-white dark:text-black text-shadow-chromatic">
+								Front-end Developer
+							</span>{" "}
+							and{" "}
+							<span className="text-white dark:text-black text-shadow-chromatic">
+								Designer
+							</span>
+							. I specialize in creating modern, responsive, and interactive web
+							applications that provide seamless user experiences.
 						</p>
 						<p>
 							With a keen eye for detail and a dedication to the craft, I bring ideas
