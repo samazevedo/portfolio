@@ -1,7 +1,24 @@
 import { Button } from "@components/ui/button"
 import { Input } from "@components/ui/input"
 import { Textarea } from "@components/ui/textarea"
+import { sendEmail } from "@utils/sendEmail"
+import { useState } from "react"
+import { useForm } from "react-hook-form"
+
+interface FormData {
+	name: string
+	email: string
+	message: string
+}
+
 export default function Contact() {
+	const { register, handleSubmit } = useForm<FormData>()
+
+	const onSubmit = (data: FormData) => {
+		sendEmail(data)
+		//clear form
+	}
+
 	return (
 		<section className="min-h-[90vh] " id="contact">
 			<div className="container px-4 md:px-6">
@@ -13,10 +30,27 @@ export default function Contact() {
 							or inquiries.
 						</p>
 					</div>
-					<form className="mx-auto w-full max-w-sm space-y-2 pt-20">
-						<Input type="text" placeholder="Name" className="max-w-lg flex-1 " />
-						<Input type="email" placeholder="Email" className="max-w-lg flex-1" />
-						<Textarea placeholder="Message" className="max-w-lg flex-1" />
+					<form
+						className="mx-auto w-full max-w-sm space-y-2 pt-20"
+						onSubmit={handleSubmit(onSubmit)}
+					>
+						<Input
+							type="text"
+							placeholder="Name"
+							className="max-w-lg flex-1 "
+							{...register("name", { required: true })}
+						/>
+						<Input
+							type="email"
+							placeholder="Email"
+							className="max-w-lg flex-1"
+							{...register("email", { required: true })}
+						/>
+						<Textarea
+							placeholder="Message"
+							className="max-w-lg flex-1"
+							{...register("message", { required: true })}
+						/>
 						<Button type="submit">Submit</Button>
 					</form>
 				</div>

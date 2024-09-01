@@ -48,7 +48,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${sawarabi.className}`}>
+			<body className={`${italiana.className}`}>
 				<ThemeProvider>{children}</ThemeProvider>
 			</body>
 		</html>

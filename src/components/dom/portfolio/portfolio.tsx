@@ -1,6 +1,36 @@
+import {
+	Carousel,
+	CarouselContent,
+	CarouselNext,
+	CarouselPrevious,
+	CarouselItem,
+} from "@components/ui/carousel"
 import Link from "next/link"
 import Image from "next/image"
 import { Card, CardContent } from "@components/ui/card"
+
+const ProjectsData = [
+	{
+		id: 1,
+		title: "Next Blog",
+		description: "A Next.js blog built with Next.js and Tailwind CSS",
+		image: "/images/next-blog.png",
+	},
+
+	{
+		id: 2,
+		title: "Next Portfolio",
+		description: "A Next.js portfolio built with Next.js and Tailwind CSS",
+		image: "/images/next-portfolio.png",
+	},
+
+	{
+		id: 3,
+		title: "Next Portfolio",
+		description: "A Next.js portfolio built with Next.js and Tailwind CSS",
+		image: "/images/next-portfolio.png",
+	},
+]
 
 export default function Portfolio() {
 	return (
@@ -15,87 +45,46 @@ export default function Portfolio() {
 						</p>
 					</div>
 				</div>
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-					<Card>
-						<CardContent>
-							<Image
-								src="/images/next-blog.png"
-								alt="Project 1"
-								className="rounded-t-lg w-full aspect-[4/3] object-cover"
-								width={200}
-								height={300}
-								objectFit="fill"
-							/>
-							<div className="p-4 space-y-2">
-								<h3 className="text-xl font-bold">Project 1</h3>
-								<p className="text-gray-500 dark:text-gray-400">
-									Next.js Blogging Web App, created with Next.js and deployed with
-									Vercel.
-								</p>
-								<div className="flex justify-end">
-									<Link
-										href="#"
-										className="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-										prefetch={false}
-									>
-										View Project
-									</Link>
-								</div>
-							</div>
-						</CardContent>
-					</Card>
-					<Card>
-						<CardContent>
-							<Image
-								src="/next.svg"
-								alt="Project 2"
-								className="rounded-t-lg w-full aspect-[4/3] object-cover"
-								width={1920}
-								height={1080}
-							/>
-							<div className="p-4 space-y-2">
-								<h3 className="text-xl font-bold">Project 2</h3>
-								<p className="text-gray-500 dark:text-gray-400">
-									A brief description of the second project.
-								</p>
-								<div className="flex justify-end">
-									<Link
-										href="#"
-										className="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-										prefetch={false}
-									>
-										View Project
-									</Link>
-								</div>
-							</div>
-						</CardContent>
-					</Card>
-					<Card>
-						<CardContent>
-							<Image
-								src="/next.svg"
-								alt="Project 3"
-								className="rounded-t-lg w-full aspect-[4/3] object-cover"
-								width={1920}
-								height={1080}
-							/>
-							<div className="p-4 space-y-2">
-								<h3 className="text-xl font-bold">Project 3</h3>
-								<p className="text-gray-500 dark:text-gray-400">
-									A brief description of the third project.
-								</p>
-								<div className="flex justify-end">
-									<Link
-										href="#"
-										className="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-										prefetch={false}
-									>
-										View Project
-									</Link>
-								</div>
-							</div>
-						</CardContent>
-					</Card>
+				<div className="max-w-xl mx-auto grid place-items-center ">
+					<Carousel className="">
+						<CarouselContent className="">
+							{ProjectsData.map((project) => (
+								<CarouselItem key={project.id} className="w-full md:w-1/2">
+									<Card>
+										<div className="relative w-full">
+											{/* Image taking full width and top space */}
+											<Image
+												src={project.image}
+												alt={project.title}
+												width={100}
+												height={100}
+												className="w-full h-auto rounded-t-md object-cover"
+												quality={100}
+											/>
+										</div>
+										<CardContent className="p-4">
+											<div>
+												{/* Title */}
+												<h3 className="text-lg font-bold mb-2">{project.title}</h3>
+												{/* Description */}
+												<p className="text-gray-500 dark:text-gray-400 text-sm">
+													{project.description}
+												</p>
+												{/* Link */}
+												<div className="flex justify-end">
+													<Link href="#" className="text-blue-500 hover:text-blue-700">
+														View Project
+													</Link>
+												</div>
+											</div>
+										</CardContent>
+									</Card>
+								</CarouselItem>
+							))}
+						</CarouselContent>
+						<CarouselNext className="w-10" />
+						<CarouselPrevious className="w-10" />
+					</Carousel>
 				</div>
 			</div>
 		</section>

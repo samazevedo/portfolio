@@ -85,6 +85,7 @@
 }
 @layer utilities {
 	.text-shadow-chromatic {
-		text-shadow: 2px 2px 0px #ff0000, -2px -2ps 0px #0000ff 1px 1ps 0px #00ff00;
+		text-shadow: 0.7px 0.7px 0px #ff0062, 1.2px 1.2px 0px #00ff00,
+			#0000ff 1.7px 1.7px 0px;
 	}
 }

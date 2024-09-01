@@ -81,7 +81,7 @@ const config = {
 			const newUtilities = {
 				".text-shadow-chromatic": {
 					textShadow:
-						"1px 1px 0px #FF005D, 2px 2px 0px #00ff00, #0000ff 3px 3px 0px",
+						"0.5px 0.5px 0px #FF005D, 1px 1px 0px #00ff00, #0000ff 1.5px 1.5px 0px",
 				},
 			}
 			addUtilities(newUtilities, ["responsive", "hover"])
