@@ -24,7 +24,7 @@ export const Scene = ({ children }: { children: React.ReactNode }) => {
 	const canvasRef = useRef<HTMLCanvasElement>(null!)
 	// change canvas bg color based on theme
 	const { theme } = useTheme()
-	const bg = theme === "dark" ? "#000000" : "#000000"
+	// const bg = theme === "dark" ? "#000000" : "#000000"
 	const delay = new THREE.Vector2(0.8, 0.6)
 
 	const offset = new THREE.Vector2(0.01, 0.01)
@@ -43,7 +43,7 @@ export const Scene = ({ children }: { children: React.ReactNode }) => {
 			}}
 			shadows
 		>
-			<color attach="background" args={[bg]} />
+			{/* <color attach="background" args={[bg]} /> */}
 
 			<Suspense fallback={null}>
 				{/* <Logo3D children={"SAM"} scale={0.2} position={[0, 0.23, 1]} /> */}

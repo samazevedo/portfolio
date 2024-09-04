@@ -33,7 +33,6 @@ export default function Home() {
 				style={{ position: "fixed", width: "100%", height: "100%", zIndex: 10 }}
 			>
 				<CanvasConfig />
-
 				<Suspense fallback={null}>
 					<View.Port />
 					{/* <Ring radius={2} height={0.7} segments={40} text="SAM AZEVEDO  " /> */}

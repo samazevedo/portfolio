@@ -14,26 +14,36 @@ export default function Menu() {
 			</SheetTrigger>
 			<SheetContent
 				side="top"
-				className="w-full h-full opacity-50 grid grid-rows-[1.8fr_0.2fr] gap-2 p-2 "
+				className="w-full h-full grid grid-rows-[1.8fr_0.2fr]  dark:lime-500"
 			>
-				<div className="grid grid-rows-4 place-items-center text-5xl md:text-8xl">
-					<SmoothLink href="home" prefetch={false}>
+				<div className="grid grid-rows-4 place-items-center text-4xl md:text-8xl mt-20 ">
+					<SmoothLink href="home" prefetch={false} className="hover:text-lime-500 ">
 						Home
 					</SmoothLink>
-					<SmoothLink href="about" prefetch={false}>
+					<SmoothLink href="about" prefetch={false} className="hover:text-lime-500 ">
 						About
 					</SmoothLink>
-					<SmoothLink href="portfolio" prefetch={false}>
+					<SmoothLink
+						href="portfolio"
+						prefetch={false}
+						className="hover:text-lime-500 "
+					>
 						Portfolio
 					</SmoothLink>
-					<SmoothLink href="contact" prefetch={false}>
+					<SmoothLink
+						href="contact"
+						prefetch={false}
+						className="hover:text-lime-500 "
+					>
 						Contact
 					</SmoothLink>
 				</div>
-				<div className="grid grid-cols-2 place-items-center gap-10  ">
-					<Socials />
-					<div>
-						<ModeSwitch />
+				<div className="place-self-center">
+					<div className="grid grid-cols-2 max-w-3xl  ">
+						<Socials />
+						<div className="self-center justify-self-end">
+							<ModeSwitch />
+						</div>
 					</div>
 				</div>
 			</SheetContent>

@@ -33,18 +33,13 @@ export default function About() {
 						<h1>Who am I?</h1>
 						<p>
 							Hello! My name is{" "}
-							<span className="text-white dark:text-black text-shadow-chromatic">
-								Samuel Azevedo
-							</span>
-							, and I am a passionate{" "}
-							<span className="text-white dark:text-black text-shadow-chromatic">
+							<span className="text-lime-600 dark:text-lime-500">Samuel Azevedo</span>,
+							and I am a passionate{" "}
+							<span className="text-lime-600 dark:text-lime-500">
 								Front-end Developer
 							</span>{" "}
-							and{" "}
-							<span className="text-white dark:text-black text-shadow-chromatic">
-								Designer
-							</span>
-							. I specialize in creating modern, responsive, and interactive web
+							and <span className="text-lime-600 dark:text-lime-500">Designer</span>. I
+							specialize in creating modern, responsive, and interactive web
 							applications that provide seamless user experiences.
 						</p>
 						<p>

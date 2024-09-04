@@ -1,4 +1,5 @@
 import { PerspectiveCamera } from "@react-three/drei"
+
 export const CanvasConfig = () => {
 	return (
 		<>
