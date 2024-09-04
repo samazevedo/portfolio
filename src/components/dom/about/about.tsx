@@ -31,7 +31,7 @@ export default function About() {
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
 					<div className="space-y-2 mt-20">
 						<h1>Who am I?</h1>
-						<p>
+						<p className="leading-5 md:leading-8">
 							Hello! My name is{" "}
 							<span className="text-lime-600 dark:text-lime-500">Samuel Azevedo</span>,
 							and I am a passionate{" "}
@@ -42,12 +42,12 @@ export default function About() {
 							specialize in creating modern, responsive, and interactive web
 							applications that provide seamless user experiences.
 						</p>
-						<p>
+						<p className="leading-5 md:leading-8">
 							With a keen eye for detail and a dedication to the craft, I bring ideas
 							to life through code and design. Whether it's building from scratch or
 							enhancing existing projects, I thrive on delivering high-quality results.
 						</p>
-						<p>
+						<p className="leading-5 md:leading-8">
 							Currently, I am working as a freelancer, collaborating with clients to
 							create web applications that not only look great but also function
 							flawlessly. Let's build something amazing together!
