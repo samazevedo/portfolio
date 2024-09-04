@@ -74,10 +74,10 @@
 		@apply bg-background text-foreground  transition-all ease-linear duration-500;
 	}
 	h1 {
-		@apply text-4xl md:text-8xl lg:text-9xl uppercase font-bold tracking-tighter;
+		@apply text-4xl md:text-7xl lg:text-8xl uppercase font-bold tracking-tighter;
 	}
 	p {
-		@apply text-xl/4 md:text-2xl/relaxed lg:text-4xl;
+		@apply text-xl/4 md:text-2xl/relaxed lg:text-4xl leading-5;
 	}
 	a {
 	}
