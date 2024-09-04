@@ -7,11 +7,11 @@ import { AnimatedIcon } from "../animated-icon/animated-icon"
 export function ModeSwitch() {
 	const { theme, setTheme } = useTheme()
 	return (
-		<Button
+		<div
 			onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-			variant="ghost"
+			className="cursor-pointer grid place-items-center"
 		>
 			<AnimatedIcon />
-		</Button>
+		</div>
 	)
 }

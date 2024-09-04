@@ -1,6 +1,6 @@
 import { useTheme } from "next-themes"
 import { useEffect, useMemo } from "react"
-import { animated, useSpring, useSprings } from "@react-spring/web"
+import { animated, useSpring } from "@react-spring/web"
 import { debug } from "console"
 
 export const AnimatedIcon = () => {
@@ -56,14 +56,19 @@ export const AnimatedIcon = () => {
 			strokeLinejoin="round"
 			style={{
 				transform: transform,
+				position: "relative",
+				display: "grid",
+				placeItems: "center",
 			}}
 		>
+			{/* Define the mask to clip the moon shape */}
 			<mask id="mask">
 				<rect x="0" y="0" width="100%" height="100%" fill="white" />
-				{/* moon */}
-				<animated.circle cx="11" cy="2" r={r} fill={fill} />
+				{/* moon mask*/}
+				<animated.circle cx="12" cy="2" r={r} fill={fill} />
 			</mask>
-			<animated.circle cx="12" cy="12" r={r} fill={fill} mask="url(#mask)" />
+			{/* Sun Circle with mask applied */}
+			<animated.circle cx="12" cy={cy} r={r} fill={fill} mask="url(#mask)" />
 
 			<animated.g stroke="currentColor" style={{ opacity: opacityLines }}>
 				<line x1="12" y1="1" x2="12" y2="3" />
