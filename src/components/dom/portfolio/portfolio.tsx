@@ -22,33 +22,40 @@ const ProjectsData = [
 		description: "A Next.js blog built with Next.js and Tailwind CSS",
 		image: "/images/next-blog.png",
 		stack: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
-		link: "https://next-blog-sam-azevedo.vercel.app/",
+		website: "https://next-blog-sam-azevedo.vercel.app/",
+		github: "https://github.com/samazevedo/next-blog",
 	},
 
 	{
 		id: 2,
-		title: "Next Portfolio",
-		description: "A Next.js portfolio built with Next.js and Tailwind CSS",
-		image: "/images/next-portfolio.png",
-		stack: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
-		link: "https://next-portfolio-sam-azevedo.vercel.app/",
+		title: "Little Lemon Restaurant",
+		description:
+			"A restaurant website, part of Meta's front-end engineering capstone project.",
+		image: "/images/little-lemon.png",
+		stack: ["React.js", "Tailwind CSS", "Responsive"],
+		website: "https://little-lemon-bjvugik2c-samazevedos-projects.vercel.app/",
+		github: "https://github.com/samazevedo/little-lemon",
 	},
 
 	{
 		id: 3,
-		title: "Next Portfolio",
-		description: "A Next.js portfolio built with Next.js and Tailwind CSS",
-		image: "/images/next-portfolio.png",
-		stack: ["Next.js", "Styled Components", "Node.js", "MongoDB"],
-		link: "https://next-portfolio-sam-azevedo.vercel.app/",
+		title: "Watermelon Landing Page",
+		description:
+			"Landing page showcase of a 3D watermelon model, built with React-three-fiber",
+		image: "/images/watermelon.png",
+		stack: ["React.js", "CSS", "React-three-fiber", "WebGL", "Typescript"],
+		website: "https://little-lemon-bjvugik2c-samazevedos-projects.vercel.app/",
+		github: "https://github.com/samazevedo/watermelon",
 	},
 	{
 		id: 4,
-		title: "Next Portfolio",
-		description: "A Next.js portfolio built with Next.js and Tailwind CSS",
-		image: "/images/next-portfolio.png",
-		stack: ["Next.js", "Styled Components", "Node.js", "MongoDB"],
-		link: "https://next-portfolio-sam-azevedo.vercel.app/",
+		title: "Mangata Gallo",
+		description:
+			"Jewelry store website,this project if part of Meta Front-end Web development course.",
+		image: "/images/mangata.png",
+		stack: ["JavaScript", "HTML", "CSS"],
+		website: "https://little-lemon-bjvugik2c-samazevedos-projects.vercel.app/",
+		github: "https://github.com/samazevedo/mangata-gallo",
 	},
 	{
 		id: 5,
@@ -56,7 +63,8 @@ const ProjectsData = [
 		description: "A Next.js portfolio built with Next.js and Tailwind CSS",
 		image: "/images/next-portfolio.png",
 		stack: ["Next.js", "Styled Components", "Node.js", "MongoDB"],
-		link: "https://next-portfolio-sam-azevedo.vercel.app/",
+		website: "https://little-lemon-bjvugik2c-samazevedos-projects.vercel.app/",
+		github: "https://github.com/samazevedos/little-lemon",
 	},
 ]
 
@@ -74,14 +82,14 @@ export default function Portfolio() {
 					</div>
 				</div>
 				<div className="w-full grid place-items-center ">
-					<Carousel className="w-full max-w-xs  md:max-w-lg lg:max-w-3xl">
+					<Carousel className="w-full max-w-xs md:max-w-lg lg:max-w-3xl">
 						<CarouselContent>
 							{ProjectsData.map((project) => (
 								<CarouselItem
 									key={project.id}
 									className="sm:basis-full md:basis-1/2 lg:basis-1/3"
 								>
-									<Card className=" h-full">
+									<Card className="w-full h-full grid grid-rows-[0.5fr_1fr]">
 										<Image
 											src={project.image}
 											alt={project.title}
@@ -91,37 +99,38 @@ export default function Portfolio() {
 											style={{ aspectRatio: "600/300", objectFit: "cover" }}
 										/>
 
-										<CardContent className="p-6 space-y-4">
-											<div>
-												<CardTitle className="text-muted-bold">{project.title}</CardTitle>
-												<CardDescription className="text-muted-foreground">
-													{project.description}
-												</CardDescription>
-												<div className="space-y-2">
-													<div className="flex flex-wrap gap-2">
-														{project.stack?.map((stack) => (
-															<Badge variant="outline" key={stack}>
-																{stack}
-															</Badge>
-														))}
-													</div>
-													<div className="flex items-center gap-4">
-														<Link
-															href={project.link}
-															className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-															prefetch={false}
-														>
-															<GithubIcon />
-														</Link>
-														<Link
-															href="#"
-															className="inline-flex items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-															prefetch={false}
-														>
-															<GlobeIcon className="w-5 h-5" />
-															Live Site
-														</Link>
-													</div>
+										<CardContent className=" grid grid-rows-[0.3fr_0.5fr_0.2fr] my-2">
+											<CardTitle className="text-muted-bold text-lg">
+												{project.title}
+											</CardTitle>
+											<CardDescription className="grid grid-rows-2 text-muted-foreground leading-relaxed self-center">
+												<div className="my-2">
+													{project.stack?.map((stack) => (
+														<Badge className="text-xs/3" variant="outline" key={stack}>
+															{stack}
+														</Badge>
+													))}
+												</div>
+												<p className="mt-4 text-sm">{project.description}</p>
+											</CardDescription>
+											<div className="grid grid-rows-2 self-end">
+												<div className="flex flex-wrap gap-2 my-2 "></div>
+												<div className="flex items-center justify-between">
+													<Link
+														href={project.github}
+														className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+														prefetch={false}
+													>
+														<GithubIcon />
+													</Link>
+													<Link
+														href={project.website}
+														className="inline-flex items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+														prefetch={false}
+													>
+														<GlobeIcon className="w-5 h-5" />
+														Live Site
+													</Link>
 												</div>
 											</div>
 										</CardContent>
