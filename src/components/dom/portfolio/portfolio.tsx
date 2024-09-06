@@ -22,7 +22,7 @@ const ProjectsData = [
 		description: "A Next.js blog built with Next.js and Tailwind CSS",
 		image: "/images/next-blog.png",
 		stack: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
-		website: "https://next-blog-sam-azevedo.vercel.app/",
+		website: "https://next-blog-delta-puce.vercel.app/",
 		github: "https://github.com/samazevedo/next-blog",
 	},
 
@@ -44,7 +44,7 @@ const ProjectsData = [
 			"Landing page showcase of a 3D watermelon model, built with React-three-fiber",
 		image: "/images/watermelon.png",
 		stack: ["React.js", "CSS", "React-three-fiber", "WebGL", "Typescript"],
-		website: "https://little-lemon-bjvugik2c-samazevedos-projects.vercel.app/",
+		website: "https://watermelon-blush.vercel.app/",
 		github: "https://github.com/samazevedo/watermelon",
 	},
 	{
@@ -55,16 +55,16 @@ const ProjectsData = [
 		image: "/images/mangata.png",
 		stack: ["JavaScript", "HTML", "CSS"],
 		website: "https://little-lemon-bjvugik2c-samazevedos-projects.vercel.app/",
-		github: "https://github.com/samazevedo/mangata-gallo",
+		github: "https://mangata-gallo-f8xwtqbkl-samazevedo.vercel.app/",
 	},
 	{
 		id: 5,
-		title: "Next Portfolio",
-		description: "A Next.js portfolio built with Next.js and Tailwind CSS",
-		image: "/images/next-portfolio.png",
-		stack: ["Next.js", "Styled Components", "Node.js", "MongoDB"],
-		website: "https://little-lemon-bjvugik2c-samazevedos-projects.vercel.app/",
-		github: "https://github.com/samazevedos/little-lemon",
+		title: "Next Blog",
+		description: "A Next.js blog built with Next.js and Tailwind CSS",
+		image: "/images/next-blog.png",
+		stack: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
+		website: "https://next-blog-sam-azevedo.vercel.app/",
+		github: "https://github.com/samazevedo/next-blog",
 	},
 ]
 
@@ -118,14 +118,16 @@ export default function Portfolio() {
 												<div className="flex items-center justify-between">
 													<Link
 														href={project.github}
-														className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+														target="_blank"
+														className="hover:bg-lime-500  inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
 														prefetch={false}
 													>
 														<GithubIcon />
 													</Link>
 													<Link
 														href={project.website}
-														className="inline-flex items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+														target="_blank"
+														className="hover:bg-lime-500 inline-flex items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
 														prefetch={false}
 													>
 														<GlobeIcon className="w-5 h-5" />
