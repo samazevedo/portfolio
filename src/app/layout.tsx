@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import { Italiana, Kalnia, Sawarabi_Gothic } from "next/font/google"
-import { ThemeProvider } from "@components/theme/theme-provider"
 import localFont from "next/font/local"
 // import Header from "@components/dom/header/header"
 import "./globals.css"
@@ -48,9 +47,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${italiana.className}`}>
-				<ThemeProvider>{children}</ThemeProvider>
-			</body>
+			<body className={`${italiana.className}`}>{children}</body>
 		</html>
 	)
 }

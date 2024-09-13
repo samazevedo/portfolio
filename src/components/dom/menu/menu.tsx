@@ -1,3 +1,4 @@
+"use client"
 import { SmoothLink } from "../smooth-link/smooth-link"
 import { Sheet, SheetTrigger, SheetContent } from "@components/ui/sheet"
 import { Button } from "@components/ui/button"
@@ -14,7 +15,7 @@ export default function Menu() {
 			</SheetTrigger>
 			<SheetContent
 				side="top"
-				className="w-full h-full grid grid-rows-[1.8fr_0.2fr]  dark:lime-500"
+				className="w-full h-full grid grid-rows-[1.8fr_0.2fr]  text-white bg-black/50"
 			>
 				<div className="grid grid-rows-4 place-items-center text-4xl md:text-8xl mt-20 ">
 					<SmoothLink href="home" prefetch={false} className="hover:text-lime-500 ">
@@ -39,11 +40,11 @@ export default function Menu() {
 					</SmoothLink>
 				</div>
 				<div className="place-self-center">
-					<div className="grid grid-cols-2 max-w-3xl  ">
+					<div className="grid  max-w-3xl  ">
 						<Socials />
-						<div className="justify-self-end self-center">
+						{/* <div className="justify-self-end self-center">
 							<ModeSwitch />
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</SheetContent>

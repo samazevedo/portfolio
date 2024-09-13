@@ -15,7 +15,7 @@ interface Props {
 
 export const Ring = ({ radius, height, segments, text }: Props) => {
 	const { theme } = useTheme()
-	const color = theme === "dark" ? "#ffffff" : "#ddfa80"
+
 	const groupRef = useRef<THREE.Group>(null!)
 
 	// calc text position
@@ -58,36 +58,21 @@ export const Ring = ({ radius, height, segments, text }: Props) => {
 				rotation: [0, 0, 0],
 			},
 			endProps: {
-				position: [0, 0, -10],
+				position: [0, 50, -1],
 				scale: 0.5,
 				rotation: [0, 0, 0],
 			},
 		},
-
 		{
 			start: 200,
-			end: 500,
+			end: 9999,
 			startProps: {
-				position: [0, 0, -10],
+				position: [0, 50, -1],
 				scale: 0.5,
 				rotation: [0, 0, 0],
 			},
 			endProps: {
-				position: [0, 10, -10],
-				scale: 0.5,
-				rotation: [0, 0, 0],
-			},
-		},
-		{
-			start: 500,
-			end: 7000,
-			startProps: {
-				position: [0, 10, -10],
-				scale: 0.5,
-				rotation: [0, 0, 0],
-			},
-			endProps: {
-				position: [0, 10, -10],
+				position: [0, 100, -1],
 				scale: 0.5,
 				rotation: [0, 0, 0],
 			},
@@ -116,7 +101,6 @@ export const Ring = ({ radius, height, segments, text }: Props) => {
 						lineHeight={1.2}
 						fontWeight={500}
 						letterSpacing={1}
-						color={color}
 						textAlign="center"
 						anchorX="center"
 						anchorY="middle"

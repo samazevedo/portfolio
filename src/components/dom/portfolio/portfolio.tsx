@@ -70,7 +70,7 @@ const ProjectsData = [
 
 export default function Portfolio() {
 	return (
-		<section className="min-h-[100vh] " id="portfolio">
+		<section className="min-h-[100vh] text-white" id="portfolio">
 			<div className="container px-4 md:px-6">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
 					<div className="space-y-2 my-20">

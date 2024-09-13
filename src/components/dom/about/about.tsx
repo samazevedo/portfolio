@@ -26,21 +26,18 @@ const tools = [
 ]
 export default function About() {
 	return (
-		<section className="min-h-[100vh]" id="about">
+		<section className="min-h-[100vh] text-white" id="about">
 			<div className="container px-4 md:px-6">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
 					<div className="space-y-2 mt-20">
 						<h1>Who am I?</h1>
 						<p className="leading-5 md:leading-8">
-							Hello! My name is{" "}
-							<span className="text-lime-600 dark:text-lime-500">Samuel Azevedo</span>,
+							Hello! My name is <span className="text-lime-400">Samuel Azevedo</span>,
 							and I am a passionate{" "}
-							<span className="text-lime-600 dark:text-lime-500">
-								Front-end Developer
-							</span>{" "}
-							and <span className="text-lime-600 dark:text-lime-500">Designer</span>. I
-							specialize in creating modern, responsive, and interactive web
-							applications that provide seamless user experiences.
+							<span className="text-lime-400">Front-end Developer</span> and{" "}
+							<span className="text-lime-400">Designer</span>. I specialize in creating
+							modern, responsive, and interactive web applications that provide
+							seamless user experiences.
 						</p>
 						<p className="leading-5 md:leading-8">
 							With a keen eye for detail and a dedication to the craft, I bring ideas
