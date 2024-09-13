@@ -89,7 +89,7 @@ export default function Portfolio() {
 									key={project.id}
 									className="sm:basis-full md:basis-1/2 lg:basis-1/3"
 								>
-									<Card className="w-full h-full grid grid-rows-[0.5fr_1fr]">
+									<Card className="w-full h-full max-h-[500px] grid grid-rows-[0.5fr_1fr]">
 										<Image
 											src={project.image}
 											alt={project.title}
@@ -100,22 +100,22 @@ export default function Portfolio() {
 										/>
 
 										<CardContent className=" grid grid-rows-[0.3fr_0.5fr_0.2fr] my-2">
-											<CardTitle className="text-muted-bold text-lg">
+											<CardTitle className="text-muted-bold text-lg ">
 												{project.title}
 											</CardTitle>
 											<CardDescription className="grid grid-rows-2 text-muted-foreground leading-relaxed self-center">
-												<div className="my-2">
+												<div>
 													{project.stack?.map((stack) => (
-														<Badge className="text-xs/3" variant="outline" key={stack}>
+														<Badge className="text-[5px] " variant="outline" key={stack}>
 															{stack}
 														</Badge>
 													))}
 												</div>
-												<p className="mt-4 text-sm">{project.description}</p>
+												<p className="text-xs min-h-[55px]">{project.description}</p>
 											</CardDescription>
-											<div className="grid grid-rows-2 self-end">
+											<div className="grid grid-rows-2 self-end text-white ">
 												<div className="flex flex-wrap gap-2 my-2 "></div>
-												<div className="flex items-center justify-between">
+												<div className="flex items-center justify-between ">
 													<Link
 														href={project.github}
 														target="_blank"
