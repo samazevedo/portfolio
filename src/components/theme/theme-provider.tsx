@@ -1,27 +1,28 @@
-"use client"
-import { ThemeProvider as NextThemesProvider } from "next-themes"
-import { useEffect, useState } from "react"
+'use client';
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-	const [mounted, setMounted] = useState(false)
+	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {
-		setMounted(true)
-	}, [])
+		setMounted(true);
+	}, []);
 
 	if (!mounted) {
-		return <>{children}</> // Prevent hydration mismatch
+		return <>{children}</>; // Prevent hydration mismatch
 	}
 
 	return (
 		<NextThemesProvider
 			attribute="class"
-			enableSystem={false}
-			enableColorScheme={false}
+			enableSystem={true}
+			enableColorScheme={true}
 			defaultTheme="dark"
-			themes={["dark", "light"]}
+			themes={['dark', 'light']}
+			storageKey="theme"
 		>
 			{children}
 		</NextThemesProvider>
-	)
+	);
 }

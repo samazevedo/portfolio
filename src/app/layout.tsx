@@ -1,53 +1,41 @@
-import type { Metadata } from "next"
-import { Italiana, Kalnia, Sawarabi_Gothic } from "next/font/google"
-import localFont from "next/font/local"
-// import Header from "@components/dom/header/header"
-import "./globals.css"
+import type { Metadata } from 'next';
+import { ThemeProvider } from '@components/theme/theme-provider';
+import './globals.css';
+import localFont from 'next/font/local';
 
-const kalnia = Kalnia({
-	subsets: ["latin"],
-	weight: "400",
-	variable: "--kalnia",
-})
-
-const sawarabi = Sawarabi_Gothic({
-	subsets: ["latin"],
-	weight: "400",
-	variable: "--sawarabi",
-})
-// const suwannaphum = Suwannaphum({
-// 	subsets: ["latin"],
-// 	weight: "100",
-// 	variable: "--suwannaphum",
-// })
-
-// const anton = Kalnia({
-// 	subsets: ["latin"],
-// 	weight: "400",
-// 	variable: "--freeman",
-// })
-const italiana = Italiana({
-	subsets: ["latin"],
-	weight: "400",
-	variable: "--farsan",
-})
+const newScience = localFont({
+	src: [
+		{
+			path: '../../public/fonts/New_Science_Regular_Extended.otf',
+			weight: '500',
+			style: 'normal'
+		},
+		{
+			path: '../../public/fonts/New_Science_Thin_Extended.otf',
+			weight: '300',
+			style: 'thin'
+		}
+	]
+});
 
 export const metadata: Metadata = {
-	title: "Sam Azevedo",
+	title: 'Sam Azevedo',
 	description: "Sam Azevedo's portfolio website",
 	icons: {
-		icon: "/favicon.ico",
-	},
-}
+		icon: '/favicon.ico'
+	}
+};
 
 export default function RootLayout({
-	children,
+	children
 }: Readonly<{
-	children: React.ReactNode
+	children: React.ReactNode;
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${italiana.className}`}>{children}</body>
+			<ThemeProvider>
+				<body className={`${newScience.className}`}>{children}</body>
+			</ThemeProvider>
 		</html>
-	)
+	);
 }

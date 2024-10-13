@@ -1,11 +1,11 @@
-import Link from "next/link"
-import { SmoothLink } from "../smooth-link/smooth-link"
-import { useLenis } from "@hooks/useLenis"
+import Link from 'next/link';
+import { SmoothLink } from '../smooth-link/smooth-link';
+import { useLenis } from '@hooks/useLenis';
 
 export default function Nav() {
-	useLenis()
+	useLenis();
 	return (
-		<nav className="ml-auto hidden md:flex gap-4 sm:gap-6 ">
+		<nav className="ml-auto text-lavanderT dark:text-greenT hidden md:flex gap-4 sm:gap-6 ">
 			{/* <Link
 				href="#"
 				className="text-sm font-medium hover:underline underline-offset-4"
@@ -47,5 +47,5 @@ export default function Nav() {
 				Contact
 			</Link> */}
 		</nav>
-	)
+	);
 }

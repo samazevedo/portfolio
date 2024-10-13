@@ -1,33 +1,30 @@
-precision mediump float;
-precision mediump int;
+precision highp float;
+precision highp int;
 
-// standar attributes 
+// standard attributes 
 in vec3 position;
 in vec2 uv;
 in vec3 normal;
+
 // output to the fragment shader
 out vec2 vUv;
 out vec3 vNormal;
 out vec3 vPosition;
 
-// customs attributes
-
-
-// stardard uniforms used for transforming the vertices
+// standard uniforms for transforming vertices
 uniform mat4 modelMatrix;
 uniform mat4 modelViewMatrix;
 uniform mat4 projectionMatrix;
 uniform mat4 viewMatrix;
-uniform mat4 normalMatrix;
+uniform mat3 normalMatrix;
 uniform vec3 cameraPosition;
 
 uniform sampler2D uTexture;
 uniform vec2 uResolution;
 
-
 void main(){
     vUv = uv;
-    vNormal = normal;
+    vNormal = normalize(normalMatrix * normal);
     vPosition = position;
 
     // FINAL POSITION
@@ -35,11 +32,5 @@ void main(){
     vec4 viewPosition = viewMatrix * modelPosition;
     vec4 projectedPosition = projectionMatrix * viewPosition;
 
-
     gl_Position = projectedPosition;
-
-    //  // POINT SIZE
-    // gl_PointSize = .01 *  pictureIntensity * uResolution.y;
-    // gl_PointSize *= (1.0 / -viewPosition.z);
-
 }
