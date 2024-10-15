@@ -23,8 +23,10 @@ export default function Contact() {
 		<section className="min-h-[90vh] " id="contact">
 			<div className="container px-4 md:px-6">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
-					<div className="space-y-2 mt-20">
-						<h1>Get in Touch</h1>
+					<div className="space-y-2 mt-20 text-start">
+						<h2>
+							Contact <span className="text-lavanderT">Me</span>
+						</h2>
 						<p className="max-w-[900px]  md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
 							I&apos;d love to hear from you! Feel free to reach out with any questions or inquiries.
 						</p>

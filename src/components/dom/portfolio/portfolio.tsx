@@ -59,8 +59,10 @@ export default function Portfolio() {
 		<section className="min-h-[100vh]" id="portfolio">
 			<div className="container px-4 md:px-6">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
-					<div className="space-y-2 my-20">
-						<h1>Explore My Work</h1>
+					<div className="space-y-2 my-20 text-start">
+						<h2>
+							Port<span className="text-lavanderT">folio</span>
+						</h2>
 						<p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
 							Check out some of my latest projects and see what I&apos;ve been working on.
 						</p>

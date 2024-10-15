@@ -73,11 +73,11 @@
 	body {
 		@apply bg-background text-foreground  transition-all ease-linear duration-500;
 	}
-	h1 {
-		@apply text-4xl md:text-7xl lg:text-8xl uppercase font-bold tracking-tighter;
+	h2 {
+		@apply text-3xl md:text-4xl lg:text-5xl uppercase tracking-tighter text-greenT mb-10;
 	}
 	p {
-		@apply text-xl/4 md:text-2xl/relaxed lg:text-4xl leading-5;
+		@apply text-xl/4 md:text-2xl/relaxed lg:text-2xl leading-5 font-thin;
 	}
 	a {
 	}

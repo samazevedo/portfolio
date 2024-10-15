@@ -28,9 +28,11 @@ export default function About() {
 	return (
 		<section className="min-h-[100vh] bg-whiteT dark:bg-blackT" id="about w-full">
 			<div className="container px-4 md:px-6">
-				<div className="flex flex-col items-center justify-center space-y-4 text-center">
+				<div className="flex flex-col items-center justify-center space-y-4 text-start">
 					<div className="space-y-2 mt-20">
-						<h1>Who am I?</h1>
+						<h2>
+							About <span className="text-lavanderT font-thin">Me</span>
+						</h2>
 						<p className="leading-5 md:leading-8">
 							Hello! My name is <span className="text-lime-400">Samuel Azevedo</span>, and I am a passionate{' '}
 							<span className="text-lime-400">Front-end Developer</span> and <span className="text-lime-400">Designer</span>. I
@@ -46,12 +48,7 @@ export default function About() {
 							great but also function flawlessly. Let's build something amazing together!
 						</p>
 					</div>
-					<div className="grid items-center rounded-full  w-60 h-60 md:w-96 md:h-96 bg-black overflow-hidden place-items-center">
-						<View className=" w-56 h-56 md:w-80 md:h-80 overflow-hidden">
-							<CanvasConfig />
-							<Photo />
-						</View>
-					</div>
+					<div className="grid items-center rounded-full  w-60 h-60 md:w-96 md:h-96 bg-black overflow-hidden place-items-center"></div>
 				</div>
 			</div>
 		</section>
