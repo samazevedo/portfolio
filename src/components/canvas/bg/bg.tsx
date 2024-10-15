@@ -56,11 +56,11 @@ export const BG = () => {
 	}, [handleMouseMove]);
 
 	return (
-		<group ref={ref} position={[0, 0, 0]} scale={100.5}>
+		<group ref={ref} position={[0, 0, 0]} scale={0.5}>
 			<ambientLight intensity={0.9} />
 			<pointLight position={[10, 10, 10]} intensity={1} />
 			<pointLight position={[-10, -10, -10]} intensity={0.8} />
-			<mesh position={[0, 0, -10]} scale={2.5} ref={geometryRef}>
+			<mesh position={[0, 0, 0]} scale={2.5} ref={geometryRef}>
 				<planeGeometry args={[10, 10, 32, 32]} />
 				{/* <sphereGeometry args={[1.4, 32, 32]} /> */}
 				<rawShaderMaterial

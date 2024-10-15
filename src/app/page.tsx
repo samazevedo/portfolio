@@ -17,7 +17,7 @@ export default function Home() {
 	const domRef = useRef<HTMLDivElement>(null!);
 
 	return (
-		<div ref={domRef} className="text-neutral-800 dark:text-neutral-100 w-full h-full">
+		<div ref={domRef} className="text-neutral-800 dark:text-neutral-100 w-full h-full bg-whiteT dark:bg-blackT">
 			<Canvas
 				eventSource={domRef}
 				dpr={[1, 2]}
@@ -31,7 +31,6 @@ export default function Home() {
 					placeItems: 'center',
 					top: 0,
 					left: 0,
-					zIndex: -10,
 					width: '100%',
 					height: '100%'
 				}}
