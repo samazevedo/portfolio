@@ -11,7 +11,7 @@ export default function Hero() {
 	// const bg = theme === "dark" ? "#1C1C1C" : "#8d8b8e"
 
 	return (
-		<section className="relative w-[100vw] h-[100vh]">
+		<section className="relative w-[100vw] h-[100vh]" id="home">
 			<View className="absolute top-0 left-0 w-full h-full -z-10">
 				<BG />
 			</View>

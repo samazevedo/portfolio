@@ -26,7 +26,7 @@ const tools = [
 ];
 export default function About() {
 	return (
-		<section className="min-h-[100vh] bg-whiteT dark:bg-blackT" id="about w-full">
+		<section className="min-h-[100vh] bg-whiteT dark:bg-blackT" id="about">
 			<div className="container md:px-6 lg:px-10">
 				<div className="flex flex-col items-center justify-center space-y-4 text-start">
 					<div className="space-y-2 mt-20">
