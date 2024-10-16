@@ -57,16 +57,14 @@ const ProjectsData = [
 export default function Portfolio() {
 	return (
 		<section className="min-h-[100vh]" id="portfolio">
-			<div className="container px-4 md:px-6">
-				<div className="flex flex-col items-center justify-center space-y-4 text-center">
-					<div className="space-y-2 my-20 text-start">
-						<h2>
-							Port<span className="text-lavanderT">folio</span>
-						</h2>
-						<p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
-							Check out some of my latest projects and see what I&apos;ve been working on.
-						</p>
-					</div>
+			<div className="container">
+				<div className="space-y-2 my-20 text-start">
+					<h2>
+						Port<span className="text-lavanderT">folio</span>
+					</h2>
+					<p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
+						Check out some of my latest projects and see what I&apos;ve been working on.
+					</p>
 				</div>
 				<div className="w-full grid place-items-center ">
 					<Carousel className="w-full max-w-xs md:max-w-lg lg:max-w-3xl">

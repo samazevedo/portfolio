@@ -6,7 +6,7 @@ const config = {
 	prefix: '',
 	theme: {
 		colors: {
-			blackT: '#494947',
+			blackT: '#3C3C3C',
 			whiteT: '#fffcf9',
 			orangeT: '#f7996e',
 			greenT: '#ACECA1',

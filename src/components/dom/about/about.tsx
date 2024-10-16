@@ -27,7 +27,7 @@ const tools = [
 export default function About() {
 	return (
 		<section className="min-h-[100vh] bg-whiteT dark:bg-blackT" id="about w-full">
-			<div className="container px-4 md:px-6">
+			<div className="container md:px-6 lg:px-10">
 				<div className="flex flex-col items-center justify-center space-y-4 text-start">
 					<div className="space-y-2 mt-20">
 						<h2>
@@ -48,7 +48,15 @@ export default function About() {
 							great but also function flawlessly. Let's build something amazing together!
 						</p>
 					</div>
-					<div className="grid items-center rounded-full  w-60 h-60 md:w-96 md:h-96 bg-black overflow-hidden place-items-center"></div>
+					<div className="grid items-center rounded-full  w-60 h-60 md:w-96 md:h-96 bg-black overflow-hidden place-items-center">
+						<Image
+							src="/images/sam.jpg"
+							alt="Samuel Azevedo"
+							width={500}
+							height={500}
+							className="w-full h-full object-cover rounded-full"
+						/>
+					</div>
 				</div>
 			</div>
 		</section>
